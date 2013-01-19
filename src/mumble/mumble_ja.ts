@@ -4,10 +4,6 @@
 <context>
     <name>ACLEditor</name>
     <message>
-        <source>Mumble - Edit ACL for %1</source>
-        <translation type="obsolete">Mumble - %1のACLを編集</translation>
-    </message>
-    <message>
         <location filename="ACLEditor.ui"/>
         <source>Active ACLs</source>
         <translation>ACLを有効にする</translation>
@@ -21,11 +17,6 @@
         <location/>
         <source>User/Group</source>
         <translation>ユーザ/グループ</translation>
-    </message>
-    <message>
-        <source>This controls which group of users this entry applies to.&lt;br /&gt;Note that the group is evaluated in the context of the channel the entry is used in. For example, the default ACL on the Root channel gives &lt;i&gt;Write&lt;/i&gt; permission to the &lt;i&gt;admin&lt;/i&gt; group. This entry, if inherited by a channel, will give a user write privileges if he belongs to the &lt;i&gt;admin&lt;/i&gt; group in that channel, even if he doesn&apos;t belong to the &lt;i&gt;admin&lt;/i&gt; group in the channel where the ACL originated.&lt;br /&gt;If a group name starts with a &apos;!&apos;, its membership is negated, and if it starts with a &apos;~&apos;, it is evaluated in the channel the ACL was defined in, rather than the channel the ACL is active in.&lt;br /&gt;If a group name starts with a  &apos;#&apos;, it is interpreted as an access token. Users must have entered whatever follows the &apos;#&apos; in their list of access tokens to match. This can be used for very simple password access to channels for non-authenticated users.&lt;br /&gt;If a group name starts with a  &apos;$&apos;, it will only match users whose certificate hash matches what follows the &apos;$&apos;.&lt;br /&gt;A few special predefined groups are:&lt;br /&gt;&lt;b&gt;all&lt;/b&gt; - Everyone will match.&lt;br /&gt;&lt;b&gt;auth&lt;/b&gt; - All authenticated users will match.&lt;br /&gt;&lt;b&gt;sub,a,b,c&lt;/b&gt; - User currently in a sub-channel minimum &lt;i&gt;a&lt;/i&gt; common parents, and between &lt;i&gt;b&lt;/i&gt; and &lt;i&gt;c&lt;/i&gt; channels down the chain. See the website for more extensive documentation on this one.&lt;br /&gt;&lt;b&gt;in&lt;/b&gt; - Users currently in the channel will match (convenience for &apos;&lt;i&gt;sub,0,0,0&lt;/i&gt;&apos;).&lt;br /&gt;&lt;b&gt;out&lt;/b&gt; - Users outside the channel will match (convenience for &apos;&lt;i&gt;!sub,0,0,0&lt;/i&gt;&apos;).&lt;br /&gt;Note that an entry applies to either a user or a group, not both.</source>
-        <translation type="obsolete">この項目がどのユーザのグループに適用されるかを制御します。グループはそのエントリが使用されるチャンネルのコンテキストそして評価されます。たとえば、Root チャンネル上のデフォルトのACL は &lt;i&gt;書き込み&lt;/i&gt;権限を&lt;i&gt;admin&lt;/i&gt;グループに与えています。このエントリは、もしチャンネルで継承済みでなければ、たとえそのACLに由来するチャンネルの&lt;i&gt;admin&lt;/i&gt;グループに属していなくても&lt;i&gt;admin&lt;/i&gt;グループがそのチャンネルに所属するならユーザに書き込み権限を与えます。グループの名前が ! で始まっていれば、そのメンバは否定されます。そして ~ で始まるなら　そのチャンネルで有効なACLよりもそのチャンネルのACLが定義された方が優先されます。グループの名前が # で始まる場合は、それはアクセストークンとして解釈されます。ユーザはアクセストークンのリストの中に # の後に続く文字列を持っている必要があります。これはとても非認証ユーザにたいして非常に単純なシンプルなパスワードアクセスの方法として使えます。グループの名前が $ で始まる場合、それは $ に続く文字列がユーザの証明書のハッシュにマッチする場合です。特別な定義済みグループは次のとおりです。&lt;br/&gt;&lt;b&gt;all&lt;/b&gt; - すべてにマッチ。&lt;br/&gt;&lt;b&gt;auth&lt;/b&gt; - 認証済みのすべてのユーザにマッチ。&lt;br /&gt;&lt;b&gt;sub,a,b,c&lt;/b&gt; - サブチャンネル &lt;i&gt;a&lt;/i&gt; &lt;i&gt;b&lt;/i&gt;&lt;i&gt;c&lt;/i&gt;最小で&lt;i&gt;a&lt;/i&gt;個の共通の両親を持ち、チェーンの下側へ&lt;i&gt;b&lt;/i&gt;個から&lt;i&gt;c個&lt;/i&gt;の間のサブチャンネルのユーザにマッチします。この項目についてのより多くのドキュメントを見るには公式サイトを確認してください。&lt;b&gt;in&lt;/b&gt; - 現在のチャンネルにいるすべてのユーザにマッチ。（これは &lt;i&gt;sub,0,0,0&lt;/i&gt;の簡易的な表記です。）&lt;b&gt;out&lt;/b&gt; - 現在のチャンネルの外にいるすべてのユーザにマッチ。（これは &lt;i&gt;！sub,0,0,0&lt;/i&gt;の簡易的な表記です。）
-エントリはユーザかグループのどちらかに適用され、両方には適用されません。</translation>
     </message>
     <message>
         <location/>
@@ -45,7 +36,7 @@
     <message>
         <location/>
         <source>&amp;Add</source>
-        <translation type="unfinished">追加(&amp;A)</translation>
+        <translation>追加(&amp;A)</translation>
     </message>
     <message>
         <location/>
@@ -83,7 +74,7 @@
         <translation>ユーザID</translation>
     </message>
     <message>
-        <location filename="ACLEditor.cpp" line="+101"/>
+        <location filename="ACLEditor.cpp" line="+105"/>
         <source>Deny</source>
         <translation>禁止</translation>
     </message>
@@ -118,10 +109,6 @@
         <translation>追加</translation>
     </message>
     <message>
-        <source>Add to Remove</source>
-        <translation type="obsolete">削除リストに追加</translation>
-    </message>
-    <message>
         <location/>
         <source>&amp;Groups</source>
         <translation>グループ(&amp;G)</translation>
@@ -132,37 +119,9 @@
         <translation>&amp;ACL</translation>
     </message>
     <message>
-        <source>&amp;OK</source>
-        <translation type="obsolete">&amp;OK</translation>
-    </message>
-    <message>
-        <source>Accept changes</source>
-        <translation type="obsolete">変更を確定</translation>
-    </message>
-    <message>
-        <source>This button will accept current groups/ACLs and send them to the server. Note that if you mistakenly remove write permission from yourself, the server will add it.</source>
-        <translation type="obsolete">このボタンは現在の グループとACLを 適用しサーバに送信します。もし誤ってあなた自身の書き込み権限を削除してしまうとサーバに追加されてしまいますのでご注意ください。</translation>
-    </message>
-    <message>
-        <source>&amp;Cancel</source>
-        <translation type="obsolete">キャンセル(&amp;C)</translation>
-    </message>
-    <message>
-        <source>Reject changes</source>
-        <translation type="obsolete">変更を破棄</translation>
-    </message>
-    <message>
-        <source>This button will cancel all changes and closes the dialog without updating the ACLs or groups on the server.</source>
-        <translation type="obsolete">このボタンは全ての変更をキャンセルし、サーバのACLやグループを変更せずにダイアログを閉じます。</translation>
-    </message>
-    <message>
         <location/>
         <source>List of entries</source>
         <translation>項目リスト</translation>
-    </message>
-    <message>
-        <source>This shows all the entries active on this channel. Entries inherited from parent channels will be show in italics.</source>
-        <translation type="obsolete">このチャンネルの全てのアクティブな項目を表示します。親チャンネルから継承される項目はイタリック(斜字)体で表示されます</translation>
     </message>
     <message>
         <location/>
@@ -200,10 +159,6 @@
         <translation>項目を上に移動</translation>
     </message>
     <message>
-        <source>Properties</source>
-        <translation type="obsolete">プロパティ</translation>
-    </message>
-    <message>
         <location/>
         <source>Name</source>
         <translation>チャンネル名</translation>
@@ -212,10 +167,6 @@
         <location/>
         <source>Enter the channel name here.</source>
         <translation>チャンネル名をここに入力してください。</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Name&lt;/b&gt;&lt;br&gt;Enter the channel name in this field. The name has to comply with the restriction imposed by the server you are connected to.</source>
-        <translation type="obsolete">&lt;b&gt;チャンネル名&lt;/b&gt;&lt;br&gt;このフィールドにチャンネル名を入力してください。チャンネル名は接続しているサーバの制限に従う必要があります。</translation>
     </message>
     <message>
         <location/>
@@ -233,19 +184,9 @@
         <translation>チャンネルに参加するためのパスワードをここに入力してください。</translation>
     </message>
     <message>
-        <source>&lt;b&gt;Password&lt;/b&gt;&lt;br&gt;This field allows you to easily set and change the password of a channel. In the background it uses Mumble&apos;s access tokens feature. To allow more fine grained and powerful access control directly use ACLs and groups instead (&lt;i&gt;Advanced configuration&lt;/i&gt; has to be checked to be able to see these settings).</source>
-        <translation type="obsolete">&lt;b&gt;パスワード&lt;/b&gt;&lt;br&gt;このフィールドで簡単にチャンネルのパスワードを設定・変更できます。 背景にはMumble のアクセストークンの機能の使用があります。より細やかで協力なアクセス制御をするには、ACLとおグループを直接に使用してください。（&lt;i&gt;高度な設定&lt;/i&gt;はこれらの設定を見るためにチェックする必要があります）。</translation>
-    </message>
-    <message>
         <location/>
         <source>Check to create a temporary channel.</source>
         <translation>一時チャンネルを作る場合はチェックしてください。</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Temporary&lt;/b&gt;&lt;br&gt;
-When checked the channel created will be marked as temporary. This means when the last player leaves it the channel will be automatically deleted by the server.</source>
-        <translation type="obsolete">&lt;b&gt;一時チャンネルとして設定する&lt;/b&gt;&lt;br&gt;
-チェックしてチャンネルを作ると一時としてマークされます。最後に残っていたユーザがチャンネルから離れるとサーバによって自動的にそのチャンネルが削除されます。</translation>
     </message>
     <message>
         <location/>
@@ -272,14 +213,6 @@ This value enables you to change the way mumble arranges the channels in the tre
         <translation>ポジション</translation>
     </message>
     <message>
-        <source>&lt;b&gt;Group&lt;/b&gt;&lt;br&gt;
-These are all the groups currently defined for the channel. To create a new group, just type in the name and press enter.</source>
-        <oldsource>&lt;b&gt;Group&lt;/b&gt;&lt;br&gt;
-This is all the groups currently defined for the channel. To create a new group, just type in the name and press enter.</oldsource>
-        <translation type="obsolete">&lt;b&gt;グループ&lt;/b&gt;&lt;br /&gt;
-このチャンネルで現在定義されている全てのグループです。新しいグループを作るには、グループ名を入力してEnterキーを押してください。</translation>
-    </message>
-    <message>
         <location/>
         <source>Add new group</source>
         <translation>新しいグループを追加</translation>
@@ -292,22 +225,6 @@ Add a new group.</source>
 新しいグループを追加する。</translation>
     </message>
     <message>
-        <source>&lt;b&gt;Remove&lt;/b&gt;&lt;br&gt;This removes the currently selected group. If the group was inherited, it will not be removed from the list, but all local information about the group will be cleared.</source>
-        <translation type="obsolete">&lt;b&gt;削除&lt;/b&gt;&lt;br /&gt;現在選択されているグループを削除します。もし、グループが継承されているなら、それはリストから削除されません。しかし、グループについての全ての局所情報はクリアされます。</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Inherit&lt;/b&gt;&lt;br&gt;This inherits all the members in the group from the parent, if the group is marked as &lt;i&gt;Inheritable&lt;/i&gt; in the parent channel.</source>
-        <translation type="obsolete">&lt;b&gt;継承&lt;/b&gt;&lt;br /&gt;そのグループが親チャンネルで&lt;i&gt;継承可能&lt;/i&gt;と設定されているなら、そのグループの全てのメンバを継承します。</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Inheritable&lt;/b&gt;&lt;br&gt;This makes this group inheritable to sub-channels. If the group is non-inheritable, sub-channels are still free to create a new group with the same name.</source>
-        <translation type="obsolete">&lt;b&gt;継承可能&lt;/b&gt;&lt;br /&gt;このグループがサブチャンネルに継承可能であることを意味します。グループが継承不可能であれば、サブチャンネルは同じ名前の新しいグループを自由に作ることが可能です。</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Inherited&lt;/b&gt;&lt;br&gt;This indicates that the group was inherited from the parent channel. You cannot edit this flag, it&apos;s just for information.</source>
-        <translation type="obsolete">&lt;b&gt;継承済み&lt;/b&gt;これはグループが親チャンネルから継承されたことを意味します。このフラグはただの情報なので編集できません。</translation>
-    </message>
-    <message>
         <location/>
         <source>Inherited members</source>
         <translation>継承済みメンバ</translation>
@@ -318,32 +235,14 @@ Add a new group.</source>
         <translation>このチャンネルのグループに追加されたメンバのリスト。</translation>
     </message>
     <message>
-        <source>&lt;b&gt;Members&lt;/b&gt;&lt;br&gt;
-This list contains all members that were added to the group by the current channel. Be aware that this does not include members inherited by higher levels of the channel tree. These can be found in the &lt;i&gt;Inherited members&lt;/i&gt; list. To prevent this list to be inherited by lower level channels uncheck &lt;i&gt;Inheritable&lt;/i&gt; or manually add the members to the &lt;i&gt;Excluded members&lt;/i&gt; list.</source>
-        <translation type="obsolete">&lt;b&gt;メンバ&lt;/b&gt;&lt;br /&gt;
-このリストは現在のチャンネルのグループに追加された全てのメンバーを含みます。より高い階層のチャンネルツリーから継承されたメンバは含まないことに注意してください。それらのメンバは&lt;i&gt;継承済みメンバー&lt;/i&gt;のリストで確認できます。より低い階層のチャンネルでこのリストを継承させたくない場合は&lt;i&gt;継承可能&lt;/i&gt;のチェックを外すか、手動で&lt;i&gt;除外メンバ&lt;/i&gt;のリストにメンバを追加してください。</translation>
-    </message>
-    <message>
         <location/>
         <source>Contains a list of members whose group membership will not be inherited from the parent channel.</source>
         <translation>親チャンネルから継承されないグループのメンバーのリスト。</translation>
     </message>
     <message>
-        <source>&lt;b&gt;Excluded members&lt;/b&gt;&lt;br&gt;
-Contains a list of members whose group membership will not be inherited from the parent channel.</source>
-        <translation type="obsolete">&lt;b&gt;除外メンバ&lt;/b&gt;&lt;br /&gt;
-親チャンネルに継承されないグループのメンバーのリストを含む。</translation>
-    </message>
-    <message>
         <location/>
         <source>Contains the list of members inherited by other channels.</source>
         <translation>他のチャンネルから継承されたメンバのリストです。</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Inherited members&lt;/b&gt;&lt;br&gt;
-Contains the list of members inherited by the current channel. Uncheck &lt;i&gt;Inherit&lt;/i&gt; to prevent inheritance from higher level channels.</source>
-        <translation type="obsolete">&lt;b&gt;継承済みメンバ&lt;/b&gt;&lt;br /&gt;
-現在のチャンネルで継承済みのメンバのリストです。より高い階層のチャンネルからの継承を防ぐには&lt;i&gt;継承&lt;/i&gt;のチェックを外してください。</translation>
     </message>
     <message>
         <location/>
@@ -407,10 +306,6 @@ Contains the list of members inherited by the current channel. Uncheck &lt;i&gt;
         <translation>この項目を適用するグループ</translation>
     </message>
     <message>
-        <source>This controls which group of users this entry applies to.&lt;br /&gt;Note that the group is evaluated in the context of the channel the entry is used in. For example, the default ACL on the Root channel gives &lt;i&gt;Write&lt;/i&gt; permission to the &lt;i&gt;admin&lt;/i&gt; group. This entry, if inherited by a channel, will give a user write privileges if he belongs to the &lt;i&gt;admin&lt;/i&gt; group in that channel, even if he doesn&apos;t belong to the &lt;i&gt;admin&lt;/i&gt; group in the channel where the ACL originated.&lt;br /&gt;If a group name starts with a !, its membership is negated, and if it starts with a ~, it is evaluated in the channel the ACL was defined in, rather than the channel the ACL is active in. Order is important; &lt;i&gt;!~in&lt;/i&gt; is valid, but &lt;i&gt;~!in&lt;/i&gt; is not.&lt;br /&gt;A few special predefined groups are:&lt;br /&gt;&lt;b&gt;all&lt;/b&gt; - Everyone will match.&lt;br /&gt;&lt;b&gt;auth&lt;/b&gt; - All authenticated users will match.&lt;br /&gt;&lt;b&gt;sub,a,b,c&lt;/b&gt; - User currently in a sub-channel minimum &lt;i&gt;a&lt;/i&gt; common parents, and between &lt;i&gt;b&lt;/i&gt; and &lt;i&gt;c&lt;/i&gt; channels down the chain. See the website for more extensive documentation on this one.&lt;br /&gt;&lt;b&gt;in&lt;/b&gt; - Users currently in the channel will match (convenience for &lt;i&gt;sub,0,0,0&lt;/i&gt;).&lt;br /&gt;&lt;b&gt;out&lt;/b&gt; - Users outside the channel will match (convenience for &lt;i&gt;!sub,0,0,0&lt;/i&gt;).&lt;br /&gt;Note that an entry applies to either a user or a group, not both.</source>
-        <translation type="obsolete">この項目がどのユーザグループに適用されるかを制御します。</translation>
-    </message>
-    <message>
         <location/>
         <source>User this entry applies to</source>
         <translation>この項目を適用するユーザ</translation>
@@ -454,7 +349,7 @@ Contains the list of members inherited by the current channel. Uncheck &lt;i&gt;
     <message>
         <location line="+123"/>
         <source>Channel must have a name</source>
-        <translation type="unfinished"></translation>
+        <translation>チャンネルには必ず名前を設定してください</translation>
     </message>
     <message>
         <location line="-131"/>
@@ -467,17 +362,9 @@ Contains the list of members inherited by the current channel. Uncheck &lt;i&gt;
         <translation>グループリスト</translation>
     </message>
     <message>
-        <source>This is all the groups currently defined for the channel. To create a new group, just type in the name and press enter.</source>
-        <translation type="obsolete">チャンネルに定義されている全てのグループです。新たにグループを作成するには名前を入力してEnterを押してください。</translation>
-    </message>
-    <message>
         <location/>
         <source>Remove selected group</source>
         <translation>選択されたグループを削除</translation>
-    </message>
-    <message>
-        <source>This removes the currently selected group. If the group was inherited, it will not be removed from the list, but all local information about the group will be cleared.</source>
-        <translation type="obsolete">選択されたグループを削除します。もしグループが継承されていたらリストからは削除されませんが、グループに関するローカルな情報は消えてしまいます。</translation>
     </message>
     <message>
         <location/>
@@ -485,17 +372,9 @@ Contains the list of members inherited by the current channel. Uncheck &lt;i&gt;
         <translation>親からグループメンバーを継承する</translation>
     </message>
     <message>
-        <source>This inherits all the members in the group from the parent, if the group is marked as &lt;i&gt;Inheritable&lt;/i&gt; in the parent channel.</source>
-        <translation type="obsolete">親チャンネルでグループが継承可になっている場合、親グループから全てのメンバーを継承します。</translation>
-    </message>
-    <message>
         <location/>
         <source>Make group inheritable to sub-channels</source>
         <translation>サブチャンネルに対してグループを継承可能にする</translation>
-    </message>
-    <message>
-        <source>This makes this group inheritable to sub-channels. If the group is non-inheritable, sub-channels are still free to create a new group with the same name.</source>
-        <translation type="obsolete">サブチャンネルに対してグループを継承可能にします。もしグループが継承不可ならばサブチャンネルでは同じ名前の新しいグループを作成することが出来ます。</translation>
     </message>
     <message>
         <location/>
@@ -503,17 +382,9 @@ Contains the list of members inherited by the current channel. Uncheck &lt;i&gt;
         <translation>親チャンネルから継承したグループ</translation>
     </message>
     <message>
-        <source>This indicates that the group was inherited from the parent channel. You cannot edit this flag, it&apos;s just for information.</source>
-        <translation type="obsolete">グループが親チャンネルから継承されたことを示しています。このフラグは変更できません。これは単なる情報です。</translation>
-    </message>
-    <message>
         <location/>
         <source>Add member to group</source>
         <translation>グループにメンバーを追加</translation>
-    </message>
-    <message>
-        <source>Type in the name of a player you wish to add to the group and press enter.</source>
-        <translation type="obsolete">グループに追加したいプレイヤーの名前を入力してEnterキーを押してください。</translation>
     </message>
     <message>
         <location/>
@@ -521,25 +392,9 @@ Contains the list of members inherited by the current channel. Uncheck &lt;i&gt;
         <translation>グループからメンバーを削除</translation>
     </message>
     <message>
-        <source>Type in the name of a player you wish to remove from the group and press enter.</source>
-        <translation type="obsolete">グループから削除したいプレイヤーの名前を入力してEnterキーを押してください。</translation>
-    </message>
-    <message>
         <location/>
         <source>Dialog</source>
         <translation>ダイアログ</translation>
-    </message>
-    <message>
-        <source>Type in the name of a player you wish to add to the group and click Add.</source>
-        <translation type="obsolete">追加したいプレイヤー名を入力して追加ボタンをクリックしてください。</translation>
-    </message>
-    <message>
-        <source>Type in the name of a player you wish to remove from the group and click Add.</source>
-        <translation type="obsolete">削除したいプレイヤー名を入力してAddボタンをクリックしてください。</translation>
-    </message>
-    <message>
-        <source>This shows all the entries active on this channel. Entries inherited from parent channels will be show in italics.&lt;br /&gt;ACLs are evaluated top to bottom, meaning priority increases as you move down the list.</source>
-        <translation type="obsolete">このチャンネルで有効な項目を全て表示します。親チャンネルから継承した項目はイタリック(斜字)体で表示されます。&lt;br /&gt;ACLは上から順に評価されます。つまり、リストの順位を下げる事は優先度が上がる事を意味します。</translation>
     </message>
     <message>
         <location/>
@@ -549,88 +404,84 @@ Contains the list of members inherited by the current channel. Uncheck &lt;i&gt;
     <message>
         <location/>
         <source>&lt;b&gt;Name&lt;/b&gt;&lt;br /&gt;Enter the channel name in this field. The name has to comply with the restriction imposed by the server you are connected to.</source>
-        <translation type="unfinished">&lt;b&gt;チャンネル名&lt;/b&gt;&lt;br /&gt;このフィールドにチャンネル名を入力してください。チャンネル名は接続しているサーバの制限に従う必要があります。</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Password&lt;/b&gt;&lt;br /&gt;This field allows you to easily set and change the password of a channel. In the background it uses Mumble&apos;s access tokens feature. To allow more fine grained and powerful access control directly, use ACLs and groups instead (&lt;i&gt;Advanced configuration&lt;/i&gt; has to be checked to be able to see these settings).</source>
-        <translation type="obsolete">&lt;b&gt;パスワード&lt;/b&gt;&lt;br /&gt;このフィールドで簡単にチャンネルのパスワードを設定・変更できます。 背景にはMumble のアクセストークンの機能の使用があります。より細やかで協力なアクセス制御をするには、ACLとおグループを直接に使用してください。（&lt;i&gt;高度な設定&lt;/i&gt;はこれらの設定を見るためにチェックする必要があります）。</translation>
+        <translation>&lt;b&gt;チャンネル名&lt;/b&gt;&lt;br /&gt;このフィールドにチャンネル名を入力してください。チャンネル名は接続しているサーバの制限に従う必要があります。</translation>
     </message>
     <message>
         <location/>
         <source>&lt;b&gt;Temporary&lt;/b&gt;&lt;br /&gt;
 When checked the channel created will be marked as temporary. This means when the last player leaves it the channel will be automatically deleted by the server.</source>
-        <translation type="unfinished">&lt;b&gt;一時チャンネルとして設定する&lt;/b&gt;&lt;br /&gt;
+        <translation>&lt;b&gt;一時チャンネルとして設定する&lt;/b&gt;&lt;br /&gt;
 チェックしてチャンネルを作ると一時としてマークされます。最後に残っていたユーザがチャンネルから離れるとサーバによって自動的にそのチャンネルが削除されます。</translation>
     </message>
     <message>
         <location/>
         <source>&lt;b&gt;Group&lt;/b&gt;&lt;br /&gt;
 These are all the groups currently defined for the channel. To create a new group, just type in the name and press enter.</source>
-        <translation type="unfinished">&lt;b&gt;グループ&lt;/b&gt;&lt;br /&gt;
+        <translation>&lt;b&gt;グループ&lt;/b&gt;&lt;br /&gt;
 このチャンネルで現在定義されている全てのグループです。新しいグループを作るには、グループ名を入力してEnterキーを押してください。</translation>
     </message>
     <message>
         <location/>
         <source>&lt;b&gt;Remove&lt;/b&gt;&lt;br /&gt;This removes the currently selected group. If the group was inherited, it will not be removed from the list, but all local information about the group will be cleared.</source>
-        <translation type="unfinished">&lt;b&gt;削除&lt;/b&gt;&lt;br /&gt;現在選択されているグループを削除します。もし、グループが継承されているなら、それはリストから削除されません。しかし、グループについての全ての局所情報はクリアされます。</translation>
+        <translation>&lt;b&gt;削除&lt;/b&gt;&lt;br /&gt;現在選択されているグループを削除します。もし、グループが継承されているなら、それはリストから削除されません。しかし、グループについての全ての局所情報はクリアされます。</translation>
     </message>
     <message>
         <location/>
         <source>&lt;b&gt;Inherit&lt;/b&gt;&lt;br /&gt;This inherits all the members in the group from the parent, if the group is marked as &lt;i&gt;Inheritable&lt;/i&gt; in the parent channel.</source>
-        <translation type="unfinished">&lt;b&gt;継承&lt;/b&gt;&lt;br /&gt;そのグループが親チャンネルで&lt;i&gt;継承可能&lt;/i&gt;と設定されているなら、そのグループの全てのメンバを継承します。</translation>
+        <translation>&lt;b&gt;継承&lt;/b&gt;&lt;br /&gt;そのグループが親チャンネルで&lt;i&gt;継承可能&lt;/i&gt;と設定されているなら、そのグループの全てのメンバを継承します。</translation>
     </message>
     <message>
         <location/>
         <source>&lt;b&gt;Inheritable&lt;/b&gt;&lt;br /&gt;This makes this group inheritable to sub-channels. If the group is non-inheritable, sub-channels are still free to create a new group with the same name.</source>
-        <translation type="unfinished">&lt;b&gt;継承可能&lt;/b&gt;&lt;br /&gt;このグループがサブチャンネルに継承可能であることを意味します。グループが継承不可能であれば、サブチャンネルは同じ名前の新しいグループを自由に作ることが可能です。</translation>
+        <translation>&lt;b&gt;継承可能&lt;/b&gt;&lt;br /&gt;このグループがサブチャンネルに継承可能であることを意味します。グループが継承不可能であれば、サブチャンネルは同じ名前の新しいグループを自由に作ることが可能です。</translation>
     </message>
     <message>
         <location/>
         <source>&lt;b&gt;Inherited&lt;/b&gt;&lt;br /&gt;This indicates that the group was inherited from the parent channel. You cannot edit this flag, it&apos;s just for information.</source>
-        <translation type="unfinished">&lt;b&gt;継承済み&lt;/b&gt;これはグループが親チャンネルから継承されたことを意味します。このフラグはただの情報なので編集できません。</translation>
+        <translation>&lt;b&gt;継承済み&lt;/b&gt;これはグループが親チャンネルから継承されたことを意味します。このフラグはただの情報なので編集できません。</translation>
     </message>
     <message>
         <location/>
         <source>&lt;b&gt;Members&lt;/b&gt;&lt;br /&gt;
 This list contains all members that were added to the group by the current channel. Be aware that this does not include members inherited by higher levels of the channel tree. These can be found in the &lt;i&gt;Inherited members&lt;/i&gt; list. To prevent this list to be inherited by lower level channels uncheck &lt;i&gt;Inheritable&lt;/i&gt; or manually add the members to the &lt;i&gt;Excluded members&lt;/i&gt; list.</source>
-        <translation type="unfinished">&lt;b&gt;メンバ&lt;/b&gt;&lt;br /&gt;
+        <translation>&lt;b&gt;メンバ&lt;/b&gt;&lt;br /&gt;
 このリストは現在のチャンネルのグループに追加された全てのメンバーを含みます。より高い階層のチャンネルツリーから継承されたメンバは含まないことに注意してください。それらのメンバは&lt;i&gt;継承済みメンバー&lt;/i&gt;のリストで確認できます。より低い階層のチャンネルでこのリストを継承させたくない場合は&lt;i&gt;継承可能&lt;/i&gt;のチェックを外すか、手動で&lt;i&gt;除外メンバ&lt;/i&gt;のリストにメンバを追加してください。</translation>
     </message>
     <message>
         <location/>
         <source>&lt;b&gt;Excluded members&lt;/b&gt;&lt;br /&gt;
 Contains a list of members whose group membership will not be inherited from the parent channel.</source>
-        <translation type="unfinished">&lt;b&gt;除外メンバ&lt;/b&gt;&lt;br /&gt;
+        <translation>&lt;b&gt;除外メンバ&lt;/b&gt;&lt;br /&gt;
 親チャンネルに継承されないグループのメンバーのリストを含む。</translation>
     </message>
     <message>
         <location/>
         <source>&lt;b&gt;Inherited members&lt;/b&gt;&lt;br /&gt;
 Contains the list of members inherited by the current channel. Uncheck &lt;i&gt;Inherit&lt;/i&gt; to prevent inheritance from higher level channels.</source>
-        <translation type="unfinished">&lt;b&gt;継承済みメンバ&lt;/b&gt;&lt;br /&gt;
+        <translation>&lt;b&gt;継承済みメンバ&lt;/b&gt;&lt;br /&gt;
 現在のチャンネルで継承済みのメンバのリストです。より高い階層のチャンネルからの継承を防ぐには&lt;i&gt;継承&lt;/i&gt;のチェックを外してください。</translation>
     </message>
     <message>
         <location/>
         <source>This controls which group of users this entry applies to.&lt;br /&gt;Note that the group is evaluated in the context of the channel the entry is used in. For example, the default ACL on the Root channel gives &lt;i&gt;Write&lt;/i&gt; permission to the &lt;i&gt;admin&lt;/i&gt; group. This entry, if inherited by a channel, will give a user write privileges if he belongs to the &lt;i&gt;admin&lt;/i&gt; group in that channel, even if he doesn&apos;t belong to the &lt;i&gt;admin&lt;/i&gt; group in the channel where the ACL originated.&lt;br /&gt;If a group name starts with &apos;!&apos;, its membership is negated, and if it starts with &apos;~&apos;, it is evaluated in the channel the ACL was defined in, rather than the channel the ACL is active in.&lt;br /&gt;If a group name starts with &apos;#&apos;, it is interpreted as an access token. Users must have entered whatever follows the &apos;#&apos; in their list of access tokens to match. This can be used for very simple password access to channels for non-authenticated users.&lt;br /&gt;If a group name starts with &apos;$&apos;, it will only match users whose certificate hash matches what follows the &apos;$&apos;.&lt;br /&gt;A few special predefined groups are:&lt;br /&gt;&lt;b&gt;all&lt;/b&gt; - Everyone will match.&lt;br /&gt;&lt;b&gt;auth&lt;/b&gt; - All authenticated users will match.&lt;br /&gt;&lt;b&gt;sub,a,b,c&lt;/b&gt; - User currently in a sub-channel minimum &lt;i&gt;a&lt;/i&gt; common parents, and between &lt;i&gt;b&lt;/i&gt; and &lt;i&gt;c&lt;/i&gt; channels down the chain. See the website for more extensive documentation on this one.&lt;br /&gt;&lt;b&gt;in&lt;/b&gt; - Users currently in the channel will match (convenience for &apos;&lt;i&gt;sub,0,0,0&lt;/i&gt;&apos;).&lt;br /&gt;&lt;b&gt;out&lt;/b&gt; - Users outside the channel will match (convenience for &apos;&lt;i&gt;!sub,0,0,0&lt;/i&gt;&apos;).&lt;br /&gt;Note that an entry applies to either a user or a group, not both.</source>
-        <translation type="unfinished">この項目がどのユーザのグループに適用されるかを制御します。グループはそのエントリが使用されるチャンネルのコンテキストそして評価されます。たとえば、Root チャンネル上のデフォルトのACL は &lt;i&gt;書き込み&lt;/i&gt;権限を&lt;i&gt;admin&lt;/i&gt;グループに与えています。このエントリは、もしチャンネルで継承済みでなければ、たとえそのACLに由来するチャンネルの&lt;i&gt;admin&lt;/i&gt;グループに属していなくても&lt;i&gt;admin&lt;/i&gt;グループがそのチャンネルに所属するならユーザに書き込み権限を与えます。グループの名前が ! で始まっていれば、そのメンバは否定されます。そして ~ で始まるなら　そのチャンネルで有効なACLよりもそのチャンネルのACLが定義された方が優先されます。グループの名前が # で始まる場合は、それはアクセストークンとして解釈されます。ユーザはアクセストークンのリストの中に # の後に続く文字列を持っている必要があります。これはとても非認証ユーザにたいして非常に単純なシンプルなパスワードアクセスの方法として使えます。グループの名前が $ で始まる場合、それは $ に続く文字列がユーザの証明書のハッシュにマッチする場合です。特別な定義済みグループは次のとおりです。&lt;br/&gt;&lt;b&gt;all&lt;/b&gt; - すべてにマッチ。&lt;br/&gt;&lt;b&gt;auth&lt;/b&gt; - 認証済みのすべてのユーザにマッチ。&lt;br /&gt;&lt;b&gt;sub,a,b,c&lt;/b&gt; - サブチャンネル &lt;i&gt;a&lt;/i&gt; &lt;i&gt;b&lt;/i&gt;&lt;i&gt;c&lt;/i&gt;最小で&lt;i&gt;a&lt;/i&gt;個の共通の両親を持ち、チェーンの下側へ&lt;i&gt;b&lt;/i&gt;個から&lt;i&gt;c個&lt;/i&gt;の間のサブチャンネルのユーザにマッチします。この項目についてのより多くのドキュメントを見るには公式サイトを確認してください。&lt;b&gt;in&lt;/b&gt; - 現在のチャンネルにいるすべてのユーザにマッチ。（これは &lt;i&gt;sub,0,0,0&lt;/i&gt;の簡易的な表記です。）&lt;b&gt;out&lt;/b&gt; - 現在のチャンネルの外にいるすべてのユーザにマッチ。（これは &lt;i&gt;！sub,0,0,0&lt;/i&gt;の簡易的な表記です。）
+        <translation>この項目がどのユーザのグループに適用されるかを制御します。グループはそのエントリが使用されるチャンネルのコンテキストそして評価されます。たとえば、Root チャンネル上のデフォルトのACL は &lt;i&gt;書き込み&lt;/i&gt;権限を&lt;i&gt;admin&lt;/i&gt;グループに与えています。このエントリは、もしチャンネルで継承済みでなければ、たとえそのACLに由来するチャンネルの&lt;i&gt;admin&lt;/i&gt;グループに属していなくても&lt;i&gt;admin&lt;/i&gt;グループがそのチャンネルに所属するならユーザに書き込み権限を与えます。グループの名前が ! で始まっていれば、そのメンバは否定されます。そして ~ で始まるなら　そのチャンネルで有効なACLよりもそのチャンネルのACLが定義された方が優先されます。グループの名前が # で始まる場合は、それはアクセストークンとして解釈されます。ユーザはアクセストークンのリストの中に # の後に続く文字列を持っている必要があります。これはとても非認証ユーザにたいして非常に単純なシンプルなパスワードアクセスの方法として使えます。グループの名前が $ で始まる場合、それは $ に続く文字列がユーザの証明書のハッシュにマッチする場合です。特別な定義済みグループは次のとおりです。&lt;br/&gt;&lt;b&gt;all&lt;/b&gt; - すべてにマッチ。&lt;br/&gt;&lt;b&gt;auth&lt;/b&gt; - 認証済みのすべてのユーザにマッチ。&lt;br /&gt;&lt;b&gt;sub,a,b,c&lt;/b&gt; - サブチャンネル &lt;i&gt;a&lt;/i&gt; &lt;i&gt;b&lt;/i&gt;&lt;i&gt;c&lt;/i&gt;最小で&lt;i&gt;a&lt;/i&gt;個の共通の両親を持ち、チェーンの下側へ&lt;i&gt;b&lt;/i&gt;個から&lt;i&gt;c個&lt;/i&gt;の間のサブチャンネルのユーザにマッチします。この項目についてのより多くのドキュメントを見るには公式サイトを確認してください。&lt;b&gt;in&lt;/b&gt; - 現在のチャンネルにいるすべてのユーザにマッチ。（これは &lt;i&gt;sub,0,0,0&lt;/i&gt;の簡易的な表記です。）&lt;b&gt;out&lt;/b&gt; - 現在のチャンネルの外にいるすべてのユーザにマッチ。（これは &lt;i&gt;！sub,0,0,0&lt;/i&gt;の簡易的な表記です。）
 エントリはユーザかグループのどちらかに適用され、両方には適用されません。</translation>
     </message>
     <message>
         <location/>
         <source>&lt;b&gt;Password&lt;/b&gt;&lt;br /&gt;This field allows you to easily set and change the password of a channel. It uses Mumble&apos;s access tokens feature in the background. Use ACLs and groups if you need more fine grained and powerful access control.</source>
-        <translation type="unfinished">&lt;b&gt;パスワード&lt;/b&gt;&lt;br&gt;このフィールドで簡単にチャンネルのパスワードを設定・変更できます。基礎としてMumbleのアクセストークンの機能を使っています。より細やかで協力なアクセス制御をするには、ACLとグループを使ってください。</translation>
+        <translation>&lt;b&gt;パスワード&lt;/b&gt;&lt;br&gt;このフィールドで簡単にチャンネルのパスワードを設定・変更できます。基礎としてMumbleのアクセストークンの機能を使っています。より細やかで協力なアクセス制御をするには、ACLとグループを使ってください。</translation>
     </message>
     <message>
         <location/>
         <source>This shows all the entries active on this channel. Entries inherited from parent channels will be shown in italics.&lt;br /&gt;ACLs are evaluated top to bottom, meaning priority increases as you move down the list.</source>
-        <translation type="unfinished">このチャンネルで有効な項目を全て表示します。親チャンネルから継承した項目はイタリック(斜字)体で表示されます。&lt;br /&gt;ACLは上から順に評価されます。つまり、リストの順位を下げる事は優先度が上がる事を意味します。</translation>
+        <translation>このチャンネルで有効な項目を全て表示します。親チャンネルから継承した項目はイタリック(斜字)体で表示されます。&lt;br /&gt;ACLは上から順に評価されます。つまり、リストの順位を下げる事は優先度が上がる事を意味します。</translation>
     </message>
 </context>
 <context>
     <name>ALSAAudioInput</name>
     <message>
-        <location filename="ALSAAudio.cpp" line="+360"/>
+        <location filename="ALSAAudio.cpp" line="+365"/>
         <source>Opening chosen ALSA Input failed: %1</source>
         <translation>選択されたALSA入力のオープンに失敗しました: %1</translation>
     </message>
@@ -651,69 +502,6 @@ Contains the list of members inherited by the current channel. Uncheck &lt;i&gt;
         <location line="-325"/>
         <source>Default ALSA Card</source>
         <translation>デフォルトALSAカード</translation>
-    </message>
-</context>
-<context>
-    <name>ALSAConfig</name>
-    <message>
-        <source>Device selection</source>
-        <translation type="obsolete">デバイス選択</translation>
-    </message>
-    <message>
-        <source>Device to use for microphone</source>
-        <translation type="obsolete">マイクに使用するデバイス</translation>
-    </message>
-    <message>
-        <source>This set which device mumble should use. The &lt;i&gt;default&lt;/i&gt; device is whatever you have configured in alsaconfig, the &lt;i&gt;hwplug&lt;/i&gt; devices are specific hardware devices backed by the ALSA mixer and the &lt;i&gt;hw&lt;/i&gt; devices are raw hardware access. Unless your soundcard supports hardware mixing of audio, using the &lt;i&gt;hw&lt;/i&gt; device will exclude all other programs from using audio.</source>
-        <translation type="obsolete">Mumbleが使用するデバイスを設定します。&lt;i&gt;デフォルト&lt;/i&gt;のデバイスは alsaconfig で設定したものです。 &lt;i&gt;hwplug&lt;/i&gt; デバイスはALSAのミキサーに基づく特別なデバイスです。&lt;i&gt;hw&lt;/i&gt; デバイスはハードウェアに直接アクセスします。ご使用のサウンドカードがオーディオのハードウェアミキシングをサポートしていない限り、&lt;i&gt;hw&lt;/i&gt; デバイス設定では他の全てのプログラムでオーディオを使用することが出来なくなってしまいます。</translation>
-    </message>
-    <message>
-        <source>Device to use for speakers/headphones</source>
-        <translation type="obsolete">スピーカー/ヘッドホンに使用するデバイス</translation>
-    </message>
-    <message>
-        <source>Input</source>
-        <translation type="obsolete">入力</translation>
-    </message>
-    <message>
-        <source>Output</source>
-        <translation type="obsolete">出力</translation>
-    </message>
-    <message>
-        <source>Output Options</source>
-        <translation type="obsolete">出力オプション</translation>
-    </message>
-    <message>
-        <source>Output Delay</source>
-        <translation type="obsolete">出力猶予</translation>
-    </message>
-    <message>
-        <source>Amount of data to buffer for ALSA</source>
-        <translation type="obsolete">ALSA用バッファデータの量</translation>
-    </message>
-    <message>
-        <source>This sets the amount of data to prebuffer in the output buffer. Experiment with different values and set it to the lowest which doesn&apos;t cause rapid jitter in the sound.</source>
-        <translation type="obsolete">出力バッファにおけるプリバッファの量を設定します。いろいろな値で試してみて、急に不安定にならない一番小さな値に設定してください。</translation>
-    </message>
-    <message>
-        <source>ALSA</source>
-        <translation type="obsolete">ALSA</translation>
-    </message>
-    <message>
-        <source>%1ms</source>
-        <translation type="obsolete">%1ms</translation>
-    </message>
-    <message>
-        <source>Form</source>
-        <translation type="obsolete">フォーム</translation>
-    </message>
-    <message>
-        <source>TextLabel</source>
-        <translation type="obsolete">テキストラベル</translation>
-    </message>
-    <message>
-        <source>Default ALSA Card</source>
-        <translation type="obsolete">デフォルトALSAカード</translation>
     </message>
 </context>
 <context>
@@ -747,10 +535,6 @@ Contains the list of members inherited by the current channel. Uncheck &lt;i&gt;
         <location/>
         <source>Configure input channels</source>
         <translation>入力チャネルを設定します</translation>
-    </message>
-    <message>
-        <source>This will configure the input channels for ASIO. Make sure you select at least one channel as microphone and speaker. &lt;i&gt;Microphone&lt;/i&gt; should be where your microphone is attached, and &lt;i&gt;Speaker&lt;/i&gt; should be a channel that samples &quot;What you hear&quot;.&lt;br /&gt;For example, on the Audigy 2 ZS, a good selection for Microphone would be &quot;Mic L&quot; while Speaker should be &quot;Mix L&quot; and &quot;Mix R&quot;</source>
-        <translation type="obsolete">ASIOのための入力チャンネルを設定します。少なくとも1つのチャンネルをマイクとスピーカーとして選んでください。&lt;i&gt;マイク&lt;/i&gt; はあなたのマイクが接続されているところです。&lt;i&gt;スピーカー&lt;/i&gt;は&quot;聞くもの&quot;を試してみるチャンネルです。Sound Blaster Audigy 2 ZS の例ではスピーカーが&quot;Mix L&quot; and &quot;Mix R&quot;の時、マイクを&quot;Mic L&quot;にするのが良い選択のひとつです。</translation>
     </message>
     <message>
         <location/>
@@ -803,10 +587,6 @@ Contains the list of members inherited by the current channel. Uncheck &lt;i&gt;
         <translation>ドライバー名</translation>
     </message>
     <message>
-        <source>Buffersize</source>
-        <translation type="obsolete">バッファサイズ</translation>
-    </message>
-    <message>
         <location/>
         <source>Microphone</source>
         <translation>マイク</translation>
@@ -832,19 +612,7 @@ Contains the list of members inherited by the current channel. Uncheck &lt;i&gt;
         <translation>スピーカー</translation>
     </message>
     <message>
-        <source>%1 (ver %2)</source>
-        <translation type="obsolete">%1 (ver %2)</translation>
-    </message>
-    <message>
-        <source>%1 ms -&gt; %2 ms (%3 ms resolution) %4Hz</source>
-        <translation type="obsolete">%1 ms -&gt; %2 ms (%3 ms resolution) %4Hz</translation>
-    </message>
-    <message>
-        <source>%1 ms -&gt; %2 ms (%3 ms resolution) %4Hz -- Unusable</source>
-        <translation type="obsolete">%1 ms -&gt; %2 ms (%3 ms resolution) %4Hz -- 未使用</translation>
-    </message>
-    <message>
-        <location filename="ASIOInput.cpp" line="+222"/>
+        <location filename="ASIOInput.cpp" line="+225"/>
         <source>%1 (version %2)</source>
         <translation></translation>
     </message>
@@ -853,10 +621,6 @@ Contains the list of members inherited by the current channel. Uncheck &lt;i&gt;
         <source>%1 -&gt; %2 samples buffer, with %3 sample resolution (%4 preferred) at %5 Hz</source>
         <oldsource>%1 -&gt; %2 samples buffer, with %3 sample resolution (%4 preferred) at %5Hz</oldsource>
         <translation></translation>
-    </message>
-    <message>
-        <source>Mumble</source>
-        <translation type="obsolete">Mumble</translation>
     </message>
     <message>
         <location line="+43"/>
@@ -880,28 +644,16 @@ Contains the list of members inherited by the current channel. Uncheck &lt;i&gt;
         <source>Form</source>
         <translation>フォーム</translation>
     </message>
-    <message>
-        <source>TextLabel</source>
-        <translation type="obsolete">テキストラベル</translation>
-    </message>
-    <message>
-        <source>This will configure the input channels for ASIO. Make sure you select at least one channel as microphone and speaker. &lt;i&gt;Microphone&lt;/i&gt; should be where your microphone is attached, and &lt;i&gt;Speaker&lt;/i&gt; should be a channel that samples &lt;i&gt;What you hear&lt;/i&gt;.&lt;br /&gt;For example, on the Audigy 2 ZS, a good selection for Microphone would be &lt;i&gt;Mic L&lt;/i&gt; while Speaker should be &lt;i&gt;Mix L&lt;/i&gt; and &lt;i&gt;Mix R&lt;/i&gt;.</source>
-        <translation type="obsolete">ASIOのための入力チャンネルを設定します。少なくとも1つのチャンネルをマイクとスピーカーとして選んでください。&lt;i&gt;マイク&lt;/i&gt; はあなたのマイクが接続されているところで、&lt;i&gt;スピーカー&lt;/i&gt;は&quot;聞くもの&quot;を試してみるチャンネルです。Sound Blaster Audigy 2 ZS の例ではスピーカーが&quot;Mix L&quot; and &quot;Mix R&quot;の時、マイクを&quot;Mic L&quot;にするのが良い選択のひとつです。</translation>
-    </message>
 </context>
 <context>
     <name>ASIOInput</name>
     <message>
-        <source>Mumble</source>
-        <translation type="obsolete">Mumble</translation>
-    </message>
-    <message>
-        <location filename="ASIOInput.cpp" line="+80"/>
+        <location filename="ASIOInput.cpp" line="+78"/>
         <source>You need to select at least one microphone and one speaker source to use ASIO. If you just need microphone sampling, use DirectSound.</source>
         <translation>ASIOを使用するためには少なくとも1つのマイクと1つのスピーカーを選択しなければなりません。もしマイクサンプリングが必要なだけなら DirectSound を使用してください。</translation>
     </message>
     <message>
-        <location line="+103"/>
+        <location line="+104"/>
         <source>Opening selected ASIO device failed. No input will be done.</source>
         <translation>選択されたASIOドライバを開くのに失敗しました。入力は行われません。</translation>
     </message>
@@ -909,12 +661,7 @@ Contains the list of members inherited by the current channel. Uncheck &lt;i&gt;
 <context>
     <name>AboutDialog</name>
     <message>
-        <source>&lt;h3&gt;Mumble v1.0.0&lt;/h3&gt;&lt;p&gt;Copyright 2005-2006 Thorvald Natvig&lt;br /&gt;slicer@users.sourceforge.net&lt;/p&gt;&lt;p&gt;&lt;b&gt;A voice-chat utility for gamers&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;tt&gt;http://mumble.sourceforge.net/&lt;/tt&gt;&lt;/p&gt;</source>
-        <translation type="obsolete">&lt;h3&gt;Mumble v1.0.0&lt;/h3&gt;&lt;p&gt;Copyright 2005-2006 Thorvald Natvig&lt;br /&gt;slicer@users.sourceforge.net&lt;/p&gt;&lt;p&gt;&lt;b&gt;A voice-chat utility for gamers&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;tt&gt;http://mumble.sourceforge.net/&lt;/tt&gt;&lt;/p&gt;
-        </translation>
-    </message>
-    <message>
-        <location filename="About.cpp" line="+63"/>
+        <location filename="About.cpp" line="+80"/>
         <source>&amp;About Mumble</source>
         <translation>Mumbleについて(&amp;A)</translation>
     </message>
@@ -924,440 +671,24 @@ Contains the list of members inherited by the current channel. Uncheck &lt;i&gt;
         <translation>ライセンス(&amp;L)</translation>
     </message>
     <message>
+        <location line="+1"/>
+        <source>3rd &amp;party licenses</source>
+        <translation>サード・パーティ・ライセンス(&amp;P)</translation>
+    </message>
+    <message>
         <location line="+2"/>
         <source>OK</source>
         <translation>OK</translation>
     </message>
     <message>
-        <location line="-29"/>
+        <location line="-44"/>
         <source>About Mumble</source>
         <translation>Mumbleについて</translation>
     </message>
     <message>
-        <location line="+16"/>
+        <location line="+30"/>
         <source>&lt;h3&gt;Mumble (%1)&lt;/h3&gt;&lt;p&gt;Copyright %3 Thorvald Natvig&lt;br /&gt;slicer@users.sourceforge.net&lt;/p&gt;&lt;p&gt;&lt;b&gt;A voice-chat utility for gamers&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;tt&gt;&lt;a href=&quot;%2&quot;&gt;%2&lt;/a&gt;&lt;/tt&gt;&lt;/p&gt;</source>
         <translation></translation>
-    </message>
-</context>
-<context>
-    <name>AboutSpeexDialog</name>
-    <message>
-        <location line="+25"/>
-        <source>&lt;h3&gt;About Speex&lt;/h3&gt;&lt;p&gt;&lt;tt&gt;&lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;&lt;/tt&gt;&lt;/p&gt;&lt;p&gt;This program uses SpeexDSP.&lt;/p&gt;&lt;p&gt;Speex is used for echo cancellation, noise&lt;br /&gt;filtering and voice activity detection.&lt;/p&gt;</source>
-        <translation></translation>
-    </message>
-    <message>
-        <source>&lt;h3&gt;About Speex&lt;/h3&gt;&lt;p&gt;&lt;tt&gt;http://www.speex.org/&lt;/tt&gt;&lt;/p&gt;&lt;p&gt;This program uses Speex version %1&lt;/p&gt;&lt;p&gt;Speex is used for echo cancellation, noise&lt;br /&gt;filtering, voice activity detection and speech&lt;br /&gt;compression.&lt;/p&gt;</source>
-        <translation type="obsolete">&lt;h3&gt;Speexについて&lt;/h3&gt;&lt;p&gt;&lt;tt&gt;http://www.speex.org/&lt;/tt&gt;&lt;/p&gt;&lt;p&gt;This program uses Speex version %1&lt;/p&gt;&lt;p&gt;Speex is used for echo cancellation, noise&lt;br /&gt;filtering, voice activity detection and speech&lt;br /&gt;compression.&lt;/p&gt;</translation>
-    </message>
-    <message>
-        <location line="+8"/>
-        <source>OK</source>
-        <translation>OK</translation>
-    </message>
-    <message>
-        <location line="-12"/>
-        <source>About Speex</source>
-        <translation>Speexについて</translation>
-    </message>
-    <message>
-        <source>&lt;h3&gt;About Speex&lt;/h3&gt;&lt;p&gt;&lt;tt&gt;&lt;a href=&quot;%2&quot;&gt;%2&lt;/a&gt;&lt;/tt&gt;&lt;/p&gt;&lt;p&gt;This program uses Speex version %1&lt;/p&gt;&lt;p&gt;Speex is used for echo cancellation, noise&lt;br /&gt;filtering, voice activity detection and speech&lt;br /&gt;compression.&lt;/p&gt;</source>
-        <translation type="obsolete">&lt;h3&gt;Speexについて&lt;/h3&gt;&lt;p&gt;&lt;tt&gt;&lt;a href=&quot;%2&quot;&gt;%2&lt;/a&gt;&lt;/tt&gt;&lt;/p&gt;&lt;p&gt;This program uses Speex version %1&lt;/p&gt;&lt;p&gt;Speex is used for echo cancellation, noise&lt;br /&gt;filtering, voice activity detection and speech&lt;br /&gt;compression.&lt;/p&gt;</translation>
-    </message>
-</context>
-<context>
-    <name>AudioConfigDialog</name>
-    <message>
-        <source>Interfaces</source>
-        <translation type="obsolete">インターフェース</translation>
-    </message>
-    <message>
-        <source>Transmission</source>
-        <translation type="obsolete">伝送方式</translation>
-    </message>
-    <message>
-        <source>Compression</source>
-        <translation type="obsolete">圧縮</translation>
-    </message>
-    <message>
-        <source>Jitter Buffer</source>
-        <translation type="obsolete">ジッタバッファ</translation>
-    </message>
-    <message>
-        <source>Input</source>
-        <translation type="obsolete">入力</translation>
-    </message>
-    <message>
-        <source>Input method for audio</source>
-        <translation type="obsolete">音声入力方法</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;This is the input method to use for audio.&lt;/b&gt;&lt;br /&gt;Most likely you want to use DirectSound.</source>
-        <translation type="obsolete">&lt;b&gt;音声の入力方法です。&lt;/b&gt;&lt;br /&gt;ほとんどの場合DirectSoundで問題ありません。</translation>
-    </message>
-    <message>
-        <source>Output</source>
-        <translation type="obsolete">出力</translation>
-    </message>
-    <message>
-        <source>Output method for audio</source>
-        <translation type="obsolete">音声入力方法</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;This is the output method to use for audio.&lt;/b&gt;&lt;br /&gt;Most likely you want to use DirectSound.</source>
-        <translation type="obsolete">&lt;b&gt;音声の出力方法です。&lt;/b&gt;&lt;br /&gt;ほとんどの場合DirectSoundで問題ありません。</translation>
-    </message>
-    <message>
-        <source>Continuous</source>
-        <translation type="obsolete">常に有効</translation>
-    </message>
-    <message>
-        <source>Voice Activity</source>
-        <translation type="obsolete">声で有効化</translation>
-    </message>
-    <message>
-        <source>Push To Talk</source>
-        <translation type="obsolete">キー押下で有効化</translation>
-    </message>
-    <message>
-        <source>Transmit</source>
-        <translation type="obsolete">送信</translation>
-    </message>
-    <message>
-        <source>When to transmit your speech</source>
-        <translation type="obsolete">発言を送信するタイミング</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;This sets when speech should be transmitted.&lt;/b&gt;&lt;br /&gt;&lt;i&gt;Continuous&lt;/i&gt; - All the time&lt;br /&gt;&lt;i&gt;Voice Activity&lt;/i&gt; - When you are speaking clearly.&lt;br /&gt;&lt;i&gt;Push To Talk&lt;/i&gt; - When you hold down the hotkey set under &lt;i&gt;Shortcuts&lt;/i&gt;.</source>
-        <translation type="obsolete">&lt;b&gt;発言を送信するタイミングを設定します。&lt;/b&gt;&lt;br /&gt;&lt;i&gt;常に有効&lt;/i&gt; - 常時音声入力を受け付けます&lt;br /&gt;&lt;i&gt;声で有効化&lt;/i&gt; - はっきりとしゃべっている時に受け付けます。&lt;br /&gt;&lt;i&gt;キー押下で有効化&lt;/i&gt; - &lt;i&gt;ショートカットキー&lt;/i&gt;で設定したキーを押している間音声入力を受け付けます。</translation>
-    </message>
-    <message>
-        <source>Voice Hold</source>
-        <translation type="obsolete">送信継続時間</translation>
-    </message>
-    <message>
-        <source>How long to keep transmitting after silence</source>
-        <translation type="obsolete">音声が無くなった後、どれくらい送信を続けるか</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;This selects how long after a perceived stop in speech transmission should continue.&lt;/b&gt;&lt;br /&gt;Set this higher if your voice breaks up when you speak (seen by a rapidly blinking voice icon next to your name).&lt;br /&gt;Only makes sense when used with Voice Activity transmission.</source>
-        <translation type="obsolete">&lt;b&gt;音声が無くなった後、送信がどれくらい続くかを選択します。&lt;/b&gt;&lt;br /&gt;あなたが話している時(名前の後ろで点滅しているアイコンで確認できます)に音声が途切れてしまうようならば、この設定をより高くしてください。&lt;br /&gt;この設定は&quot;声で有効化&quot;の場合のみ効果があります。</translation>
-    </message>
-    <message>
-        <source>Audio per packet</source>
-        <translation type="obsolete">パケットあたりの音声長</translation>
-    </message>
-    <message>
-        <source>How many audio frames to send per packet</source>
-        <translation type="obsolete">送信1パケットに含む音声フレームの長さ</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;This selects how many audio frames should be put in one packet.&lt;/b&gt;&lt;br /&gt;Increasing this will increase the latency of your voice, but will also reduce bandwidth requirements.</source>
-        <translation type="obsolete">&lt;b&gt;送信1パケットに含む音声フレームの長さを選択します。&lt;/b&gt;&lt;br /&gt;これを大きくするとあなたの音声の遅延が大きくなりますが、必要とするネットワーク帯域幅は下がります。</translation>
-    </message>
-    <message>
-        <source>Use TCP mode</source>
-        <translation type="obsolete">TCPモードを使用する</translation>
-    </message>
-    <message>
-        <source>Use TCP Compatibility mode</source>
-        <translation type="obsolete">TCP互換モードを使用します</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Enable TCP Compatibility mode&lt;/b&gt;.&lt;br /&gt;This will make Mumble use only TCP when communicating with the server. This will increase overhead and cause lost packets to produce noticeable pauses in communication, so this should only be used if you are unable to use the default (which uses UDP for voice and TCP for control).</source>
-        <translation type="obsolete">&lt;b&gt;TCP互換モードを有効にします。&lt;/b&gt;.&lt;br /&gt;この設定をするとMumbleがサーバとの通信にTCPのみを使用するようになります。この設定は通信のオーバーヘッドを増大させ、通信時に音声が途切れる原因になるので、デフォルトの設定(音声:UDP 操作:TCP)が使用できない場合だけ使用するのが良いでしょう。</translation>
-    </message>
-    <message>
-        <source>Automatic Reconnect</source>
-        <translation type="obsolete">自動再接続</translation>
-    </message>
-    <message>
-        <source>Reconnect when disconnected</source>
-        <translation type="obsolete">切断時に再接続を試みます</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Reconnect when disconnected&lt;/b&gt;.&lt;br /&gt;This will make Mumble try to automatically reconnect after 10 seconds if your server connection fails.</source>
-        <translation type="obsolete">&lt;b&gt;切断時に再接続を試みます。&lt;/b&gt;&lt;br /&gt;この設定をすると、サーバへの接続が失敗した際、10秒後に再接続を行います。</translation>
-    </message>
-    <message>
-        <source>Maximum bandwidth used for sent audio</source>
-        <translation type="obsolete">音声の送信に使用するネットワーク帯域幅のピーク値</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;This shows peak outgoing bandwidth used.&lt;/b&gt;&lt;br /&gt;This shows the peak amount of bandwidth sent out from your machine. Audio bitrate is the maximum bitrate (as we use VBR) for the audio data alone. Position is the bitrate used for positional information. Overhead is our framing and the IP packet headers (IP and UDP is 90% of this overhead).</source>
-        <translation type="obsolete">&lt;b&gt;音声の送信に使用される帯域の最大値を示します。&lt;/b&gt;&lt;br /&gt;これは、あなたのPCから送出される帯域幅のピーク値を示します。Audioビットレートは音声データ単独の最大ビットレート(VBR使用時)です。 Positionは位置情報のために使用されるビットレートです。 Overheadは独自のフレーミングとIPパケットヘッダ(IP と UDP はこのOverheadの90%)です。</translation>
-    </message>
-    <message>
-        <source>Outgoing Bitrate</source>
-        <translation type="obsolete">送信方向のビットレート</translation>
-    </message>
-    <message>
-        <source>Quality</source>
-        <translation type="obsolete">音質</translation>
-    </message>
-    <message>
-        <source>Quality of compression (peak bandwidth)</source>
-        <translation type="obsolete">圧縮品質(ピーク帯域幅)</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;This sets the quality of compression.&lt;/b&gt;&lt;br /&gt;This determines how much bandwidth Mumble is allowed to use for outgoing audio.</source>
-        <translation type="obsolete">&lt;b&gt;圧縮品質を設定します。&lt;/b&gt;&lt;br /&gt;送出される音声のためにどれくらいの帯域幅を使えるか決定します。</translation>
-    </message>
-    <message>
-        <source>Complexity</source>
-        <translation type="obsolete">計算量</translation>
-    </message>
-    <message>
-        <source>Complexity of compression (CPU)</source>
-        <translation type="obsolete">圧縮の計算量(CPU)</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;This sets the complexity of compression.&lt;/b&gt;&lt;br /&gt;This determines how much CPU Mumble is allowed to use to increase transmitted voice quality. Settings above 5 give only marginal gain.</source>
-        <translation type="obsolete">&lt;b&gt;圧縮の計算量を設定します。&lt;/b&gt;&lt;br /&gt;送信される声の音質を向上させるためにどれくらいのCPUリソースを使えるか決定します。</translation>
-    </message>
-    <message>
-        <source>Amp</source>
-        <translation type="obsolete">アンプ</translation>
-    </message>
-    <message>
-        <source>Maximum amplification of input sound</source>
-        <translation type="obsolete">音声入力の最大増幅量</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Maximum amplification of input.&lt;/b&gt;&lt;br /&gt;Mumble normalizes the input volume before compressing, and this sets how much it&apos;s allowed to amplify.&lt;br /&gt;The actual level is continually updated based on your current speech pattern, but it will never go above the level specified here.&lt;br /&gt;If the &lt;i&gt;Microphone loudness&lt;/i&gt; level of the audio statistics hover around 100%, you probably want to set this to 2.0 or so, but if, like most people, you are unable to reach 100%, set this to something much higher.&lt;br /&gt;Ideally, set it so &lt;i&gt;Microphone Loudness * Amplification Factor &gt;= 100&lt;/i&gt;, even when you&apos;re speaking really soft.&lt;br /&gt;&lt;br /&gt;Note that there is no harm in setting this to maximum, but Mumble will start picking up other conversations if you leave it to auto-tune to that level.</source>
-        <translation type="obsolete">&lt;b&gt;音声入力の最大増幅量です。&lt;/b&gt;&lt;br /&gt;Mumbleは圧縮を行う前に入力量を正常化します。この設定は、どれくらい音量を増幅させるかを決定します。&lt;br /&gt;実際の音量はその時の発言パターンによって変化しますが、ここで指定された音量を上回ることはありません。&lt;br /&gt;音声統計で&lt;i&gt;マイクの音量&lt;/i&gt;レベルが常に100%近くに達しているなら、この値を2.0くらいにしたくなるかも知れません。しかし、(大部分の人がそうだと思いますが)100%に届かないなら、この値をより高くしてください。&lt;br /&gt;あなたが非常に穏やかに話している時に&lt;i&gt;マイク音量 * 増幅値 &gt;= 100&lt;/i&gt; となるのが理想的です。&lt;br /&gt;&lt;br /&gt;この値を最大にすることに実害はありませんが、だからといって適当に最大値に合わせてしまうと他の会話まで拾ってしまうので気をつけてください。</translation>
-    </message>
-    <message>
-        <source>Default Jitter Buffer</source>
-        <translation type="obsolete">ジッタバッファのデフォルト</translation>
-    </message>
-    <message>
-        <source>How long to prebuffer on first packet</source>
-        <translation type="obsolete">初回パケットのプリバッファまでの長さ</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;This sets the default buffer size for the jitter buffer&lt;/b&gt;.&lt;br /&gt;All incoming audio is buffered, and the jitter buffer continually tries to push the buffer to the minimum sustainable by your network, so latency can be as low as possible. This sets the default buffer size to use on the first packet to arrive from a new speaker, or when a speaker using Voice Activity or Push-To-Talk just started talking again. If the start of sentences you hear is very jittery, increase this value.</source>
-        <translation type="obsolete">&lt;b&gt;ジッタバッファのデフォルトサイズを設定します。&lt;/b&gt;&lt;br /&gt;全ての受信音声は一時保存されます。ジッタバッファは、現在のネットワークの状態に合わせて一時保存の領域を小さくしようとし続けるので、レイテンシーは可能な限り小さくなります。この設定は、使用する最小のバッファサイズを決定します。これは、新たな話し手から到着する最初のパケット(または&quot;声で有効化&quot;または&quot;キー押下で有効化&quot;にしている話し手の音声が再開したとき)に使用されるデフォルトバッファサイズを設定します。聞こえてくる会話の出だしが不安定なら、この値を増やしてください。</translation>
-    </message>
-    <message>
-        <source>Basic Audio</source>
-        <translation type="obsolete">基本設定</translation>
-    </message>
-    <message>
-        <source>%1 ms</source>
-        <translation type="obsolete">%1 ms</translation>
-    </message>
-    <message>
-        <source>%1s</source>
-        <translation type="obsolete">%1s</translation>
-    </message>
-    <message>
-        <source>%1kbit/s (Audio %2, Position %4, Overhead %3)</source>
-        <translation type="obsolete">%1kbit/s (Audio %2, Position %4, Overhead %3)</translation>
-    </message>
-    <message>
-        <source>Loopback Test</source>
-        <translation type="obsolete">ループバックテスト</translation>
-    </message>
-    <message>
-        <source>PTT Audio cue</source>
-        <translation type="obsolete">キー押下を音で通知</translation>
-    </message>
-    <message>
-        <source>Audible audio cue when push-to-talk pressed and released</source>
-        <translation type="obsolete">&quot;キー押下で有効化&quot;設定の時、ショートカットキーが押されるのと離されるタイミングで音による通知を行います。</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;This enables the audio cues for &quot;push to talk&quot;&lt;/b&gt;&lt;br /&gt;Setting this will give you a short audio beep when push to talk is pressed and released.</source>
-        <translation type="obsolete">&lt;b&gt;&quot;キー押下で有効化&quot;設定の際、音による通知を行います。&lt;/b&gt;&lt;br /&gt;これを設定するとキーを押した時と離した時に短いビープ音が聞こえるようになります。</translation>
-    </message>
-    <message>
-        <source>None</source>
-        <translation type="obsolete">なし</translation>
-    </message>
-    <message>
-        <source>Local</source>
-        <translation type="obsolete">ローカル</translation>
-    </message>
-    <message>
-        <source>Server</source>
-        <translation type="obsolete">サーバ</translation>
-    </message>
-    <message>
-        <source>Desired loopback mode</source>
-        <translation type="obsolete">使用したいループバックモード</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;This enables one of the loopback testmodes.&lt;/b&gt;&lt;br /&gt;&lt;i&gt;None&lt;/i&gt; - Loopback disabled&lt;br /&gt;&lt;i&gt;Local&lt;/i&gt; - Emulate a local server.&lt;br /&gt;&lt;i&gt;Server&lt;/i&gt; - Request loopback from server.&lt;br /&gt;Please note than when loopback is enabled, no other players will hear your voice. This setting is not saved on application exit.</source>
-        <translation type="obsolete">&lt;b&gt;ループバックテストモードの一つが有効になります。&lt;/b&gt;&lt;br /&gt;&lt;i&gt;なし&lt;/i&gt; - ループバックしない&lt;br /&gt;&lt;i&gt;ローカル&lt;/i&gt; - ローカルなサーバをエミュレートします。&lt;br /&gt;&lt;i&gt;サーバ&lt;/i&gt; - サーバにループバックを要求します。&lt;br /&gt;ループバックが有効になっている間、他のプレイヤーはあなたの声を聞くことが出来ないのでご注意ください。この設定はアプリケーション終了時に保存されません。</translation>
-    </message>
-    <message>
-        <source>Delay Variance</source>
-        <translation type="obsolete">レイテンシー調整</translation>
-    </message>
-    <message>
-        <source>Variance in packet latency</source>
-        <translation type="obsolete">パケットレイテンシーの変動値</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;This sets the packet latency variance for loopback testing&lt;/b&gt;&lt;br /&gt;Most audio paths contain some variable latency. This allows you set that variance for loopback mode testing. For example, if you set this to 15ms, this will emulate a network with 20-35ms ping latency or one with 80-95ms latency. Most domestic net connections have a variance of about 5ms</source>
-        <translation type="obsolete">&lt;b&gt;ループバックテストの為のパケットレイテンシーの値を調整します。&lt;/b&gt;&lt;br /&gt;音声のネットワーク経路は、ほとんどの場合若干のレイテンシーを含んでいます。 この設定はループバックモードでのテスト時、レイテンシーの値を変更できるようにします。例えば、この値を15msにすると、20-35msのレイテンシーや80ms-95msのレイテンシーを持ったネットワークをエミュレートするでしょう。 国内のネット接続ではおよそ5msくらいのレイテンシーがあります。</translation>
-    </message>
-    <message>
-        <source>Packet Loss</source>
-        <translation type="obsolete">パケットロス</translation>
-    </message>
-    <message>
-        <source>Packet loss for loopback mode</source>
-        <translation type="obsolete">ループバックモードでのパケットロス</translation>
-    </message>
-    <message>
-        <source>Form</source>
-        <translation type="obsolete">フォーム</translation>
-    </message>
-    <message>
-        <source>&amp;Input</source>
-        <translation type="obsolete">入力(&amp;I)</translation>
-    </message>
-    <message>
-        <source>&amp;Output</source>
-        <translation type="obsolete">出力(&amp;O)</translation>
-    </message>
-    <message>
-        <source>&amp;Transmit</source>
-        <translation type="obsolete">送信(&amp;T)</translation>
-    </message>
-    <message>
-        <source>Voice &amp;Hold</source>
-        <translation type="obsolete">送信継続時間(&amp;H)</translation>
-    </message>
-    <message>
-        <source>TextLabel</source>
-        <translation type="obsolete">テキストラベル</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;This shows peak outgoing bandwidth used.&lt;/b&gt;&lt;br /&gt;This shows the peak amount of bandwidth sent out from your machine. Audio bitrate is the maximum bitrate (as we use VBR) for the audio data alone. Position is the bitrate used for positional information. Overhead is our framing and the IP packet headers (IP and UDP is 75% of this overhead).</source>
-        <translation type="obsolete">&lt;b&gt;音声の送信に使用される帯域幅の最大値を示します。&lt;/b&gt;&lt;br /&gt;これは、あなたのPCから送出される帯域の最も大きな値を表示しています。Audioビットレートは音声データ単体の最大ビットレート(VBR使用時)を表します。 Positionは位置情報のために使用されるビットレート表し、Overheadは独自のフレーミングとIPパケットヘッダ(IP と UDP はこのOverheadの90%)を表しています。</translation>
-    </message>
-    <message>
-        <source>&amp;Quality</source>
-        <translation type="obsolete">音質(&amp;Q)</translation>
-    </message>
-    <message>
-        <source>&amp;Complexity</source>
-        <translation type="obsolete">計算量(&amp;C)</translation>
-    </message>
-    <message>
-        <source>Audio Processing</source>
-        <translation type="obsolete">音声処理</translation>
-    </message>
-    <message>
-        <source>Noise Suppression</source>
-        <translation type="obsolete">ノイズ抑制</translation>
-    </message>
-    <message>
-        <source>Noise suppression</source>
-        <translation type="obsolete">ノイズ抑制</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;This sets the ammount of noise suppression to apply.&lt;/b&gt;&lt;br /&gt;The higher this value, the more aggressively stationary noise will be supressed.</source>
-        <translation type="obsolete">&lt;b&gt;ノイズ抑制の量を設定します。&lt;/b&gt;&lt;br /&gt;値を大きくすると、より積極的に定常ノイズを抑制しようとします。</translation>
-    </message>
-    <message>
-        <source>Amplification</source>
-        <translation type="obsolete">音量の増幅</translation>
-    </message>
-    <message>
-        <source>Audio Output</source>
-        <translation type="obsolete">音声出力</translation>
-    </message>
-    <message>
-        <source>Default &amp;Jitter Buffer</source>
-        <translation type="obsolete">ジッタバッファのデフォルト(&amp;J)</translation>
-    </message>
-    <message>
-        <source>Safety margin for jitter buffer</source>
-        <translation type="obsolete">ジッタバッファの安全マージン</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;This sets the minimum safety margin for the jitter buffer.&lt;/b&gt;&lt;br /&gt;All incoming audio is buffered, and the jitter buffer continually tries to push the buffer to the minimum sustainable by your network, so latency can be as low as possible. This sets the minimum buffer size to use. If the start of sentences you hear is very jittery, increase this value.</source>
-        <translation type="obsolete">&lt;b&gt;ジッタバッファのための最小の安全マージンを設定します。&lt;/b&gt;&lt;br /&gt;全ての受信音声は一時保存されます。ジッタバッファは、現在のネットワークの状態に合わせて一時保存の領域を小さくしようとし続けるので、レイテンシーは可能な限り小さくなります。この設定は、使用する最小のバッファサイズを決定します。聞こえてくる会話の出だしが不安定なら、この値を増やしてください。</translation>
-    </message>
-    <message>
-        <source>Volume</source>
-        <translation type="obsolete">音量</translation>
-    </message>
-    <message>
-        <source>Volume of incoming speech</source>
-        <translation type="obsolete">受信音声の音量</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;This adjusts the volume of incoming speech.&lt;/b&gt;&lt;br /&gt;Note that this can only be used to decrease the volume. No amplification is possible.</source>
-        <translation type="obsolete">&lt;b&gt;受信する音声の音量を調整します。&lt;/b&gt;&lt;br /&gt;ここでは、音量を下げる事のみが可能です。増やす事は出来ません。</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;This sets the packet loss for loopback mode.&lt;/b&gt;&lt;br /&gt;This will be the ratio of packets lost. Unless your outgoing bandwidth is peaked or there&apos;s something wrong with your network connection, this will be 0%</source>
-        <translation type="obsolete">&lt;b&gt;ループバックモードでのパケットロスを設定します。&lt;/b&gt;&lt;br /&gt;これはパケットロスの割合です。送信方向の帯域幅のピークに達するか、ネットワーク接続に問題がない限り、これは0%のはずです。</translation>
-    </message>
-    <message>
-        <source>&amp;Loopback</source>
-        <translation type="obsolete">ループバック(&amp;L)</translation>
-    </message>
-    <message>
-        <source>Off</source>
-        <translation type="obsolete">オフ</translation>
-    </message>
-    <message>
-        <source>DoublePush Time</source>
-        <translation type="obsolete">二重押し時間</translation>
-    </message>
-    <message>
-        <source>Use SNR based speech detection</source>
-        <translation type="obsolete">S/N比に基づく発言認識を使用</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;This sets speech detection to use Signal to Noise ratio.&lt;/b&gt;&lt;br /&gt;In this mode, the input is analyzed for something resembling a clear singal, and the clarity of that signal is used to trigger speech detection.</source>
-        <translation type="obsolete">&lt;b&gt;発言認識にS/N比を使うかどうかを決定します。&lt;/b&gt;&lt;br /&gt;このモードでは、ノイズ無しに近い状態に比較して入力が解析され、その明瞭度が発言の検出に使用されます。</translation>
-    </message>
-    <message>
-        <source>Signal to Noise</source>
-        <translation type="obsolete">S/N比</translation>
-    </message>
-    <message>
-        <source>Use Amplitude based speech detection.</source>
-        <translation type="obsolete">信号の強さに基づく発言認識を使用</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;This sets speech detection to use Amplitude.&lt;/b&gt;&lt;br /&gt;In this mode, the raw strength of the input signal is used to detect speech.</source>
-        <translation type="obsolete">&lt;b&gt;発言認識に信号の強さを使用するかを設定します。&lt;/b&gt;このモードにすると、入力信号そのものの強さが発言の検出に使用されます。</translation>
-    </message>
-    <message>
-        <source>Amplitude</source>
-        <translation type="obsolete">信号の強さ</translation>
-    </message>
-    <message>
-        <source>Silence Below</source>
-        <translation type="obsolete">沈黙しきい値</translation>
-    </message>
-    <message>
-        <source>Signal values below this counts as silence</source>
-        <translation type="obsolete">沈黙と判定される信号値のしきい値</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;This sets the trigger values for voice detection.&lt;/b&gt;&lt;br /&gt;Use this together with the Audio Statistics window to manually tune the trigger values for detecting speech. Input values below &quot;Silence Below&quot; always count as silence. Values above &quot;Speech Above&quot; always count as voice. Values in between will count as voice if you&apos;re already talking, but will not trigger a new detection.</source>
-        <translation type="obsolete">&lt;b&gt;声を検出するための基準値を設定します。&lt;/b&gt;手動で調整するためには音声統計ウインドウを一緒にご利用ください。&quot;沈黙しきい値&quot;以下の値は常に発言していない状態と見なされ、&quot;発言しきい値&quot;より上の値は発言と見なされます。中間の値は既に話し中であれば発言と判断されますが、新たな発言であると判断する材料にはなりません。</translation>
-    </message>
-    <message>
-        <source>Speech Above</source>
-        <translation type="obsolete">発言しきい値</translation>
-    </message>
-    <message>
-        <source>Signal values above this count as voice</source>
-        <translation type="obsolete">発言と判定される信号値のしきい値</translation>
-    </message>
-    <message>
-        <source>Connection</source>
-        <translation type="obsolete">接続</translation>
     </message>
 </context>
 <context>
@@ -1405,10 +736,6 @@ Contains the list of members inherited by the current channel. Uncheck &lt;i&gt;
         <translation>&lt;b&gt;音声のための入力デバイスです。&lt;/b&gt;</translation>
     </message>
     <message>
-        <source>Cancel Echo</source>
-        <translation type="obsolete">エコーキャンセル</translation>
-    </message>
-    <message>
         <location/>
         <source>Transmission</source>
         <translation>伝送方式</translation>
@@ -1434,38 +761,14 @@ Contains the list of members inherited by the current channel. Uncheck &lt;i&gt;
         <translation>二重押し時間</translation>
     </message>
     <message>
-        <source>TextLabel</source>
-        <translation type="obsolete">テキストラベル</translation>
-    </message>
-    <message>
-        <source>Audible audio cue when push-to-talk pressed and released</source>
-        <translation type="obsolete">&quot;キー押下で有効化&quot;設定の時、ショートカットキーが押される/離されるといったタイミングで音による通知を行います。</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;This enables the audio cues for push to talk.&lt;/b&gt;&lt;br /&gt;Setting this will give you a short audio beep when push to talk is pressed and released.</source>
-        <translation type="obsolete">&lt;b&gt;プッシュ・トゥ・トークの際に通知を行います&lt;/b&gt;&lt;br /&gt;この設定を有効にすると、ショートカットキーが押されたり離されたりするタイミング短いビープ音を鳴らします。</translation>
-    </message>
-    <message>
-        <source>PTT Audio cue</source>
-        <translation type="obsolete">プッシュ・トゥ・トークを音で通知</translation>
-    </message>
-    <message>
         <location/>
         <source>Use SNR based speech detection</source>
         <translation>S/N比に基づく発言認識を使用</translation>
     </message>
     <message>
-        <source>&lt;b&gt;This sets speech detection to use Signal to Noise ratio.&lt;/b&gt;&lt;br /&gt;In this mode, the input is analyzed for something resembling a clear singal, and the clarity of that signal is used to trigger speech detection.</source>
-        <translation type="obsolete">&lt;b&gt;発言認識にS/N比を使うかどうかを決定します。&lt;/b&gt;&lt;br /&gt;このモードでは、ノイズ無しに近い状態に比較して入力が解析され、その明瞭度が発言の検出に使用されます。</translation>
-    </message>
-    <message>
         <location/>
         <source>Signal to Noise</source>
         <translation>S/N比</translation>
-    </message>
-    <message>
-        <source>Use Amplitude based speech detection.</source>
-        <translation type="obsolete">信号の強さに基づく発言認識を使用します。</translation>
     </message>
     <message>
         <location/>
@@ -1488,17 +791,9 @@ Contains the list of members inherited by the current channel. Uncheck &lt;i&gt;
         <translation>音声が無くなった後、どれくらい送信を続けるか</translation>
     </message>
     <message>
-        <source>&lt;b&gt;This selects how long after a perceived stop in speech transmission should continue.&lt;/b&gt;&lt;br /&gt;Set this higher if your voice breaks up when you speak (seen by a rapidly blinking voice icon next to your name).&lt;br /&gt;Only makes sense when used with Voice Activity transmission.</source>
-        <translation type="obsolete">&lt;b&gt;音声が無くなった後、送信がどれくらい続くかを選択します。&lt;/b&gt;&lt;br /&gt;あなたが話している時(名前の後ろで点滅しているアイコンで確認できます)に音声が途切れてしまうようならば、この設定をより高くしてください。&lt;br /&gt;この設定は&quot;声で有効化&quot;の場合のみ効果があります。</translation>
-    </message>
-    <message>
         <location/>
         <source>Silence Below</source>
         <translation>非発言のしきい値</translation>
-    </message>
-    <message>
-        <source>Signal values below this counts as silence</source>
-        <translation type="obsolete">発言していないと判定される信号値のしきい値</translation>
     </message>
     <message>
         <location/>
@@ -1536,18 +831,6 @@ Contains the list of members inherited by the current channel. Uncheck &lt;i&gt;
         <translation>&lt;b&gt;圧縮品質を設定します。&lt;/b&gt;&lt;br /&gt;送出される音声のためにどれくらいの帯域幅を使えるか決定します。</translation>
     </message>
     <message>
-        <source>&amp;Complexity</source>
-        <translation type="obsolete">計算量(&amp;C)</translation>
-    </message>
-    <message>
-        <source>Complexity of compression (CPU)</source>
-        <translation type="obsolete">圧縮の計算量(CPU)</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;This sets the complexity of compression.&lt;/b&gt;&lt;br /&gt;This determines how much CPU Mumble is allowed to use to increase transmitted voice quality. Settings above 5 give only marginal gain.</source>
-        <translation type="obsolete">&lt;b&gt;圧縮の計算量を設定します。&lt;/b&gt;&lt;br /&gt;送信される声の音質を向上させるためにどれくらいのCPUリソースを使えるか決定します。</translation>
-    </message>
-    <message>
         <location/>
         <source>Audio per packet</source>
         <translation>パケットあたりの音声長</translation>
@@ -1561,10 +844,6 @@ Contains the list of members inherited by the current channel. Uncheck &lt;i&gt;
         <location/>
         <source>&lt;b&gt;This selects how many audio frames should be put in one packet.&lt;/b&gt;&lt;br /&gt;Increasing this will increase the latency of your voice, but will also reduce bandwidth requirements.</source>
         <translation>&lt;b&gt;送信1パケットに含む音声フレームの長さを選択します。&lt;/b&gt;&lt;br /&gt;これを大きくするとあなたの音声の遅延が大きくなりますが、必要とするネットワーク帯域幅は下がります。</translation>
-    </message>
-    <message>
-        <source>Maximum bandwidth used for sent audio</source>
-        <translation type="obsolete">音声の送信に使用するネットワーク帯域幅のピーク値</translation>
     </message>
     <message>
         <location/>
@@ -1585,15 +864,6 @@ Contains the list of members inherited by the current channel. Uncheck &lt;i&gt;
         <location/>
         <source>Noise suppression</source>
         <translation>ノイズ抑制</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;This sets the ammount of noise suppression to apply.&lt;/b&gt;&lt;br /&gt;The higher this value, the more aggressively stationary noise will be supressed.</source>
-        <translation type="obsolete">&lt;b&gt;ノイズ抑制の量を設定します。&lt;/b&gt;&lt;br /&gt;値を大きくすると、より積極的に定常ノイズを抑制しようとします。</translation>
-    </message>
-    <message>
-        <location/>
-        <source>Amplification</source>
-        <translation>音量の増幅</translation>
     </message>
     <message>
         <location/>
@@ -1651,14 +921,6 @@ Contains the list of members inherited by the current channel. Uncheck &lt;i&gt;
         <translation>&lt;b&gt;2度押し時間&lt;/b&gt;&lt;br /&gt;もしあなたがプッシュ・トゥ・トークキーを2回、ここで設定した感覚の間に押したなら、キーはロックされます。Mumble は あなたがプッシュ・トゥ・トークをアンロックするために一回以上キーを押すまで転送状態のままです。</translation>
     </message>
     <message>
-        <source>Gets played when the PTT button is pressed</source>
-        <translation type="obsolete">プッシュ・トゥ・トーク ボタンが押されたときに再生させる</translation>
-    </message>
-    <message>
-        <source>Gets played when the PTT button is released</source>
-        <translation type="obsolete">プッシュ・トゥ・トーク ボタンが放されたときに再生させる</translation>
-    </message>
-    <message>
         <location/>
         <source>Reset audio cue to default</source>
         <translation>オーディオキューをデフォルトにリセット</translation>
@@ -1669,17 +931,9 @@ Contains the list of members inherited by the current channel. Uncheck &lt;i&gt;
         <translation>&lt;b&gt;リセット&lt;/b&gt;&lt;br /&gt;デフォルトにファイルへのパスをリセットします。</translation>
     </message>
     <message>
-        <source>Reset</source>
-        <translation type="obsolete">リセット</translation>
-    </message>
-    <message>
         <location/>
         <source>Browse for on audio file</source>
         <translation>オン時の音声ファイルを参照</translation>
-    </message>
-    <message>
-        <source>Browse</source>
-        <translation type="obsolete">参照</translation>
     </message>
     <message>
         <location/>
@@ -1702,18 +956,6 @@ Contains the list of members inherited by the current channel. Uncheck &lt;i&gt;
         <translation>オーディオキューをプレビュー</translation>
     </message>
     <message>
-        <source>&lt;b&gt;Preview&lt;/b&gt;&lt;br/&gt;Plays the current &lt;i&gt;on&lt;/i&gt; soundfile followed by the current &lt;i&gt;off&lt;/i&gt; soundfile.</source>
-        <translation type="obsolete">&lt;b&gt;プレビュー&lt;/b&gt;&lt;br /&gt;現在のオンのときのサウンドファイルを再生しそのあとにオフのときのサウンドファイルを再生する。</translation>
-    </message>
-    <message>
-        <source>Preview</source>
-        <translation type="obsolete">プレビュー</translation>
-    </message>
-    <message>
-        <source>Audible audio cue when push-to-talk is activated or deactivated</source>
-        <translation type="obsolete">&quot;プッシュ・トゥ・トーク&quot;の設定の時、ショートカットキーが押される/離されるといったタイミングで音による通知を行います</translation>
-    </message>
-    <message>
         <location/>
         <source>&lt;b&gt;This sets speech detection to use Signal to Noise ratio.&lt;/b&gt;&lt;br /&gt;In this mode, the input is analyzed for something resembling a clear signal, and the clarity of that signal is used to trigger speech detection.</source>
         <translation>&lt;b&gt;S/N比を使用して発言認識を設定します。&lt;/b&gt;&lt;br /&gt;このモードでは、入力は明らかな信号に似た何かに分析され、その信号の明快さは、音声検出ののために使用されます。</translation>
@@ -1729,18 +971,6 @@ Contains the list of members inherited by the current channel. Uncheck &lt;i&gt;
         <translation>&lt;b&gt;この設定は多くのノイズを抑制します。&lt;/b&gt;&lt;br /&gt;より大きい値を設定すると、より多くのノイズが抑制されます。</translation>
     </message>
     <message>
-        <source>Idle AutoMute</source>
-        <translation type="obsolete">自動ミュートまでの待ち時間</translation>
-    </message>
-    <message>
-        <source>How long to remain idle before auto-mute.</source>
-        <translation type="obsolete">自動的にミュートになるまでに必要なアイドル時間です。</translation>
-    </message>
-    <message>
-        <source>This sets an idle timer. If the timer expires without any audio being sent to the server, you are muted.</source>
-        <translation type="obsolete">アイドリング時間を設定します。指定時間のあいだ、サーバへ何の音声も送信されなかった場合、ミュートになります。</translation>
-    </message>
-    <message>
         <location/>
         <source>Signal values below this count as silence</source>
         <translation>発言していないと判定される信号値のしきい値</translation>
@@ -1751,16 +981,7 @@ Contains the list of members inherited by the current channel. Uncheck &lt;i&gt;
         <translation>音声を送信するために使う最大帯域</translation>
     </message>
     <message>
-        <source>&lt;b&gt;This sets the amount of noise suppression to apply.&lt;/b&gt;&lt;br /&gt;The higher this value, the more aggressively stationary noise will be supressed.</source>
-        <translation type="obsolete">&lt;b&gt;ノイズ抑制の量を設定します。&lt;/b&gt;&lt;br /&gt;値を大きくすると、より積極的に定常ノイズを抑制しようとします。</translation>
-    </message>
-    <message>
-        <location filename="AudioInput.cpp" line="+520"/>
-        <source>Server maximum network bandwidth is only %1 kbit/s. Audio quality auto-adjusted to %2 kbit/s (%3ms)</source>
-        <translation>サーバの最大ネットワーク帯域は%1kbit/s しかありません。音質を自動的に%2kbit/s (%3ms) に調整します</translation>
-    </message>
-    <message>
-        <location filename="AudioInput.ui"/>
+        <location/>
         <source>Use Amplitude based speech detection</source>
         <translation>振幅による発言検出を使う</translation>
     </message>
@@ -1768,21 +989,6 @@ Contains the list of members inherited by the current channel. Uncheck &lt;i&gt;
         <location/>
         <source>&lt;b&gt;This selects how long after a perceived stop in speech transmission should continue.&lt;/b&gt;&lt;br /&gt;Set this higher if your voice breaks up when you speak (seen by a rapidly blinking voice icon next to your name).</source>
         <translation>&lt;b&gt;発言の転送をどれだけ継続するべきかを設定します。&lt;/b&gt;&lt;br /&gt;あなたの声が発言中に破綻する（あなたの名前の次にある音声アイコンがすぐに点滅する場合）ならにこの値を高く設置してください。</translation>
-    </message>
-    <message>
-        <location/>
-        <source>Idle AutoDeafen</source>
-        <translation>自動聴取禁止までの待ち時間</translation>
-    </message>
-    <message>
-        <location/>
-        <source>How long to remain idle before auto-deafen.</source>
-        <translation>どれだけのアイドル時間が続いたら自動聴取禁止にするか。</translation>
-    </message>
-    <message>
-        <location/>
-        <source>This sets an idle timer. If the timer expires without any audio being sent to the server, you are muted and deafened.</source>
-        <translation>この設定はアイドルタイマーです。サーバに音声を送信しないままこの時間が過ぎると、あなたは発言禁止と聴取禁止状態になります。</translation>
     </message>
     <message>
         <location/>
@@ -1822,53 +1028,103 @@ Contains the list of members inherited by the current channel. Uncheck &lt;i&gt;
     <message>
         <location/>
         <source>&lt;b&gt;Preview&lt;/b&gt;&lt;br/&gt;Plays the current &lt;i&gt;on&lt;/i&gt; sound followed by the current &lt;i&gt;off&lt;/i&gt; sound.</source>
-        <translation type="unfinished">&lt;b&gt;プレビュー&lt;/b&gt;&lt;br /&gt;現在のオンのときのサウンドを再生しそのあとにオフのときのサウンドを再生する。</translation>
+        <translation>&lt;b&gt;プレビュー&lt;/b&gt;&lt;br /&gt;現在のオンのときのサウンドを再生しそのあとにオフのときのサウンドを再生する。</translation>
     </message>
     <message>
         <location/>
         <source>Displays an always on top window with a push to talk button in it</source>
-        <translation type="unfinished"></translation>
+        <translation>プッシュ・トゥ・トークボタンを表示するウィンドウを常に前面で表示します</translation>
     </message>
     <message>
         <location/>
         <source>Display push to talk window</source>
-        <translation type="unfinished"></translation>
+        <translation>プッシュ・トゥ・トークウィンドウ</translation>
     </message>
     <message>
         <location/>
         <source>Misc</source>
-        <translation type="unfinished"></translation>
+        <translation>その他</translation>
     </message>
     <message>
         <location/>
         <source>Audible audio cue when starting or stopping to transmit</source>
-        <translation type="unfinished"></translation>
+        <translation>転送を開始、終了するときに聞こえる音声キュー</translation>
     </message>
     <message>
         <location/>
         <source>&lt;b&gt;This enables transmission audio cues.&lt;/b&gt;&lt;br /&gt;Setting this will give you a short audio beep when you start and stop transmitting.</source>
-        <translation type="unfinished"></translation>
+        <translation>この機能は転送時に音声キューを有効にします。&lt;/b&gt;&lt;br /&gt;これを設定すると転送の開始時と、終了時に短いオーディオビープが聞こえるようになります。</translation>
     </message>
     <message>
         <location/>
         <source>Audio cue</source>
-        <translation type="unfinished"></translation>
+        <translation>音声キュー</translation>
     </message>
     <message>
         <location/>
         <source>Gets played when starting to transmit</source>
-        <translation type="unfinished"></translation>
+        <translation>転送を開始するときに再生します</translation>
     </message>
     <message>
         <location/>
         <source>Gets played when stopping to transmit</source>
-        <translation type="unfinished"></translation>
+        <translation>転送を停止するときに再生します</translation>
+    </message>
+    <message>
+        <location/>
+        <source>Hold Time</source>
+        <translation>待機時間</translation>
+    </message>
+    <message>
+        <location/>
+        <source>Time the microphone stays open after the PTT key is released</source>
+        <translation>PTTキーを話した後にマイクがオープである時間</translation>
+    </message>
+    <message>
+        <location filename="AudioInput.cpp" line="+529"/>
+        <source>Server maximum network bandwidth is only %1 kbit/s. Audio quality auto-adjusted to %2 kbit/s (%3 ms)</source>
+        <translation>サーバの最大ネットワーク帯域は%1kbit/sしかありません。音声品質は自動的に%2kbit/s (%3 ms)に調整されます</translation>
+    </message>
+    <message>
+        <location filename="AudioInput.ui"/>
+        <source>Max. Amplification</source>
+        <translation>増幅の最大値</translation>
+    </message>
+    <message>
+        <location/>
+        <source>Idle action</source>
+        <translation>アイドル時の動作</translation>
+    </message>
+    <message>
+        <location/>
+        <source>minutes do</source>
+        <translation>後に</translation>
+    </message>
+    <message>
+        <location/>
+        <source>nothing</source>
+        <translation>何もしない</translation>
+    </message>
+    <message>
+        <location/>
+        <source>deafen</source>
+        <translation>聴取禁止</translation>
+    </message>
+    <message>
+        <location/>
+        <source>mute</source>
+        <translation>発言禁止</translation>
+    </message>
+    <message>
+        <location/>
+        <source>after</source>
+        <translation> </translation>
     </message>
 </context>
 <context>
     <name>AudioInputDialog</name>
     <message>
-        <location filename="AudioConfigDialog.cpp" line="+71"/>
+        <location filename="AudioConfigDialog.cpp" line="+75"/>
         <source>Continuous</source>
         <translation>常に有効</translation>
     </message>
@@ -1883,25 +1139,26 @@ Contains the list of members inherited by the current channel. Uncheck &lt;i&gt;
         <translation>プッシュ・トゥ・トーク</translation>
     </message>
     <message>
-        <location line="+13"/>
+        <location line="+14"/>
         <source>Audio Input</source>
         <translation>音声入力</translation>
     </message>
     <message>
-        <location line="+101"/>
+        <location line="+111"/>
         <location line="+8"/>
+        <location line="+7"/>
         <source>%1 ms</source>
         <translation>%1 ms</translation>
     </message>
     <message>
-        <location line="-2"/>
+        <location line="-9"/>
+        <location line="+7"/>
         <location line="+20"/>
-        <location line="+18"/>
         <source>Off</source>
         <translation>オフ</translation>
     </message>
     <message>
-        <location line="-30"/>
+        <location line="-12"/>
         <source>%1 s</source>
         <translation>%1 s</translation>
     </message>
@@ -1916,29 +1173,9 @@ Contains the list of members inherited by the current channel. Uncheck &lt;i&gt;
         <translation>-%1 dB</translation>
     </message>
     <message>
-        <location line="+55"/>
-        <source>%1 kbit/s (Audio %2 %5, Position %4, Overhead %3)</source>
-        <oldsource>%1kbit/s (Audio %2 %5, Position %4, Overhead %3)</oldsource>
-        <translation>%1kbit/s (音声 %2 %5, 位置 %4, オーバヘッド %3)</translation>
-    </message>
-    <message>
-        <location line="+0"/>
-        <source>CELT</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location line="+0"/>
-        <source>Speex</source>
-        <translation></translation>
-    </message>
-    <message>
-        <source>%1kbit/s (Audio %2, Position %4, Overhead %3)</source>
-        <translation type="obsolete">%1kbit/s (Audio %2, Position %4, Overhead %3)</translation>
-    </message>
-    <message>
-        <location line="-42"/>
-        <source>%1 min</source>
-        <translation>%1 min</translation>
+        <location line="+48"/>
+        <source>%1 kbit/s (Audio %2, Position %4, Overhead %3)</source>
+        <translation>%1kbit/s (音声 %2, 位置 %4, オーバヘッド %3)</translation>
     </message>
 </context>
 <context>
@@ -2031,10 +1268,6 @@ Contains the list of members inherited by the current channel. Uncheck &lt;i&gt;
         <translation>&lt;b&gt;ループバックテストモードの一つが有効になります。&lt;/b&gt;&lt;br /&gt;&lt;i&gt;なし&lt;/i&gt; - ループバックしない&lt;br /&gt;&lt;i&gt;ローカル&lt;/i&gt; - ローカルなサーバをエミュレートします。&lt;br /&gt;&lt;i&gt;サーバ&lt;/i&gt; - サーバにループバックを要求します。&lt;br /&gt;ループバックが有効になっている間、他のプレイヤーはあなたの声を聞くことが出来ないのでご注意ください。この設定はアプリケーション終了時に保存されません。</translation>
     </message>
     <message>
-        <source>TextLabel</source>
-        <translation type="obsolete">テキストラベル</translation>
-    </message>
-    <message>
         <location/>
         <source>Volume</source>
         <translation>音量</translation>
@@ -2060,49 +1293,9 @@ Contains the list of members inherited by the current channel. Uncheck &lt;i&gt;
         <translation>バッファデータ量</translation>
     </message>
     <message>
-        <source>This sets the amount of data to prebuffer in the output buffer. Experiment with different values and set it to the lowest which doesn&apos;t cause rapid jitter in the sound.</source>
-        <translation type="obsolete">出力バッファにおけるプリバッファの量を設定します。いろいろな値で試してみて、急に不安定にならない一番小さな値に設定してください。</translation>
-    </message>
-    <message>
-        <source>Volume attenuation</source>
-        <translation type="obsolete">ボリューム減衰</translation>
-    </message>
-    <message>
-        <source>MinDistance</source>
-        <translation type="obsolete">最小距離</translation>
-    </message>
-    <message>
-        <source>Minimum distance to player before sound decreases</source>
-        <translation type="obsolete">音が小さくなる前のプレイヤーへの最小距離</translation>
-    </message>
-    <message>
-        <source>This sets the minimum distance for sound calculations. The volume of other players&apos; speech will not decrease until they are at least this far away from you.</source>
-        <translation type="obsolete">サウンドの計算に使う最小距離を設定します。少なくともこの距離だけ離れていれば、他のプレイヤーの音声は減衰しません。</translation>
-    </message>
-    <message>
-        <source>MaxDistance</source>
-        <translation type="obsolete">最大距離</translation>
-    </message>
-    <message>
-        <source>Maximum distance, beyond which sound won&apos;t decrease</source>
-        <translation type="obsolete">音が小さくならない最大距離</translation>
-    </message>
-    <message>
-        <source>This sets the maximum distance for sound calculations. When farther away than this, other players&apos; sound volume will not decrease any more.</source>
-        <translation type="obsolete">サウンドの計算に使う最大距離を設定します。これよりも遠くなると、他のプレイヤーの音声はこれ以上減衰しなくなります。</translation>
-    </message>
-    <message>
-        <source>RollOff</source>
-        <translation type="obsolete">ロールオフ</translation>
-    </message>
-    <message>
         <location/>
         <source>Factor for sound volume decrease</source>
         <translation>ボリューム減少の割合</translation>
-    </message>
-    <message>
-        <source>How fast should sound volume drop when passing beyond the minimum distance. The normal (1.0) is that sound volume halves each time the distance doubles. Increasing this value means sound volume drops faster, while decreasing it means it drops slower.</source>
-        <translation type="obsolete">最小距離を超えた時、音量がどのくらい落ちるかについての値です。普通(1.0)の設定では距離が2倍になるたびに音量は半分になります。これを大きくすると音量の落ち込みが速くなり、小さくすると音量の落ち込みは遅くなります。</translation>
     </message>
     <message>
         <location/>
@@ -2156,10 +1349,6 @@ Contains the list of members inherited by the current channel. Uncheck &lt;i&gt;
         <translation>使用したいループバックモード</translation>
     </message>
     <message>
-        <source>&lt;b&gt;This enables one of the loopback testmodes.&lt;/b&gt;&lt;br /&gt;&lt;i&gt;None&lt;/i&gt; - Loopback disabled&lt;br /&gt;&lt;i&gt;Local&lt;/i&gt; - Emulate a local server.&lt;br /&gt;&lt;i&gt;Server&lt;/i&gt; - Request loopback from server.&lt;br /&gt;Please note than when loopback is enabled, no other players will hear your voice. This setting is not saved on application exit.</source>
-        <translation type="obsolete">&lt;b&gt;ループバックテストモードの一つが有効になります。&lt;/b&gt;&lt;br /&gt;&lt;i&gt;なし&lt;/i&gt; - ループバックしない&lt;br /&gt;&lt;i&gt;ローカル&lt;/i&gt; - ローカルなサーバをエミュレートします。&lt;br /&gt;&lt;i&gt;サーバ&lt;/i&gt; - サーバにループバックを要求します。&lt;br /&gt;ループバックが有効になっている間、他のプレイヤーはあなたの声を聞くことが出来ないのでご注意ください。この設定はアプリケーション終了時に保存されません。</translation>
-    </message>
-    <message>
         <location/>
         <source>Factor for sound volume increase</source>
         <translation>ボリューム増加の割合</translation>
@@ -2176,10 +1365,6 @@ Contains the list of members inherited by the current channel. Uncheck &lt;i&gt;
         <translation>最小距離</translation>
     </message>
     <message>
-        <source>Minimum distance to player before sound volume decreases</source>
-        <translation type="obsolete">サウンドのボリュームが減る前のプレイヤに対する最小の距離です。</translation>
-    </message>
-    <message>
         <location/>
         <source>Maximum Distance</source>
         <translation>最大距離</translation>
@@ -2188,10 +1373,6 @@ Contains the list of members inherited by the current channel. Uncheck &lt;i&gt;
         <location/>
         <source>Maximum distance, beyond which speech volume won&apos;t decrease</source>
         <translation>音声のボリュームが減少しない最大の距離</translation>
-    </message>
-    <message>
-        <source>This sets the maximum distance for sound calculations. When farther away than this, other players&apos; speech volume will not decrease any further.</source>
-        <translation type="obsolete">音の計算のために最大距離の設定します。 これよりより遠くに離れているとき、他のプレーヤーのスピーチボリュームはこれ以上減少しないでしょう。</translation>
     </message>
     <message>
         <location/>
@@ -2209,10 +1390,6 @@ Contains the list of members inherited by the current channel. Uncheck &lt;i&gt;
         <translation>入力ソースの近さによってどのくらいボリュームを上げるべきか?</translation>
     </message>
     <message>
-        <source>Connected &quot;speakers&quot; are actually headphones.</source>
-        <translation type="obsolete">接続している &quot;出力機器&quot; はヘッドホンです。</translation>
-    </message>
-    <message>
         <location/>
         <source>Checking this indicates that you don&apos;t have speakers connected, just headphones. This is important, as speakers are usually in front of you, while headphones are directly to your left/right.</source>
         <translation>スピーカーを接続しておらず、ヘッドホンだけであることを確認してください。ヘッドホンはあなたからまっすぐ右と左に位置しているのに対し、スピーカーは一般的にあなたの正面に位置しているため、これは重要になります。</translation>
@@ -2223,29 +1400,9 @@ Contains the list of members inherited by the current channel. Uncheck &lt;i&gt;
         <translation>ヘッドホン</translation>
     </message>
     <message>
-        <source>Other Applications</source>
-        <translation type="obsolete">他のアプリケーションの音量</translation>
-    </message>
-    <message>
         <location/>
         <source>This sets the amount of data to pre-buffer in the output buffer. Experiment with different values and set it to the lowest which doesn&apos;t cause rapid jitter in the sound.</source>
         <translation>出力バッファにおけるプリバッファの量を設定します。いろいろな値で試してみて、急に不安定にならない一番小さな値に設定してください。</translation>
-    </message>
-    <message>
-        <source>Volume of other applications during speech</source>
-        <translation type="obsolete">発言中の他のアプリケーションの音量</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Decrease volume of other applications during speech.&lt;/b&gt;&lt;br /&gt;Mumble supports decreasing the volume of other applications during incoming speech. This sets the relative volume of other applications when others are talking.</source>
-        <translation type="obsolete">&lt;b&gt;発言中における他のアプリケーションの音量減少&lt;/b&gt;&lt;br /&gt;Mumbleは音声受信中に他のアプリケーションの音量を下げるのを手助けします。ここでは、あなたが話している間の他アプリケーションの音量比率を設定します。</translation>
-    </message>
-    <message>
-        <source>If checked Mumble also lowers the volume of other applications when you talk</source>
-        <translation type="obsolete">チェックすると、Mumble はあなたが発言しているときに他のアプリケーションの音量を下げます</translation>
-    </message>
-    <message>
-        <source>Attenuate other applications while you talk</source>
-        <translation type="obsolete">あなたが発言しているとき、他のアプリケーションの音量を下げる</translation>
     </message>
     <message>
         <location/>
@@ -2311,7 +1468,7 @@ Contains the list of members inherited by the current channel. Uncheck &lt;i&gt;
 <context>
     <name>AudioOutputDialog</name>
     <message>
-        <location filename="AudioConfigDialog.cpp" line="+165"/>
+        <location filename="AudioConfigDialog.cpp" line="+135"/>
         <source>None</source>
         <translation>なし</translation>
     </message>
@@ -2352,32 +1509,16 @@ Contains the list of members inherited by the current channel. Uncheck &lt;i&gt;
         <source>%1 m</source>
         <translation></translation>
     </message>
-    <message>
-        <source>%1%</source>
-        <translation type="obsolete">%1%</translation>
-    </message>
-    <message>
-        <source>%1ms</source>
-        <translation type="obsolete">%1ms</translation>
-    </message>
-    <message>
-        <source>%1m</source>
-        <translation type="obsolete">%1m</translation>
-    </message>
-    <message>
-        <source>%1</source>
-        <translation type="obsolete">%1</translation>
-    </message>
 </context>
 <context>
     <name>AudioOutputSample</name>
     <message>
-        <location filename="AudioOutput.cpp" line="+297"/>
+        <location filename="AudioOutputSample.cpp" line="+211"/>
         <source>Choose sound file</source>
         <translation>サウンドファイルを選択してください</translation>
     </message>
     <message>
-        <location line="+4"/>
+        <location line="+5"/>
         <source>Invalid sound file</source>
         <translation>無効なサウンドファイル</translation>
     </message>
@@ -2405,30 +1546,14 @@ Contains the list of members inherited by the current channel. Uncheck &lt;i&gt;
         <translation>最大クリーンレベル</translation>
     </message>
     <message>
-        <source>Microphone loudness</source>
-        <translation type="obsolete">マイク音量</translation>
-    </message>
-    <message>
-        <source>Mic Signal-To-Noise</source>
-        <translation type="obsolete">マイクS/N比</translation>
-    </message>
-    <message>
         <location/>
         <source>Speech Probability</source>
         <translation>発言確率</translation>
     </message>
     <message>
-        <source>Audio bitrate</source>
-        <translation type="obsolete">音声ビットレート</translation>
-    </message>
-    <message>
         <location/>
         <source>Peak power in last frame</source>
         <translation>直近フレームでの最大の強さ</translation>
-    </message>
-    <message>
-        <source>This shows the peak power in the last frame (20 ms), and is the same measurement as you would usually find displayed as &quot;input power&quot;. Please disregard this and look at &lt;b&gt;Loudness&lt;/b&gt; instead, which is much more steady and disregards outliers.</source>
-        <translation type="obsolete">直近のフレーム(20 ms)での最大音量さを表示します。そしてこれは、通常&quot;入力の強さ&quot;として表示されている測定値と同じものです。これは無視して&lt;b&gt;音量&lt;/b&gt;を見るようにしてください。こちらの方がより安定していて外部要素に影響されにくいです。</translation>
     </message>
     <message>
         <location/>
@@ -2437,17 +1562,9 @@ Contains the list of members inherited by the current channel. Uncheck &lt;i&gt;
         <translation>直近のフレーム(20 ms)におけるスピーカーの最大音量を表示します。スピーカの設定を変更して多重チャンネルサンプリング法(例えばASIO)を使用していない限り、これは0になります。セットアップでそのような構成をしているのに、ほかのプログラムが音声を再生している間も0を表示しているなら、セットアップは正しく動いていません。</translation>
     </message>
     <message>
-        <source>This shows the peak power in the last frame (20 ms) after all processing. Ideally, this should be -96 dB when you&apos;re not talking. In reality, a sound studio should see -60 dB, and you should hopefully see somewhere around -20 dB. When you are talking, this should rise to somewhere between -5 and -10 dB.&lt;br /&gt;If you are using echo cancellation, and this rises to more than -15 dB when you&apos;re not talking, your setup is not working, and you&apos;ll annoy other players with echoes.</source>
-        <translation type="obsolete">直近のフレーム(20 ms)における全ての処理後の最大音量を表示します。あなたが話していないとき、これは -96 dBであるのが理想です。しかし実際には音楽スタジオでも -60 dB、あなたの環境では -20 dB くらい出れば良い方でしょう。あなたが話している時は、-5 から -10 dB のあたりまで上がります。&lt;br /&gt;もしあなたがエコーキャンセルを使っていて、話してもいないのに -15 dB まで上がるようならセットアップは失敗しています。この場合、反響によってほかのプレイヤーを悩ますことになります。</translation>
-    </message>
-    <message>
         <location/>
         <source>How close the current input level is to ideal</source>
         <translation>入力レベルの理想値までの差</translation>
-    </message>
-    <message>
-        <source>This shows how close your current input volume is to the ideal. To adjust your microphone level, open whatever program you use to adjust the recording volume, and look at the value here while talking.&lt;br /&gt;&lt;b&gt;Talk loud, as you would when you&apos;re upset over getting fragged by a noob.&lt;/b&gt;&lt;br /&gt;Adjust the volume until this value is close to 100%, but make sure it doesn&apos;t go above. If it does go above, you are likely to get clipping in parts of your speech, which will degrade sound quality</source>
-        <translation type="obsolete">現在の入力音量が理想の値からどれくらい離れているかを表示します。マイクの音量を調整するためには、録音ボリュームを調整するプログラムを開いて、話している間この値を見てください。&lt;br /&gt;&lt;b&gt;noob(訳注: 初心者の事)にやられて怒り狂っているときのように大声で叫んでください。&lt;/b&gt;&lt;br /&gt;この値が100%近くになるまで音量を調整してください。しかし100%を超えないように注意しましょう。もし超えてしまうとあなたの音声の一部が省略されて、音質が低下するでしょう。</translation>
     </message>
     <message>
         <location/>
@@ -2480,10 +1597,6 @@ Contains the list of members inherited by the current channel. Uncheck &lt;i&gt;
         <translation>直近フレームのビットレート</translation>
     </message>
     <message>
-        <source>This is the audio bitrate of the last compressed frame (20 ms), and as such will jump up and down as the VBR adjusts the quality. To adjust the peak bitrate, adjust &lt;b&gt;Compression Complexity&lt;/b&gt; in the Settings dialog.</source>
-        <translation type="obsolete">直近の圧縮されたフレーム(20 ms)における音声ビットレートです。VBRが品質を調整するので値は上下します。最大ビットレートを調整するには、設定ダイアログで&lt;b&gt;圧縮 計算量&lt;/b&gt;を調整してください。</translation>
-    </message>
-    <message>
         <location/>
         <source>Time between last two Push-To-Talk presses</source>
         <translation>直近2回のプッシュ・トゥ・トークの間隔</translation>
@@ -2509,27 +1622,7 @@ Contains the list of members inherited by the current channel. Uncheck &lt;i&gt;
         <translation>下に向かっている時間と右に向かっている周波数でエコーキャンセラの重みを表示します。&lt;br /&gt;理想的には、これは反響が全くない事を示す黒でなくてはなりません。普通は、反響が遅れる時間を表す青っぽい色の横縞が一つ以上あるでしょう。あなたは、重みがリアルタイムに更新されるのを見る事ができます。&lt;br /&gt;反響しないものがない限り、ここでは何も有用なデータが得られない事に注意してください。安定した状態で何曲かの音楽を再生してください。&lt;br /&gt;あなたは周波数領域における重みの実数または虚数の部分、もしくは計算された係数と位相の表示を選んで見ることができます。これらで最も役に立つのはおそらく係数です。係数とは反響の大きさであり、送信方向の信号が一定時間毎にどのくらい取り除かれているかを表します。他の表示は主にエコーキャンセラアルゴリズムを調整したい人にとって役に立ちます。&lt;br /&gt;注意： 係数モードの時に全ての表示が大幅に変動する場合、エコーキャンセラは2つの入力源(スピーカーとマイク)の間にどんな相関関係も見出せていません。反響に非常に長い遅れがあるか、入力源のうち1つが誤って設定されているかのどちらかでしょう。</translation>
     </message>
     <message>
-        <source>Mumble</source>
-        <translation type="obsolete">Mumble</translation>
-    </message>
-    <message>
-        <source>Real</source>
-        <translation type="obsolete">実数</translation>
-    </message>
-    <message>
-        <source>Imaginary</source>
-        <translation type="obsolete">虚数</translation>
-    </message>
-    <message>
-        <source>Modulus</source>
-        <translation type="obsolete">係数</translation>
-    </message>
-    <message>
-        <source>Phase</source>
-        <translation type="obsolete">位相</translation>
-    </message>
-    <message>
-        <location filename="AudioStats.cpp" line="+384"/>
+        <location filename="AudioStats.cpp" line="+387"/>
         <source>&gt;1000 ms</source>
         <oldsource>&gt;1000ms</oldsource>
         <translation>&gt;1000ms</translation>
@@ -2548,10 +1641,6 @@ Contains the list of members inherited by the current channel. Uncheck &lt;i&gt;
         <location/>
         <source>This shows the peak power in the last frame (20 ms), and is the same measurement as you would usually find displayed as &quot;input power&quot;. Please disregard this and look at &lt;b&gt;Microphone power&lt;/b&gt; instead, which is much more steady and disregards outliers.</source>
         <translation>直近のフレーム(20 ms)での最大の強さを表示します。そしてこれは、通常&quot;入力の強さ&quot;として表示されている測定値と同じものです。これは無視して&lt;b&gt;マイクの強さ&lt;/b&gt;を見るようにしてください。こちらの方がより安定していて外部要素に影響されにくいです。</translation>
-    </message>
-    <message>
-        <source>TextLabel</source>
-        <translation type="obsolete">テキストラベル</translation>
     </message>
     <message>
         <location/>
@@ -2589,10 +1678,6 @@ Contains the list of members inherited by the current channel. Uncheck &lt;i&gt;
         <translation>二重押しの間隔</translation>
     </message>
     <message>
-        <source>Time between last two PushToTalk presses</source>
-        <translation type="obsolete">直近2回のショートカットキー押下の間隔</translation>
-    </message>
-    <message>
         <location/>
         <source>Speech Detection</source>
         <translation>発言検出</translation>
@@ -2620,7 +1705,7 @@ Contains the list of members inherited by the current channel. Uncheck &lt;i&gt;
     <message>
         <location/>
         <source>This is the audio bitrate of the last compressed frame (20 ms), and as such will jump up and down as the VBR adjusts the quality. The peak bitrate can be adjusted in the Settings dialog.</source>
-        <translation type="unfinished">直近の圧縮されたフレーム(20 ms)における音声ビットレートです。VBRが品質を調整するので値は上下します。ピークビットレートを調整するには、設定ダイアログで調整できます。</translation>
+        <translation>直近の圧縮されたフレーム(20 ms)における音声ビットレートです。VBRが品質を調整するので値は上下します。ピークビットレートを調整するには、設定ダイアログで調整できます。</translation>
     </message>
 </context>
 <context>
@@ -2641,14 +1726,6 @@ Contains the list of members inherited by the current channel. Uncheck &lt;i&gt;
         <translation>Mumble 音声ウィザードへようこそ</translation>
     </message>
     <message>
-        <source>This is the audio tuning wizard for Mumble. This will help you correctly set the input levels of your sound card, and also set the correct parameters for sound processing in Mumble.</source>
-        <translation type="obsolete">これはMumbleの音声を調整するためのウィザードです。サウンドカードの入力レベルとMumbleでの音声処理のパラメータを正しく設定するお手伝いをします。</translation>
-    </message>
-    <message>
-        <source>Please be aware that as long as this wizard is active, audio will be looped locally to allow you to listen to it, and no audio will be sent to the server.</source>
-        <translation type="obsolete">ウィザードが動作中の間、音声はあなたが聞けるようPC上だけで完結し、サーバには送信されませんのでご注意ください。</translation>
-    </message>
-    <message>
         <location/>
         <source>Finished</source>
         <translation>完了</translation>
@@ -2659,10 +1736,6 @@ Contains the list of members inherited by the current channel. Uncheck &lt;i&gt;
         <translation>Mumbleをお楽しみください</translation>
     </message>
     <message>
-        <source>Congratulations. You should now be ready to enjoy a richer sound experience with Mumble.</source>
-        <translation type="obsolete">おめでとうございます！Mumbleでリッチなサウンド体験をする準備が整いました。</translation>
-    </message>
-    <message>
         <location/>
         <source>Device selection</source>
         <translation>デバイス選択</translation>
@@ -2671,10 +1744,6 @@ Contains the list of members inherited by the current channel. Uncheck &lt;i&gt;
         <location/>
         <source>Selecting the input and output device to use with Mumble.</source>
         <translation>Mumbleで使用する入力および出力のデバイスを選択します。</translation>
-    </message>
-    <message>
-        <source>Input device</source>
-        <translation type="obsolete">入力デバイス</translation>
     </message>
     <message>
         <location/>
@@ -2712,10 +1781,6 @@ Contains the list of members inherited by the current channel. Uncheck &lt;i&gt;
         <translation>&lt;b&gt;音声の入力にどのサウンドカードを使用するか選択してください。&lt;/b&gt;</translation>
     </message>
     <message>
-        <source>Output device</source>
-        <translation type="obsolete">出力デバイス</translation>
-    </message>
-    <message>
         <location/>
         <source>This is the device your speakers or headphones are connected to.</source>
         <translation>あなたのスピーカ(もしくはヘッドホン)が接続しているデバイスです。</translation>
@@ -2749,14 +1814,6 @@ Contains the list of members inherited by the current channel. Uncheck &lt;i&gt;
         <location/>
         <source>Tuning microphone hardware volume to optimal settings.</source>
         <translation>マイクの音量を最適な設定になるよう調整します。</translation>
-    </message>
-    <message>
-        <source>Open your sound control panel and go to the recording settings. Make sure the microphone is selected as active input with maximum recording volume. If there&apos;s an option to enable a &quot;Microphone boost&quot; make sure it&apos;s checked.</source>
-        <translation type="obsolete">ボリュームコントロールパネルを開き、録音設定画面に移動しましょう。そして、マイクが選択されていて、音量が最大になっている事を確認してください。もし&quot;マイクブースト&quot;を有効にするオプションがあるなら、それもチェックされているか確認してください。</translation>
-    </message>
-    <message>
-        <source>Speak loudly, as when you are annoyed or excited. Decrease the volume in the sound control panel until the bar below stays as high as possible in the blue and green but &lt;b&gt;not&lt;/b&gt; the red zone while you speak.</source>
-        <translation type="obsolete">イライラしていたり、興奮していたりする時のように大声で話してみてください。話している間、下にあるバーが青と緑の区域のなるべく赤に近い場所に留まるまでサウンドコントロールパネルの音量を下げてください。(赤い区域には&lt;b&gt;入らない&lt;/b&gt;ようにしましょう)</translation>
     </message>
     <message>
         <location/>
@@ -2795,10 +1852,6 @@ Contains the list of members inherited by the current channel. Uncheck &lt;i&gt;
         <translation>次に、以下の2つのスライダーを調節しましょう。最初の発声は緑(確実に発言と判定)になると良いでしょう。話している最中は黄色(発言だろうと判定)の中に収まり、話していない時はすべて赤(発言ではないと判定)に入っているようにしてください。</translation>
     </message>
     <message>
-        <source>Last, you need to adjust the grace time. Mumble may detect this much non-speech and still keep transmitting before it breaks off. This allows you to catch your breath while speaking.</source>
-        <translation type="obsolete">最後に、猶予時間を調整しましょう。発言以外のものを検出する許容量が上がり、話が途切れずに送信を続けることができるでしょう。これにより、話の間に小休止を入れることができるようになります。</translation>
-    </message>
-    <message>
         <location/>
         <source>Device tuning</source>
         <translation>デバイス調整</translation>
@@ -2809,49 +1862,9 @@ Contains the list of members inherited by the current channel. Uncheck &lt;i&gt;
         <translation>ハードウェアの出力遅延が最小値になるように変更します。</translation>
     </message>
     <message>
-        <source>To keep latency to an absolute minium, it&apos;s important to buffer as little audio as possible on the soundcard. However, many soundcards report that they require a much smaller buffer than what they can actually work with, so the only way to set this value is to try and fail.</source>
-        <translation type="obsolete">遅延を最小限に保つためには、サウンドカード上で音声のバッファを出来るだけ小さくすることが重要です。しかし、多くのサウンドカードが要求してくるバッファは、実際に動作可能な大きさよりかなり小さなものです。結局、この値を設定するにはいろいろ試してみるほかありません。</translation>
-    </message>
-    <message>
-        <source>Amount of data to buffer.</source>
-        <translation type="obsolete">バッファデータの量</translation>
-    </message>
-    <message>
-        <source>This sets the amount of data to prebuffer in the output buffer. Experiment with different values and set it to the lowest which doesn&apos;t cause rapid jitter in the sound.</source>
-        <translation type="obsolete">出力バッファにおけるプリバッファの量を設定します。いろいろな値で試してみて、急に不安定にならない一番小さな値に設定してください。</translation>
-    </message>
-    <message>
-        <source>%1ms</source>
-        <translation type="obsolete">%1ms</translation>
-    </message>
-    <message>
-        <source>%1 s</source>
-        <translation type="obsolete">%1 s</translation>
-    </message>
-    <message>
-        <source>You should hear a single tone that&apos;s changing in frequency. Change the slider below to the lowest value which gives &lt;b&gt;no&lt;/b&gt; interruptions or jitter in the sound. Please note that local echo is disabled during this test to improve audio path recognition.</source>
-        <translation type="obsolete">周波数が変わる1つの音色が聞こえますでしょうか。音が途切れたり不安定に&lt;b&gt;ならない&lt;/b&gt;一番小さな値まで下のスライダーを動かしてください。なお、音声経路の認識率を向上するため、このテストの間ローカルエコーは使えなくなっている事をお忘れなく。</translation>
-    </message>
-    <message>
-        <source>If you position the microphone so it can pick up the speakers or headset, Mumble will measure the total audio path delay in your system; this means the delay from a sample is placed in an outbound buffer until it&apos;s found in a matching incoming buffer.</source>
-        <translation type="obsolete">スピーカーやヘッドセットの出力をマイクが拾ってしまうような配置にしている場合、あなたのシステムで音声経路の遅延が起きていると判断されるでしょう; つまり、対応する受信バッファ内に含まれるまでサンプルが送信バッファに放置されて、遅延をもたらします。</translation>
-    </message>
-    <message>
-        <source>Audio path is %1ms long.</source>
-        <translation type="obsolete">音声経路は %1ms の長さ</translation>
-    </message>
-    <message>
-        <source>Audio path cannot be determined. Input not recognized.</source>
-        <translation type="obsolete">音声経路が決定できません。入力が不明です。</translation>
-    </message>
-    <message>
         <location/>
         <source>Use echo cancellation</source>
         <translation>エコーキャンセルを使う</translation>
-    </message>
-    <message>
-        <source>Cancel echo from headset or speakers.</source>
-        <translation type="obsolete">ヘッドセットやスピーカーからのエコーをキャンセルします。</translation>
     </message>
     <message>
         <location/>
@@ -2994,30 +2007,14 @@ Mumbleは現在開発中であり、開発チームはより多くのユーザ�
 &lt;/p&gt;</translation>
     </message>
     <message>
-        <source>Mumble supports positional audio for some games, and will position the voice of other players relative to their position in game. Depending on their position, the volume of the voice will be changed between the speakers to simulate the direction and distance the other player is at. Such positioning depends on your speaker configuration being correct in your operating system, so a test is done here.</source>
-        <translation type="obsolete">Mumbleは、いくつかのゲームにおいてゲーム内での他プレイヤーの位置に対応した位置音響をサポートします。他プレイヤーの位置によって、方向と距離をシミュレートして音量が変化します。このシミュレーションはお使いのオペレーティング・システムでスピーカーが正しく設定されていることが前提となります。そのテストはここで行うことが出来ます。</translation>
-    </message>
-    <message>
-        <source>The graph below shows the position of &lt;font color=&quot;red&quot;&gt;you&lt;/font&gt;, the &lt;font color=&quot;yellow&quot;&gt;speakers&lt;/font&gt; and a &lt;font color=&quot;green&quot;&gt;moving sound source&lt;/font&gt; as if seen from above. You should hear the audio move between the channels.</source>
-        <translation type="obsolete">このグラフはこれらの位置を表しています: &lt;font color=&quot;red&quot;&gt;あなた&lt;/font&gt;, the &lt;font color=&quot;yellow&quot;&gt;スピーカー&lt;/font&gt; and a &lt;font color=&quot;green&quot;&gt;移動する音の発生源&lt;/font&gt; 上からに見えるようなら、チャンネルの間に移動して聞くのがよいでしょう。</translation>
-    </message>
-    <message>
         <location/>
         <source>Use headphones</source>
         <translation>ヘッドホンを使う</translation>
     </message>
     <message>
-        <source>Use headphones instead of speakers.</source>
-        <translation type="obsolete">スピーカーの代わりにヘッドホンを使う</translation>
-    </message>
-    <message>
         <location/>
         <source>This ignores the OS speaker configuration and configures the positioning for headphones instead.</source>
         <translation>OSのスピーカー構成を無視して、代わりにヘッドホン用の位置設定を使用します。</translation>
-    </message>
-    <message>
-        <source>Mumble is under continuous development, and the development team wants to focus on the features that benefit the most users. To this end, Mumble supports submitting anonymous statistics about your configuration to the developers. These statistcs are essential for future development, and also make sure the features you use aren&apos;t deprecated.</source>
-        <translation type="obsolete">Mumbleは現在開発中であり、開発チームはより多くのユーザの利益となる機能に注力したいと考えています。そのため、匿名で設定に関する統計を送信する機能を追加しました。これらの統計情報は主に将来の開発のために使用されるか、特定の機能が使用されていないかどうかを確認するために使用されます。</translation>
     </message>
     <message>
         <location/>
@@ -3050,25 +2047,9 @@ Mumbleは現在開発中であり、開発チームはより多くのユーザ�
         <translation>低</translation>
     </message>
     <message>
-        <source>In this configuration Mumble will use a &lt;b&gt;low amount of bandwidth&lt;/b&gt;. This will inevitable result in high latency and poor quality. Choose this only if your connection cannot handle the other settings. (Speex 16kbit/s, 60ms per packet)</source>
-        <translation type="obsolete">この設定ではMumbleは&lt;b&gt;少量の帯域&lt;/b&gt;を使います。 これにより当然ながら高い遅延と残念な音質になります。 あなたのネットワーク環境で他の設定がうまく動作しない場合のみこの設定を選んでください。. (Speex 16kbit/s, 60ms / packet)</translation>
-    </message>
-    <message>
         <location/>
         <source>Balanced</source>
         <translation>バランス</translation>
-    </message>
-    <message>
-        <source>This is the &lt;b&gt;recommended default&lt;/b&gt; configuration. It provides a good balance between quality, latency and bandwidth usage. (CELT 40kbit/s, 20ms per packet)</source>
-        <translation type="obsolete">これは&lt;b&gt;標準で推奨される&lt;/b&gt;設定です。音質・遅延と帯域との間に素晴らしいバランスを提供します。 (CELT 40kbit/s, 20ms per packet)</translation>
-    </message>
-    <message>
-        <source>Ultra</source>
-        <translation type="obsolete">ウルトラ</translation>
-    </message>
-    <message>
-        <source>This configuration is only recommended for use in setups where bandwidth is not an issue like a LAN. It provides the lowest latency supported by Mumble and &lt;b&gt;high quality&lt;/b&gt;. (CELT 72kbit/s, 10ms per packet)</source>
-        <translation type="obsolete">この設定はLAN内のような通信帯域が問題とならない状況で使うことが推奨されます。 Mumble がサポートする最小の遅延と&lt;b&gt;高い品質&lt;/b&gt;提供します。. (CELT 72kbit/s, 10ms / packet)</translation>
     </message>
     <message>
         <location/>
@@ -3086,7 +2067,7 @@ Mumbleは現在開発中であり、開発チームはより多くのユーザ�
         <translation>テキスト読み上げを無効にして、代わりにサウンドファイルを再生します。</translation>
     </message>
     <message>
-        <location filename="AudioWizard.cpp" line="+306"/>
+        <location filename="AudioWizard.cpp" line="+309"/>
         <source>%1 ms</source>
         <translation>%1ms</translation>
     </message>
@@ -3096,33 +2077,14 @@ Mumbleは現在開発中であり、開発チームはより多くのユーザ�
         <translation>ユーザが会話しているときに他のアプリケーションの減衰を有効化</translation>
     </message>
     <message>
-        <source>Enables attenuation of other applications while users talk to you. This means that as soon someone is starting to speak to you in mumble the sound of all other applications, like audio players, will get attenuated so you can understand them better.</source>
-        <translation type="obsolete">ユーザが会話しているときに他のアプリケーションの減衰を有効にする。 Mumble で誰かがあなたに話し始めたらすぐに、他のすべてのアプリケーションの音量はあなたが他人の会話を良く理解出来るように減衰されます。</translation>
-    </message>
-    <message>
         <location/>
         <source>Attenuate applications while other users talk</source>
         <translation>他のユーザが話しているとき他のアプリケーションの音量を減らす</translation>
     </message>
     <message>
         <location/>
-        <source>In this configuration Mumble will use a &lt;b&gt;low amount of bandwidth&lt;/b&gt;. This will inevitably result in high latency and poor quality. Choose this only if your connection cannot handle the other settings. (Speex 16kbit/s, 60ms per packet)</source>
-        <translation>この設定ではMumbleは&lt;b&gt;少量の帯域&lt;/b&gt;を使います。 これにより当然ながら高い遅延と残念な音質になります。 あなたのネットワーク環境で他の設定がうまく動作しない場合のみこの設定を選んでください。. (Speex 16kbit/s, 60ms / packet)</translation>
-    </message>
-    <message>
-        <location/>
-        <source>This is the &lt;b&gt;recommended default&lt;/b&gt; configuration. It provides a good balance between quality, latency, and bandwidth usage. (CELT 40kbit/s, 20ms per packet)</source>
-        <translation>これは&lt;b&gt;標準で推奨される&lt;/b&gt;設定です。音質・遅延と帯域との間に素晴らしいバランスを提供します。 (CELT 40kbit/s, 20ms per packet)</translation>
-    </message>
-    <message>
-        <location/>
         <source>High</source>
         <translation>高</translation>
-    </message>
-    <message>
-        <location/>
-        <source>This configuration is only recommended for use in setups where bandwidth is not an issue, like a LAN. It provides the lowest latency supported by Mumble and &lt;b&gt;high quality&lt;/b&gt;. (CELT 72kbit/s, 10ms per packet)</source>
-        <translation>この設定はLAN内のような通信帯域が問題とならない状況で使うことが推奨されます。 Mumble がサポートする最小の遅延と&lt;b&gt;高い品質&lt;/b&gt;提供します。. (CELT 72kbit/s, 10ms / packet)</translation>
     </message>
     <message>
         <location/>
@@ -3171,7 +2133,7 @@ Speak loudly, as when you are annoyed or excited. Decrease the volume in the sou
 &lt;/p&gt;
 </oldsource>
         <comment>For high contrast mode</comment>
-        <translation type="unfinished">&lt;p&gt;
+        <translation>&lt;p&gt;
 ボリュームコントロールパネルを開き、録音設定画面に移動しましょう。そして、マイクが選択されていて、音量が最大になっている事を確認してください。もし&quot;マイクブースト&quot;を有効にするオプションがあるなら、それもチェックされているか確認してください。
 &lt;/p&gt;
 &lt;p&gt;
@@ -3185,15 +2147,25 @@ Speak loudly, as when you are annoyed or excited. Decrease the volume in the sou
         <translation>次に、誰も起こさないようにしている夜中のようにそっと話してみましょう。話している間、バーが空の領域にかかり、静かにしている時は青に留まるように下のスライダーを調整してください。</translation>
     </message>
     <message>
-        <source>Next you need to adjust the following slider. The first few utterances you say should end up in the empty area (definitive speech). While talking, you should stay inside the striped (might be speech) and when you&apos;re not talking, everything should be in the criss-crossed (definitively not speech).</source>
-        <comment>For high contrast mode</comment>
-        <translation type="obsolete">次に、以下の2つのスライダーを調節しましょう。最初の発声は空の領域(確実に発言と判定)になると良いでしょう。話している最中は黄色(発言だろうと判定)の中に収まり、話していない時はすべて赤(発言ではないと判定)に入っているようにしてください。</translation>
-    </message>
-    <message>
         <location/>
         <source>Next you need to adjust the following slider. The first few utterances you say should end up in the empty area (definitive speech). While talking, you should stay inside the striped (might be speech) and when you&apos;re not talking, everything should be in the crisscrossed (definitively not speech).</source>
         <comment>For high contrast mode</comment>
-        <translation type="unfinished">次に、以下の2つのスライダーを調節しましょう。最初の発声は空の領域(確実に発言と判定)になると良いでしょう。話している最中は黄色(発言だろうと判定)の中に収まり、話していない時はすべて赤(発言ではないと判定)に入っているようにしてください。</translation>
+        <translation>次に、以下の2つのスライダーを調節しましょう。最初の発声は空の領域(確実に発言と判定)になると良いでしょう。話している最中は黄色(発言だろうと判定)の中に収まり、話していない時はすべて赤(発言ではないと判定)に入っているようにしてください。</translation>
+    </message>
+    <message>
+        <location/>
+        <source>In this configuration Mumble will use a &lt;b&gt;low amount of bandwidth&lt;/b&gt;. This will inevitably result in high latency and poor quality. Choose this only if your connection cannot handle the other settings. (16kbit/s, 60ms per packet)</source>
+        <translation>この設定ではMumbleは&lt;b&gt;少ない量の帯域&lt;/b&gt;を使うでしょう。必然的に高遅延及び、低品質になります。あなたの接続環境が他の設定を処理できない場合にのみ選択してください。(16kbit/s, 60ms per packet)</translation>
+    </message>
+    <message>
+        <location/>
+        <source>This is the &lt;b&gt;recommended default&lt;/b&gt; configuration. It provides a good balance between quality, latency, and bandwidth usage. (40kbit/s, 20ms per packet)</source>
+        <translation>これは&lt;b&gt;標準の&lt;/b&gt;設定として&lt;b&gt;推奨されます。&lt;/b&gt;音質と遅延、帯域の使用のバランスが良い設定です。(40kbit/s, 20ms per packet)</translation>
+    </message>
+    <message>
+        <location/>
+        <source>This configuration is only recommended for use in setups where bandwidth is not an issue, like a LAN. It provides the lowest latency supported by Mumble and &lt;b&gt;high quality&lt;/b&gt;. (72kbit/s, 10ms per packet)</source>
+        <translation>この設定は帯域を問題としない場所、例えばLANのような場所でのみ使うことを推奨します。Mumbleがサポートする最も低い遅延と&lt;b&gt;高い音質&lt;/b&gt;を提供します。(72kbit/s, 10ms per packet)</translation>
     </message>
 </context>
 <context>
@@ -3244,34 +2216,6 @@ Speak loudly, as when you are annoyed or excited. Decrease the volume in the sou
         <translation>削除(&amp;R)</translation>
     </message>
     <message>
-        <source>&amp;OK</source>
-        <translation type="obsolete">&amp;OK</translation>
-    </message>
-    <message>
-        <source>Accept changes</source>
-        <translation type="obsolete">変更を確定</translation>
-    </message>
-    <message>
-        <source>This button will accept current groups/ACLs and send them to the server. Note that if you mistakenly remove write permission from yourself, the server will add it.</source>
-        <translation type="obsolete">このボタンは現在の グループとACLを 適用しサーバに送信します。もし誤ってあなた自身の書き込み権限を削除してしまうとサーバに追加されてしまいますのでご注意ください。</translation>
-    </message>
-    <message>
-        <source>&amp;Cancel</source>
-        <translation type="obsolete">キャンセル(&amp;C)</translation>
-    </message>
-    <message>
-        <source>Reject changes</source>
-        <translation type="obsolete">変更を破棄</translation>
-    </message>
-    <message>
-        <source>This button will cancels all changes and closes the dialog without updating the ACLs or groups on the server.</source>
-        <translation type="obsolete">このボタンは全ての変更をキャンセルし、サーバのACLやグループを変更せずにダイアログを閉じます。</translation>
-    </message>
-    <message>
-        <source>0.0.0.0</source>
-        <translation type="obsolete">0.0.0.0</translation>
-    </message>
-    <message>
         <location/>
         <source>&amp;Address</source>
         <translation>アドレス(&amp;A)</translation>
@@ -3285,7 +2229,7 @@ Speak loudly, as when you are annoyed or excited. Decrease the volume in the sou
 <context>
     <name>CertView</name>
     <message>
-        <location filename="Cert.cpp" line="+50"/>
+        <location filename="Cert.cpp" line="+53"/>
         <source>Name</source>
         <translation>名前</translation>
     </message>
@@ -3383,7 +2327,7 @@ Speak loudly, as when you are annoyed or excited. Decrease the volume in the sou
         <translation>Mumble ユーザ</translation>
     </message>
     <message>
-        <location filename="main.cpp" line="+405"/>
+        <location filename="main.cpp" line="+454"/>
         <source>&lt;b&gt;Certificate Expiry:&lt;/b&gt; Your certificate is about to expire. You need to renew it, or you will no longer be able to connect to servers you are registered on.</source>
         <translation>&lt;b&gt;証明書の有効期限:&lt;/b&gt;あなたの証明書の有効期限がもうすぐ切れます。証明書を更新する必要があります。さもないとあなたはユーザ登録したサーバに接続できなくなるでしょう。</translation>
     </message>
@@ -3396,10 +2340,6 @@ Speak loudly, as when you are annoyed or excited. Decrease the volume in the sou
         <translation>証明書 管理</translation>
     </message>
     <message>
-        <source>This opens a file selection dialog to choose a file to export the certificate to.</source>
-        <translation type="obsolete">証明書をエクスポートするファイルを選択するためのダイアログを開きます。</translation>
-    </message>
-    <message>
         <location/>
         <source>Certificate Authentication</source>
         <translation>証明書による認証</translation>
@@ -3408,10 +2348,6 @@ Speak loudly, as when you are annoyed or excited. Decrease the volume in the sou
         <location/>
         <source>Authenticating to servers without using passwords</source>
         <translation>パスワードを使わないサーバへのユーザ認証</translation>
-    </message>
-    <message>
-        <source>&lt;p&gt;Mumble can use certificates to authenticate with servers. Using certificates avoids passwords, meaning you don&apos;t need to disclose any password to the remote site. It also enables very easy user registration.&lt;/p&gt;&lt;p&gt;While Mumble can work without certificates, the majority of servers will expect you to have one.&lt;/p&gt;</source>
-        <translation type="obsolete">&lt;p&gt;Mumble はサーバと認証するために証明書を使います。証明書の使用することでパスワードの入力が不要になります。つまりパスワードを使用しないでサーバにアクセスできます。このことでとても簡単にユーザ登録ができるようになります。&lt;/p&gt;&lt;p&gt;Mumble は証明書なしでも動きますが、多くのサーバの管理者はあなたが証明書を持っていることを望んでいます。&lt;/p&gt;</translation>
     </message>
     <message>
         <location/>
@@ -3600,12 +2536,6 @@ Are you sure you wish to replace your certificate?
         <translation>証明書のバックアップを作成</translation>
     </message>
     <message>
-        <source>&lt;p&gt;If you ever lose your current certificate, which will happen if your computer suffers a hardware failure or you reinstall your machine, you will no longer be able to authenticate to any server you are registered on. It is therefore &lt;b&gt;mandatory&lt;/b&gt; that you make a backup of your certificate. We strongly recommend you store this backup on removable storage, such as an USB memory stick.&lt;/p&gt;
-&lt;p&gt;Note that this file will not be encrypted, and if anyone gains access to it, they will be able to impersonate you, so take good care of it.&lt;/p&gt;</source>
-        <translation type="obsolete">&lt;p&gt;現在の証明書をハードウェアの故障やマシンの再インストールなどで失ったなら、登録したサーバから認証を受けることが出来なくなります。そのため、証明書のバックアップを作成することは&lt;b&gt;必須&lt;/b&gt;です。USBメモリのようなリムーバブルストレージに証明書のバックアップを保存することを強く推奨します。&lt;/p&gt;
-&lt;p&gt;このファイルは暗号化されておらず、もし、誰かがアクセスしたら、あなたに成りすます可能性があります。十分に気をつけてください。&lt;/p&gt;</translation>
-    </message>
-    <message>
         <location/>
         <source>Export to</source>
         <translation>エクスポート先</translation>
@@ -3707,56 +2637,16 @@ It is &lt;b&gt;strongly&lt;/b&gt; recommended that you &lt;a href=&quot;http://m
         <location/>
         <source>&lt;p&gt;If you ever lose your current certificate, which will happen if your computer suffers a hardware failure or you reinstall your machine, you will no longer be able to authenticate to any server you are registered on. It is therefore &lt;b&gt;mandatory&lt;/b&gt; that you make a backup of your certificate. We strongly recommend you store this backup on removable storage, such as a USB flash drive.&lt;/p&gt;
 &lt;p&gt;Note that this file will not be encrypted, and if anyone gains access to it, they will be able to impersonate you, so take good care of it.&lt;/p&gt;</source>
-        <translation type="unfinished">&lt;p&gt;現在の証明書をハードウェアの故障やマシンの再インストールなどで失ったなら、登録したサーバから認証を受けることが出来なくなります。そのため、証明書のバックアップを作成することは&lt;b&gt;必須&lt;/b&gt;です。USBメモリのようなリムーバブルストレージに証明書のバックアップを保存することを強く推奨します。&lt;/p&gt;
+        <translation>&lt;p&gt;現在の証明書をハードウェアの故障やマシンの再インストールなどで失ったなら、登録したサーバから認証を受けることが出来なくなります。そのため、証明書のバックアップを作成することは&lt;b&gt;必須&lt;/b&gt;です。USBメモリのようなリムーバブルストレージに証明書のバックアップを保存することを強く推奨します。&lt;/p&gt;
 &lt;p&gt;このファイルは暗号化されておらず、もし、誰かがアクセスしたら、あなたに成りすます可能性があります。十分に気をつけてください。&lt;/p&gt;</translation>
     </message>
 </context>
 <context>
     <name>ChanACL</name>
     <message>
-        <source>W</source>
-        <translation type="obsolete">W</translation>
-    </message>
-    <message>
-        <source>T</source>
-        <translation type="obsolete">T</translation>
-    </message>
-    <message>
-        <source>E</source>
-        <translation type="obsolete">E</translation>
-    </message>
-    <message>
-        <source>S</source>
-        <translation type="obsolete">S</translation>
-    </message>
-    <message>
-        <source>A</source>
-        <translation type="obsolete">A</translation>
-    </message>
-    <message>
-        <source>M</source>
-        <translation type="obsolete">M</translation>
-    </message>
-    <message>
-        <source>K</source>
-        <translation type="obsolete">K</translation>
-    </message>
-    <message>
-        <source>C</source>
-        <translation type="obsolete">C</translation>
-    </message>
-    <message>
-        <source>L</source>
-        <translation type="obsolete">L</translation>
-    </message>
-    <message>
-        <location filename="../ACL.cpp" line="+214"/>
+        <location filename="../ACL.cpp" line="+230"/>
         <source>None</source>
         <translation>なし</translation>
-    </message>
-    <message>
-        <source>Write</source>
-        <translation type="obsolete">ACLの更新</translation>
     </message>
     <message>
         <location line="+4"/>
@@ -3774,17 +2664,9 @@ It is &lt;b&gt;strongly&lt;/b&gt; recommended that you &lt;a href=&quot;http://m
         <translation>発言</translation>
     </message>
     <message>
-        <source>AltSpeak</source>
-        <translation type="obsolete">Alt発言</translation>
-    </message>
-    <message>
         <location line="+4"/>
         <source>Mute/Deafen</source>
         <translation>発言禁止/聴取禁止</translation>
-    </message>
-    <message>
-        <source>Move/Kick</source>
-        <translation type="obsolete">移動/キック</translation>
     </message>
     <message>
         <location line="+4"/>
@@ -3917,52 +2799,18 @@ It is &lt;b&gt;strongly&lt;/b&gt; recommended that you &lt;a href=&quot;http://m
         <translation>自分をユーザ登録</translation>
     </message>
     <message>
-        <source>This represents the permission to speak in a channel with flagged speech. This works exactly like the &lt;i&gt;speak&lt;/i&gt; privilege, but applies to packets spoken with AltPushToTalk held down. This may be used to broadcast to a hierarchy of channels without linking.</source>
-        <translation type="obsolete">このチャンネル内でフラグ付きの発言をする権限を表します。これは&lt;i&gt;発言&lt;/i&gt;権限と全く同じ動作をしますが、Alt+ショートカットキーが押された時のパケットのみに適用されます。これはリンクしていないチャンネルの階層全体に送信をするために使うことが出来ます。</translation>
-    </message>
-    <message>
-        <source>This represents the permission to mute and deafen other players. Once muted, a player will stay muted until he is unmuted by another privileged player or reconnects to the server.</source>
-        <translation type="obsolete">他の人を発言禁止にしたり、聴取禁止にしたりする権限を表します。一度発言禁止になると、他に権限を持った人が発言禁止を解くか、サーバに接続しなおすまで発言禁止のままになります。</translation>
-    </message>
-    <message>
-        <source>This represents the permission to move a player to another channel or kick him from the server. To actually move the player, either the moving player must have Move/Kick privileges in the destination channel, or the player must normally be allowed to enter the channel. Players with this privilege can move players into channels the target player normally wouldn&apos;t have permission to enter.</source>
-        <translation type="obsolete">他の人を別のチャンネルに移動させたり、サーバからキックしたりする権限を表します。実際にプレイヤーを動かすには、実行する人が移動先のチャンネルの移動/キック権限を持っているか、プレイヤーが移動先チャンネルに入る権限を持っていなければなりません。この権限を持っている人は、対象のプレイヤーが通常参加を許可されていないチャンネルに移動させることができます。</translation>
-    </message>
-    <message>
-        <source>This represents the permission to make sub-channels. The player making the sub-channel will be added to the admin group of the sub-channel.</source>
-        <translation type="obsolete">サブチャンネルを作成する権限を表します。サブチャンネルを作った人は、そのチャンネルの管理者グループに追加されます。</translation>
-    </message>
-    <message>
-        <source>This represents the permission to link channels. Players in linked channels hear each other, as long as the speaking player has the &lt;i&gt;speak&lt;/i&gt; privilege in the channel of the listener. You need the link privilege in both channels to create a link, but just in either channel to remove it.</source>
-        <translation type="obsolete">チャンネルをリンクする権限を表します。話している人が聞き手のチャンネルに&lt;i&gt;発言&lt;/i&gt;の権限を持っている限り、リンクされたチャンネルのプレイヤーは互いに聞く事ができます。</translation>
-    </message>
-    <message>
         <location line="-28"/>
         <source>Write ACL</source>
         <translation>ACLの上書き</translation>
     </message>
 </context>
 <context>
-    <name>ChatbarLineEdit</name>
-    <message>
-        <source>Paste and send</source>
-        <translation type="obsolete">貼り付けて送信</translation>
-    </message>
-    <message>
-        <source>&lt;center&gt;Type chat message here&lt;/center&gt;</source>
-        <translation type="obsolete">&lt;center&gt;ここにメッセージを入力&lt;/center&gt;</translation>
-    </message>
-    <message>
-        <source>Type chat message here</source>
-        <translation type="obsolete">ここにメッセージを入力</translation>
-    </message>
-</context>
-<context>
     <name>ChatbarTextEdit</name>
     <message>
-        <location filename="CustomElements.cpp" line="+104"/>
-        <source>Paste and send</source>
-        <translation>貼り付けて送信</translation>
+        <location filename="CustomElements.cpp" line="+108"/>
+        <source>Paste and &amp;Send</source>
+        <oldsource>Paste and send</oldsource>
+        <translation>貼り付けて送信(&amp;S)</translation>
     </message>
     <message>
         <location line="+25"/>
@@ -3971,36 +2819,9 @@ It is &lt;b&gt;strongly&lt;/b&gt; recommended that you &lt;a href=&quot;http://m
     </message>
 </context>
 <context>
-    <name>ClientPlayer</name>
-    <message>
-        <source>Authenticated</source>
-        <translation type="obsolete">認証済み</translation>
-    </message>
-    <message>
-        <source>Muted (server)</source>
-        <translation type="obsolete">発言禁止 (server)</translation>
-    </message>
-    <message>
-        <source>Deafened (server)</source>
-        <translation type="obsolete">聴取禁止 (server)</translation>
-    </message>
-    <message>
-        <source>Local Mute</source>
-        <translation type="obsolete">ローカルでの発言禁止</translation>
-    </message>
-    <message>
-        <source>Muted (self)</source>
-        <translation type="obsolete">発言禁止(セルフ)</translation>
-    </message>
-    <message>
-        <source>Deafened (self)</source>
-        <translation type="obsolete">聴取禁止(セルフ)</translation>
-    </message>
-</context>
-<context>
     <name>ClientUser</name>
     <message>
-        <location filename="ClientUser.cpp" line="+142"/>
+        <location filename="ClientUser.cpp" line="+134"/>
         <source>Friend</source>
         <translation>フレンド</translation>
     </message>
@@ -4031,6 +2852,11 @@ It is &lt;b&gt;strongly&lt;/b&gt; recommended that you &lt;a href=&quot;http://m
     </message>
     <message>
         <location line="+2"/>
+        <source>Local Ignore (Text messages)</source>
+        <translation>ローカルで無視（テキストメッセージ）</translation>
+    </message>
+    <message>
+        <location line="+2"/>
         <source>Local Mute</source>
         <translation>ローカルでの発言禁止</translation>
     </message>
@@ -4054,98 +2880,11 @@ It is &lt;b&gt;strongly&lt;/b&gt; recommended that you &lt;a href=&quot;http://m
     </message>
     <message>
         <location/>
-        <location filename="ConfigDialogDelegate.mm" line="+142"/>
         <source>Advanced</source>
         <translation>高度な設定を表示する</translation>
     </message>
     <message>
-        <source>&amp;OK</source>
-        <translation type="obsolete">&amp;OK</translation>
-    </message>
-    <message>
-        <location filename="ConfigDialog.cpp" line="+52"/>
-        <source>Accept changes</source>
-        <translation>変更を確定</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>This button will accept current settings and return to the application.&lt;br /&gt;The settings will be stored to disk when you leave the application.</source>
-        <translation>このボタンは現在の設定を適用してアプリケーションに戻ります。&lt;br /&gt;この設定はアプリケーションを終了してもディスクに保存されます。</translation>
-    </message>
-    <message>
-        <source>&amp;Cancel</source>
-        <translation type="obsolete">キャンセル(&amp;C)</translation>
-    </message>
-    <message>
-        <location line="+4"/>
-        <source>Reject changes</source>
-        <translation>変更を破棄</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>This button will reject all changes and return to the application.&lt;br /&gt;The settings will be reset to the previous positions.</source>
-        <translation>このボタンは変更を破棄してアプリケーションに戻ります。&lt;br /&gt;設定は前の状態に戻ります。</translation>
-    </message>
-    <message>
-        <source>&amp;Apply</source>
-        <translation type="obsolete">適用(&amp;A)</translation>
-    </message>
-    <message>
-        <location line="+4"/>
-        <source>Apply changes</source>
-        <translation>変更を適用</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>This button will immediately apply all changes.</source>
-        <translation>全ての変更を、すぐに適用します。</translation>
-    </message>
-    <message>
-        <location line="+3"/>
-        <source>Undo changes for current page</source>
-        <translation>このページの変更を元に戻す</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>This button will revert any changes done on the current page to the most recent applied settings.</source>
-        <translation>このボタンは、現在のページで最後に適用した変更を元に戻します。</translation>
-    </message>
-    <message>
-        <location line="+3"/>
-        <source>Restore defaults for current page</source>
-        <translation>このページをデフォルト設定に戻す</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>This button will restore the defaults for the settings on the current page. Other pages will not be changed.&lt;br /&gt;To restore all settings to their defaults, you will have to use this button on every page.</source>
-        <oldsource>This button will restore the settings for the current page only to their defaults. Other pages will not be changed.&lt;br /&gt;To restore all settings to their defaults, you will have to use this button on every page.</oldsource>
-        <translation type="unfinished">このボタンは現在のページの設定をデフォルトに戻します。他のページは変更されません。&lt;br /&gt;全ての設定をデフォルト戻すには、各ページでこのボタンを使わなければなりません。</translation>
-    </message>
-    <message>
-        <source>This button will restore the settings for the current page only to their defaults. Other pages will be not be changed.&lt;br /&gt;To restore all settings to their defaults, you will have to use this button on every page.</source>
-        <translation type="obsolete">このボタンは現在のページの設定をデフォルトに戻します。他のページは変更されません。&lt;br /&gt;全ての設定をデフォルト戻すには、各ページでこのボタンを使わなければなりません。</translation>
-    </message>
-    <message>
-        <source>Show all configuration items</source>
-        <translation type="obsolete">全ての設定項目を表示</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;This will show all configuration items.&lt;/b&gt;&lt;br /&gt;Mumble contains a lot of configuration items that most users won&apos;t need to change. Checking this will show all configurable items.</source>
-        <translation type="obsolete">&lt;b&gt;全ての設定項目を表示します。&lt;/b&gt;&lt;br /&gt;Mumbleは大部分のユーザが変更する必要のない設定項目を多く含んでいます。ここにチェックを入れると全ての設定項目を表示します。</translation>
-    </message>
-    <message>
-        <source>Expert Config</source>
-        <translation type="obsolete">上級者向け設定</translation>
-    </message>
-    <message>
-        <source>Tab 1</source>
-        <translation type="obsolete">Tab 1</translation>
-    </message>
-</context>
-<context>
-    <name>ConfigDialogMac</name>
-    <message>
-        <location filename="ConfigDialog_macx.mm" line="+70"/>
+        <location filename="ConfigDialog.cpp" line="+55"/>
         <source>Accept changes</source>
         <translation>変更を確定</translation>
     </message>
@@ -4193,89 +2932,29 @@ It is &lt;b&gt;strongly&lt;/b&gt; recommended that you &lt;a href=&quot;http://m
         <location line="+1"/>
         <source>This button will restore the defaults for the settings on the current page. Other pages will not be changed.&lt;br /&gt;To restore all settings to their defaults, you will have to use this button on every page.</source>
         <oldsource>This button will restore the settings for the current page only to their defaults. Other pages will not be changed.&lt;br /&gt;To restore all settings to their defaults, you will have to use this button on every page.</oldsource>
-        <translation type="unfinished">このボタンは現在のページの設定をデフォルトに戻します。他のページは変更されません。&lt;br /&gt;全ての設定をデフォルト戻すには、各ページでこのボタンを使わなければなりません。</translation>
+        <translation>このボタンは現在のページの設定をデフォルトに戻します。他のページは変更されません。&lt;br /&gt;全ての設定をデフォルト戻すには、各ページでこのボタンを使わなければなりません。</translation>
     </message>
 </context>
 <context>
     <name>ConnectDialog</name>
     <message>
-        <source>&amp;Name</source>
-        <translation type="obsolete">名前(&amp;N)</translation>
-    </message>
-    <message>
-        <source>A&amp;ddress</source>
-        <translation type="obsolete">アドレス(&amp;D)</translation>
-    </message>
-    <message>
-        <source>&amp;Port</source>
-        <translation type="obsolete">ポート(&amp;P)</translation>
-    </message>
-    <message>
-        <source>&amp;Username</source>
-        <translation type="obsolete">ユーザ名(&amp;U)</translation>
-    </message>
-    <message>
-        <source>&amp;Password</source>
-        <translation type="obsolete">パスワード(&amp;P)</translation>
-    </message>
-    <message>
-        <location filename="ConnectDialog.cpp" line="+780"/>
+        <location filename="ConnectDialog.cpp" line="+766"/>
         <source>&amp;Connect</source>
         <translation>接続(&amp;C)</translation>
     </message>
     <message>
-        <source>Cancel</source>
-        <translation type="obsolete">キャンセル</translation>
-    </message>
-    <message>
-        <source>&amp;Add</source>
-        <translation type="obsolete">追加(&amp;A)</translation>
-    </message>
-    <message>
-        <source>&amp;Remove</source>
-        <translation type="obsolete">削除(&amp;R)</translation>
-    </message>
-    <message>
-        <source>&amp;Custom Servers</source>
-        <translation type="obsolete">お気に入りサーバ(&amp;C)</translation>
-    </message>
-    <message>
-        <source>Server &amp;Browser</source>
-        <translation type="obsolete">サーバブラウザ(&amp;B)</translation>
-    </message>
-    <message>
-        <source>Name</source>
-        <translation type="obsolete">名前</translation>
-    </message>
-    <message>
-        <source>Address</source>
-        <translation type="obsolete">アドレス</translation>
-    </message>
-    <message>
-        <source>URL</source>
-        <translation type="obsolete">URL</translation>
-    </message>
-    <message>
-        <source>C&amp;opy to custom</source>
-        <translation type="obsolete">お気に入りにコピー(&amp;O)</translation>
-    </message>
-    <message>
-        <source>&amp;View Webpage</source>
-        <translation type="obsolete">ウェブサイトを見る(&amp;V)</translation>
-    </message>
-    <message>
-        <location line="+133"/>
+        <location line="+140"/>
         <source>Connecting to %1</source>
         <translation>%1に接続中</translation>
     </message>
     <message>
-        <location line="-508"/>
-        <location line="+508"/>
+        <location line="-515"/>
+        <location line="+515"/>
         <source>Enter username</source>
         <translation>ユーザ名を入力してください</translation>
     </message>
     <message>
-        <location line="-508"/>
+        <location line="-515"/>
         <source>Adding host %1</source>
         <translation>ホスト %1 を追加中</translation>
     </message>
@@ -4342,13 +3021,13 @@ It is &lt;b&gt;strongly&lt;/b&gt; recommended that you &lt;a href=&quot;http://m
         <translation></translation>
     </message>
     <message>
-        <location line="+332"/>
+        <location line="+339"/>
         <source>&amp;Filters</source>
         <translation>フィルタ(&amp;F)</translation>
     </message>
     <message>
         <location filename="ConnectDialog.ui"/>
-        <location filename="ConnectDialog.cpp" line="-331"/>
+        <location filename="ConnectDialog.cpp" line="-338"/>
         <source>Users</source>
         <translation>ユーザ</translation>
     </message>
@@ -4358,41 +3037,9 @@ It is &lt;b&gt;strongly&lt;/b&gt; recommended that you &lt;a href=&quot;http://m
         <translation>バージョン</translation>
     </message>
     <message>
-        <source>Connect</source>
-        <translation type="obsolete">接続</translation>
-    </message>
-    <message>
-        <source>Add New...</source>
-        <translation type="obsolete">新しく追加 ...</translation>
-    </message>
-    <message>
-        <source>Filters</source>
-        <translation type="obsolete">フィルタ</translation>
-    </message>
-    <message>
-        <source>Mumble</source>
-        <translation type="obsolete">Mumble</translation>
-    </message>
-    <message>
-        <location line="+1002"/>
+        <location line="+1015"/>
         <source>Failed to fetch server list</source>
         <translation>サーバリストを取得出来ませんでした</translation>
-    </message>
-    <message>
-        <source>&amp;Label</source>
-        <translation type="obsolete">ラベル(&amp;L)</translation>
-    </message>
-    <message>
-        <source>Label</source>
-        <translation type="obsolete">ラベル</translation>
-    </message>
-    <message>
-        <source>Unknown</source>
-        <translation type="obsolete">不明</translation>
-    </message>
-    <message>
-        <source>-Unnamed entry-</source>
-        <translation type="obsolete">-Unnamed entry-</translation>
     </message>
     <message>
         <location filename="ConnectDialog.ui"/>
@@ -4410,25 +3057,9 @@ It is &lt;b&gt;strongly&lt;/b&gt; recommended that you &lt;a href=&quot;http://m
         <translation>お気に入りから削除する</translation>
     </message>
     <message>
-        <source>Edit...</source>
-        <translation type="obsolete">編集...</translation>
-    </message>
-    <message>
         <location/>
         <source>Add custom server</source>
         <translation>カスタムサーバを追加</translation>
-    </message>
-    <message>
-        <source>Add to Favorites</source>
-        <translation type="obsolete">お気に入りに追加</translation>
-    </message>
-    <message>
-        <source>Open Webpage</source>
-        <translation type="obsolete">Webページを開く</translation>
-    </message>
-    <message>
-        <source>Show Reachable</source>
-        <translation type="obsolete">到達可能なものを表示する</translation>
     </message>
     <message>
         <location/>
@@ -4436,17 +3067,9 @@ It is &lt;b&gt;strongly&lt;/b&gt; recommended that you &lt;a href=&quot;http://m
         <translation>ping に応答する全てのサーバを表示します</translation>
     </message>
     <message>
-        <source>Show Populated</source>
-        <translation type="obsolete">ユーザのいるサーバを表示</translation>
-    </message>
-    <message>
         <location/>
         <source>Show all servers with users</source>
         <translation>ユーザがいる全てのサーバを表示します</translation>
-    </message>
-    <message>
-        <source>Show All</source>
-        <translation type="obsolete">全て表示</translation>
     </message>
     <message>
         <location/>
@@ -4474,29 +3097,14 @@ It is &lt;b&gt;strongly&lt;/b&gt; recommended that you &lt;a href=&quot;http://m
         <translation>クリップボードからお気に入りへペースト</translation>
     </message>
     <message>
-        <source>&amp;Cancel</source>
-        <translation type="obsolete">キャンセル(&amp;C)</translation>
-    </message>
-    <message>
-        <source>New</source>
-        <translation type="obsolete">新規</translation>
-    </message>
-    <message>
-        <source>Add</source>
-        <translation type="obsolete">追加</translation>
-    </message>
-    <message>
-        <source>Update</source>
-        <translation type="obsolete">更新</translation>
-    </message>
-    <message>
         <location/>
+        <location filename="ConnectDialog.cpp" line="-716"/>
         <source>&amp;Edit...</source>
         <translation>編集(&amp;E)...</translation>
     </message>
     <message>
         <location/>
-        <location filename="ConnectDialog.cpp" line="-709"/>
+        <location filename="ConnectDialog.cpp" line="-6"/>
         <source>&amp;Add New...</source>
         <translation>新しく追加(&amp;A) ...</translation>
     </message>
@@ -4537,12 +3145,6 @@ It is &lt;b&gt;strongly&lt;/b&gt; recommended that you &lt;a href=&quot;http://m
         <location/>
         <source>Name of the server</source>
         <translation>サーバの名前</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Name&lt;/b&gt;&lt;br/&gt;
-Name of the server. This is what the server will be named like in your serverlist and can be chosen freely.</source>
-        <translation type="obsolete">&lt;b&gt;名前&lt;/b&gt;&lt;br/&gt;
-サーバの名前。これはサーバリスト上でサーバの名前であり、自由に変更が可能です。</translation>
     </message>
     <message>
         <location/>
@@ -4604,13 +3206,6 @@ Username to send to the server. Be aware that the server can impose restrictions
         <translation>ラベル</translation>
     </message>
     <message>
-        <source>&lt;b&gt;Label&lt;/b&gt;&lt;br/&gt;
-Label of the server. This is what the server will be named like in your serverlist and can be chosen freely.</source>
-        <translation type="obsolete">&lt;b&gt;ラベル&lt;/b&gt;&lt;br /&gt;
-そのサーバのラベルです。あなたのサーバリスト上でどのようにそのサーバが名前をつけるもので
-自由に選べます。</translation>
-    </message>
-    <message>
         <location filename="ConnectDialog.cpp" line="-75"/>
         <source>Add Server</source>
         <translation>サーバの追加</translation>
@@ -4623,25 +3218,25 @@ Label of the server. This is what the server will be named like in your serverli
     <message>
         <location/>
         <source>Password to send to the server</source>
-        <translation type="unfinished">サーバに送信するパスワード</translation>
+        <translation>サーバに送信するパスワード</translation>
     </message>
     <message>
         <location/>
         <source>&lt;b&gt;Password&lt;/b&gt;&lt;br/&gt;
 Password to be sent to the server on connect. This password is needed when connecting as &lt;i&gt;SuperUser&lt;/i&gt; or to a server using password authentication. If not entered here the password will be queried on connect.</source>
-        <translation type="unfinished">&lt;b&gt;Password&lt;/b&gt;&lt;br /&gt;
+        <translation>&lt;b&gt;Password&lt;/b&gt;&lt;br /&gt;
 接続したサーバに送信されるパスワードです。このパスワードはSuperUserとして接続するときやパスワード認証を使うサーバに接続するとき必要です。パスワードをここに入力しなければ接続時に要求されます。</translation>
     </message>
     <message>
         <location/>
         <source>Show password</source>
-        <translation type="unfinished">パスワードを表示する</translation>
+        <translation>パスワードを表示する</translation>
     </message>
     <message>
         <location/>
         <source>&lt;b&gt;Label&lt;/b&gt;&lt;br/&gt;
 Label of the server. This is what the server will be named like in your server list and can be chosen freely.</source>
-        <translation type="unfinished">&lt;b&gt;ラベル&lt;/b&gt;&lt;br /&gt;
+        <translation>&lt;b&gt;ラベル&lt;/b&gt;&lt;br /&gt;
 そのサーバのラベルです。あなたのサーバリスト上でどのようにそのサーバが名前をつけるもので
 自由に選べます。</translation>
     </message>
@@ -4649,7 +3244,7 @@ Label of the server. This is what the server will be named like in your server l
 <context>
     <name>CoreAudioSystem</name>
     <message>
-        <location filename="CoreAudio.cpp" line="+83"/>
+        <location filename="CoreAudio.cpp" line="+87"/>
         <source>Default Device</source>
         <translation>デフォルトデバイス</translation>
     </message>
@@ -4657,7 +3252,7 @@ Label of the server. This is what the server will be named like in your server l
 <context>
     <name>CrashReporter</name>
     <message>
-        <location filename="CrashReporter.cpp" line="+37"/>
+        <location filename="CrashReporter.cpp" line="+40"/>
         <source>Mumble Crash Report</source>
         <translatorcomment>ここは翻訳しないでください。翻訳すると日本語でエラーレポートを送って良いとユーザが誤解するかもしれません。</translatorcomment>
         <translation></translation>
@@ -4728,25 +3323,17 @@ Label of the server. This is what the server will be named like in your server l
 <context>
     <name>DXAudioInput</name>
     <message>
-        <source>Mumble</source>
-        <translation type="obsolete">Mumble</translation>
-    </message>
-    <message>
-        <source>Opening chosen DirectSound Input failed. No microphone capture will be done.</source>
-        <translation type="obsolete">選択されたDirectSound Inputのオープンに失敗しました。マイクからの入力は行われません。</translation>
-    </message>
-    <message>
-        <location filename="DirectSound.cpp" line="+551"/>
+        <location filename="DirectSound.cpp" line="+541"/>
         <source>Opening chosen DirectSound Input failed. Default device will be used.</source>
         <translation>選択されたDirectSound Inputのオープンに失敗しました。デフォルトのデバイスが使用されます。</translation>
     </message>
     <message>
-        <location line="-382"/>
+        <location line="-368"/>
         <source>Default DirectSound Voice Input</source>
         <translation>デフォルトのDirectSound音声入力</translation>
     </message>
     <message>
-        <location line="+461"/>
+        <location line="+451"/>
         <source>Opening chosen DirectSound Input device failed. No microphone capture will be done.</source>
         <translation>DirectSound入力デバイスのオープンに失敗しました。 マイクの取得ができませんでした。</translation>
     </message>
@@ -4759,189 +3346,30 @@ Label of the server. This is what the server will be named like in your server l
 <context>
     <name>DXAudioOutput</name>
     <message>
-        <source>Mumble</source>
-        <translation type="obsolete">Mumble</translation>
-    </message>
-    <message>
-        <location line="-167"/>
+        <location line="-166"/>
         <source>Opening chosen DirectSound Output failed. No audio will be heard.</source>
         <translation>選択されたDirectSound出力のオープンに失敗しました。音声は出力されません。</translation>
     </message>
     <message>
-        <location line="-82"/>
+        <location line="-77"/>
         <source>Opening chosen DirectSound Output failed. Default device will be used.</source>
         <translation>選択されたDirectSound出力のオープンに失敗しました。音声は出力されません。</translation>
     </message>
     <message>
-        <location line="-247"/>
+        <location line="-243"/>
         <source>Default DirectSound Voice Output</source>
         <translation>デフォルトのDirectSound音声出力</translation>
     </message>
     <message>
-        <location line="+325"/>
+        <location line="+316"/>
         <source>Lost DirectSound output device.</source>
         <translation>DirectSound出力デバイスを失いました。</translation>
     </message>
 </context>
 <context>
-    <name>DXConfigDialog</name>
-    <message>
-        <source>Default DirectSound Voice Input</source>
-        <translation type="obsolete">デフォルトのDirectSound音声入力</translation>
-    </message>
-    <message>
-        <source>Default DirectSound Voice Output</source>
-        <translation type="obsolete">デフォルトのDirectSound音声出力</translation>
-    </message>
-    <message>
-        <source>Device selection</source>
-        <translation type="obsolete">デバイス選択</translation>
-    </message>
-    <message>
-        <source>Device to use for microphone</source>
-        <translation type="obsolete">マイクを使用するデバイス</translation>
-    </message>
-    <message>
-        <source>This sets the input device to use, which is where you have connected the microphone.</source>
-        <translation type="obsolete">使用する入力デバイスを設定します。これは、マイクを接続しているデバイスです。</translation>
-    </message>
-    <message>
-        <source>Input</source>
-        <translation type="obsolete">入力</translation>
-    </message>
-    <message>
-        <source>Device to use for speakers/headphones</source>
-        <translation type="obsolete">スピーカー/ヘッドホンに使用するデバイス</translation>
-    </message>
-    <message>
-        <source>This sets the output device to use, which is where you have connected your speakers or your headset.</source>
-        <translation type="obsolete">使用する出力デバイスを設定します。これは、あなたのスピーカ(もしくはヘッドホン)が接続しているデバイスです。</translation>
-    </message>
-    <message>
-        <source>Output</source>
-        <translation type="obsolete">出力</translation>
-    </message>
-    <message>
-        <source>Output Options</source>
-        <translation type="obsolete">出力オプション</translation>
-    </message>
-    <message>
-        <source>Output Delay</source>
-        <translation type="obsolete">出力猶予</translation>
-    </message>
-    <message>
-        <source>Amount of data to buffer for DirectSound</source>
-        <translation type="obsolete">DirectSoundのバッファデータの量</translation>
-    </message>
-    <message>
-        <source>This sets the amount of data to prebuffer in the DirectSound buffer. Experiment with different values and set it to the lowest which doesn&apos;t cause rapid jitter in the sound.</source>
-        <translation type="obsolete">DirectSoundバッファにおけるプリバッファの量を設定します。いろいろな値で試してみて、急に不安定にならない一番小さな値に設定してください。</translation>
-    </message>
-    <message>
-        <source>Positional Audio</source>
-        <translation type="obsolete">位置音響</translation>
-    </message>
-    <message>
-        <source>None</source>
-        <translation type="obsolete">なし</translation>
-    </message>
-    <message>
-        <source>Panning</source>
-        <translation type="obsolete">パンニング</translation>
-    </message>
-    <message>
-        <source>Light HRTF</source>
-        <translation type="obsolete">少量のHRTF</translation>
-    </message>
-    <message>
-        <source>Full HRTF</source>
-        <translation type="obsolete">フルHRTF</translation>
-    </message>
-    <message>
-        <source>3D Sound Algorithm</source>
-        <translation type="obsolete">3Dサウンドのアルゴリズム</translation>
-    </message>
-    <message>
-        <source>This sets what 3D Sound algorithm to use.&lt;br /&gt;&lt;b&gt;None&lt;/b&gt; - Disable 3D Sound (least CPU).&lt;br /&gt;&lt;b&gt;Panning&lt;/b&gt; - Just use stereo panning (some CPU).&lt;br /&gt;&lt;b&gt;Light/Full HRTF&lt;/b&gt; - Head-Related Transfer Functions enabled. This may use a small amount of CPU.&lt;br /&gt;Note that if you have a soundcard with &lt;i&gt;hardware&lt;/i&gt; 3D processing, HRTF processing will be done on the soundcard and will use practically no processing power.</source>
-        <translation type="obsolete">3Dサウンドのアルゴリズムに何を使用するか設定します。&lt;br /&gt;&lt;b&gt;なし&lt;/b&gt; - 3Dサウンドを使いません(最小のCPU消費)。&lt;br /&gt;&lt;b&gt;パンニング&lt;/b&gt; - ステレオパンニングだけを使います(若干のCPU消費)。&lt;br /&gt;&lt;b&gt;少量の/フル HRTF&lt;/b&gt; - 頭部伝達関数(Head-Related Transfer Functions)を使用します。これは、少量のCPU消費を伴うことがあります。&lt;br /&gt;&lt;i&gt;ハードウェア&lt;/i&gt;3D処理に対応したサウンドカードをお使いの場合、HRTFはサウンドカードで処理され、CPUパワーをほとんど使いません。</translation>
-    </message>
-    <message>
-        <source>Method</source>
-        <translation type="obsolete">方式</translation>
-    </message>
-    <message>
-        <source>MinDistance</source>
-        <translation type="obsolete">最小距離</translation>
-    </message>
-    <message>
-        <source>Minimum distance to player before sound decreases</source>
-        <translation type="obsolete">音が小さくなる前のプレイヤーへの最小距離</translation>
-    </message>
-    <message>
-        <source>This sets the minimum distance for sound calculations. The volume of other players&apos; speech will not decrease until they are at least this far away from you.</source>
-        <translation type="obsolete">サウンドの計算に使う最小距離を設定します。少なくともこの距離だけ離れていれば、他のプレイヤーの音声は減衰しません。</translation>
-    </message>
-    <message>
-        <source>MaxDistance</source>
-        <translation type="obsolete">最大距離</translation>
-    </message>
-    <message>
-        <source>Maximum distance, beyond which sound won&apos;t decrease</source>
-        <translation type="obsolete">音が小さくならない最大距離</translation>
-    </message>
-    <message>
-        <source>This sets the maximum distance for sound calculations. When farther away than this, other players&apos; sound volume will not decrease any more.</source>
-        <translation type="obsolete">サウンドの計算に使う最大距離を設定します。これよりも遠くなると、他のプレイヤーの音声はこれ以上減衰しなくなります。</translation>
-    </message>
-    <message>
-        <source>RollOff</source>
-        <translation type="obsolete">ロールオフ</translation>
-    </message>
-    <message>
-        <source>Factor for sound volume decrease</source>
-        <translation type="obsolete">ボリューム減少の割合</translation>
-    </message>
-    <message>
-        <source>How fast should sound volume drop when passing beyond the minimum distance. The normal (1.0) is that sound volume halves each time the distance doubles. Increasing this value means sound volume drops faster, while decreasing it means it drops slower.</source>
-        <translation type="obsolete">最小距離を超えた時、音量がどのくらい落ちるかについての値です。普通(1.0)の設定では距離が2倍になるたびに音量は半分になります。これを大きくすると音量の落ち込みが速くなり、小さくすると音量の落ち込みは遅くなります。</translation>
-    </message>
-    <message>
-        <source>DirectSound</source>
-        <translation type="obsolete">DirectSound</translation>
-    </message>
-    <message>
-        <source>%1ms</source>
-        <translation type="obsolete">%1ms</translation>
-    </message>
-    <message>
-        <source>%1m</source>
-        <translation type="obsolete">%1м</translation>
-    </message>
-    <message>
-        <source>%1</source>
-        <translation type="obsolete">%1</translation>
-    </message>
-    <message>
-        <source>Players more than %1 meters away have %2% intensity</source>
-        <translation type="obsolete">%1 メートル以上離れたプレイヤーで %2% の強さ</translation>
-    </message>
-    <message>
-        <source>Form</source>
-        <translation type="obsolete">フォーム</translation>
-    </message>
-    <message>
-        <source>TextLabel</source>
-        <translation type="obsolete">テキストラベル</translation>
-    </message>
-</context>
-<context>
     <name>Database</name>
     <message>
-        <source>Mumble</source>
-        <translation type="obsolete">Mumble</translation>
-    </message>
-    <message>
-        <location filename="Database.cpp" line="+86"/>
+        <location filename="Database.cpp" line="+89"/>
         <source>Mumble failed to initialize a database in any
 of the possible locations.</source>
         <translation>Mumble: データベースの初期化が可能な場所がなく、
@@ -4952,14 +3380,7 @@ of the possible locations.</source>
         <location line="+7"/>
         <source>The database &apos;%1&apos; is read-only. Mumble cannot store server settings (i.e. SSL certificates) until you fix this problem.</source>
         <oldsource>The database &apos;%1&apos; is read-only. Mumble can not store server settings (ie. SSL certificates) until you fix this problem.</oldsource>
-        <translation type="unfinished">データベース &quot;%1&quot; は読み込み専用です。 この問題を修正するまで、Mumble はサーバの設定（例えばSSL証明書）を保存できません。</translation>
-    </message>
-</context>
-<context>
-    <name>DirectInputKeyWidget</name>
-    <message>
-        <source>Press Shortcut</source>
-        <translation type="obsolete">DirectInputKeyウィジェット</translation>
+        <translation>データベース &quot;%1&quot; は読み込み専用です。 この問題を修正するまで、Mumble はサーバの設定（例えばSSL証明書）を保存できません。</translation>
     </message>
 </context>
 <context>
@@ -5032,40 +3453,36 @@ of the possible locations.</source>
         <source>&amp;Remove</source>
         <translation>削除(&amp;R)</translation>
     </message>
+    <message>
+        <location/>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Mumble can currently only use mouse buttons and keyboard modifier keys (Alt, Ctrl, Cmd, etc.) for global shortcuts.&lt;/p&gt;&lt;p&gt;If you want more flexibility, you can enable &lt;span style=&quot; font-style:italic;&quot;&gt;Access for assistive devices&lt;/span&gt; in the system&apos;s Accessibility preferences. However, please note that this change also potentially allows malicious programs to read what is typed on your keyboard.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Mumbleはマウスボタンとキーボードの修飾キー（Alt、Ctrl、Cmdなど）のみを使用できます。&lt;/p&gt;&lt;p&gt;より柔軟に設定したいなら、システム環境設定のアクセシビリティの&lt;span style=&quot; font-style:italic;&quot;&gt;補助装置にアクセスできるようにする&lt;/span&gt;を有効にできる。しかし、この変更は悪意のあるプログラムがあなたがキーボードでタイプした内容を読み取ることを許すことに注意してください。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <location/>
+        <source>Open Accessibility Preferences</source>
+        <translation>アクセシビリティ設定を開く</translation>
+    </message>
+    <message>
+        <location/>
+        <source>Skip</source>
+        <translation>スキップ</translation>
+    </message>
+    <message>
+        <location/>
+        <source>Enable Global Shortcuts</source>
+        <translation>グローバルショートカットを有効にする</translation>
+    </message>
 </context>
 <context>
     <name>GlobalShortcutConfig</name>
     <message>
-        <location filename="GlobalShortcut.cpp" line="+654"/>
+        <location filename="GlobalShortcut.cpp" line="+721"/>
         <source>Shortcuts</source>
         <translation>ショートカット</translation>
     </message>
     <message>
-        <source>Function</source>
-        <translation type="obsolete">機能</translation>
-    </message>
-    <message>
-        <source>Shortcut</source>
-        <translation type="obsolete">ショートカット</translation>
-    </message>
-    <message>
-        <source>Shortcut bound to %1.</source>
-        <translation type="obsolete">%1 に登録されているショートカット</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;This is the global shortcut bound to %1&lt;/b&gt;&lt;br /&gt;Click this field and then the desired key/button combo to rebind. Double-click to clear.</source>
-        <translation type="obsolete">&lt;b&gt;%1 に登録するショートカットキーです。&lt;/b&gt;&lt;br /&gt;このフィールドをクリックして希望のキー/ボタンの組み合わせを押すと登録できます。ダブルクリックで削除します。</translation>
-    </message>
-    <message>
-        <source>Double-click an entry to clear the shortcut.</source>
-        <translation type="obsolete">項目をダブルクリックするとショートカットを削除します。</translation>
-    </message>
-    <message>
-        <source>Suppress</source>
-        <translation type="obsolete">抑制</translation>
-    </message>
-    <message>
-        <location line="+38"/>
+        <location line="+52"/>
         <source>Shortcut button combination.</source>
         <translation>ショートカットボタンの組み合わせ。</translation>
     </message>
@@ -5084,13 +3501,6 @@ of the possible locations.</source>
         <location line="+1"/>
         <source>&lt;b&gt;This hides the button presses from other applications.&lt;/b&gt;&lt;br /&gt;Enabling this will hide the button (or the last button of a multi-button combo) from other applications. Note that not all buttons can be suppressed.</source>
         <translation>&lt;b&gt;他のアプリケーションで押されたボタンを隠します.&lt;/b&gt;&lt;br /&gt;この設定を有効にすると、他のアプリケーションで押されたボタン(または、複数ボタンの組み合わせの最後のもの)を隠します. 全てのボタンを抑制できるわけではないことにご注意ください。</translation>
-    </message>
-</context>
-<context>
-    <name>GlobalShortcutMacInit</name>
-    <message>
-        <source>Mumble has detected that it is unable to receive Global Shortcut events when it is in the background.&lt;br /&gt;&lt;br /&gt;This is because the Universal Access feature called &apos;Enable access for assistive devices&apos; is currently disabled.&lt;br /&gt;&lt;br /&gt;Please &lt;a href=&quot; &quot;&gt;enable this setting&lt;/a&gt; and continue when done.</source>
-        <translation type="obsolete">バックグラウンドでグローバルなショートカットイベントが発生し、受け入れることができませんでした。&lt;br /&gt;&lt;br /&gt;&apos;補助デバイスへのアクセス&apos; のようなユニバーサルアクセス機能が無効になっているのが原因です。&lt;br /&gt;&lt;br /&gt;&lt;a href=&quot; &quot;&gt;この設定を有効にして&lt;/a&gt; その後、再び設定してください。 </translation>
     </message>
 </context>
 <context>
@@ -5119,18 +3529,6 @@ of the possible locations.</source>
         <location/>
         <source>If specified, only members of this group will receive the whisper.</source>
         <translation>設定すると、このグループのメンバーのみがささやきを受けとります。</translation>
-    </message>
-    <message>
-        <source>If checked the whisper will also be transmitted to linked channels.</source>
-        <translation type="obsolete">チェックすると、ささやきがリンクしているチャンネルにも転送されます。</translation>
-    </message>
-    <message>
-        <source>Whisper to Linked channels</source>
-        <translation type="obsolete">リンク済みのチャンネルにささやき</translation>
-    </message>
-    <message>
-        <source>If checked this whisper will also be sent to the subchannels of the channel target.</source>
-        <translation type="obsolete">チェックすると対象チャンネルのサブチャンネルにもささやきが送信されます。</translation>
     </message>
     <message>
         <location/>
@@ -5180,86 +3578,32 @@ of the possible locations.</source>
     <message>
         <location/>
         <source>The whisper will also be transmitted to linked channels.</source>
-        <translation type="unfinished">ささやきはリンクしているチャンネルにも送信されます。</translation>
+        <translation>ささやきはリンクしているチャンネルにも送信されます。</translation>
     </message>
     <message>
         <location/>
         <source>The whisper will also be sent to the subchannels of the channel target.</source>
-        <translation type="unfinished">ささやきは対象のチャンネルのサブチャンネルにも送信されます。</translation>
-    </message>
-</context>
-<context>
-    <name>GlobalShortcutWinConfig</name>
-    <message>
-        <source>Shortcuts</source>
-        <translation type="obsolete">ショートカット一覧</translation>
-    </message>
-    <message>
-        <source>Function</source>
-        <translation type="obsolete">機能</translation>
-    </message>
-    <message>
-        <source>Shortcut</source>
-        <translation type="obsolete">ショートカット</translation>
-    </message>
-    <message>
-        <source>Shortcut bound to %1.</source>
-        <translation type="obsolete">%1 に登録されているショートカット</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;This is the global shortcut bound to %1&lt;/b&gt;&lt;br /&gt;Click this field and then the desired key/button combo to rebind. Double-click to clear.</source>
-        <translation type="obsolete">&lt;b&gt;%1 に登録するショートカットキーです。&lt;/b&gt;&lt;br /&gt;このフィールドをクリックして希望のキー/ボタンの組み合わせを押すと登録できます。ダブルクリックで削除します。</translation>
+        <translation>ささやきは対象のチャンネルのサブチャンネルにも送信されます。</translation>
     </message>
 </context>
 <context>
     <name>GlobalShortcutX</name>
     <message>
-        <location filename="GlobalShortcut_unix.cpp" line="+336"/>
+        <location filename="GlobalShortcut_unix.cpp" line="+339"/>
         <source>Mouse %1</source>
         <translation>マウス %1</translation>
     </message>
 </context>
 <context>
-    <name>GlobalShortcutXConfig</name>
-    <message>
-        <source>Shortcuts</source>
-        <translation type="obsolete">ショートカット一覧</translation>
-    </message>
-    <message>
-        <source>Function</source>
-        <translation type="obsolete">機能</translation>
-    </message>
-    <message>
-        <source>Shortcut</source>
-        <translation type="obsolete">ショートカット</translation>
-    </message>
-    <message>
-        <source>Shortcut bound to %1.</source>
-        <translation type="obsolete">%1に登録されているショートカット</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;This is the global shortcut bound to %1&lt;/b&gt;&lt;br /&gt;Click this field and then the desired key combo to rebind. Double-click to clear.</source>
-        <translation type="obsolete">&lt;b&gt;%1 に登録するショートカットキーです。&lt;/b&gt;&lt;br /&gt;このフィールドをクリックして希望のキー/ボタンの組み合わせを押すと登録できます。ダブルクリックで削除します。</translation>
-    </message>
-</context>
-<context>
     <name>LCD</name>
     <message>
-        <location filename="LCD.cpp" line="+279"/>
+        <location filename="LCD.cpp" line="+282"/>
         <source>Not connected</source>
         <translation>接続されていません</translation>
     </message>
 </context>
 <context>
     <name>LCDConfig</name>
-    <message>
-        <source>Graphic</source>
-        <translation type="obsolete">画像</translation>
-    </message>
-    <message>
-        <source>Character</source>
-        <translation type="obsolete">キャラクタ</translation>
-    </message>
     <message>
         <location line="-160"/>
         <source>Enable this device</source>
@@ -5284,10 +3628,6 @@ of the possible locations.</source>
         <location/>
         <source>Name</source>
         <translation>名前</translation>
-    </message>
-    <message>
-        <source>Type</source>
-        <translation type="obsolete">タイプ</translation>
     </message>
     <message>
         <location/>
@@ -5339,10 +3679,6 @@ This field describes the size of an LCD device. The size is given either in pixe
         <translation>この設定は列の分割の幅を決めます。</translation>
     </message>
     <message>
-        <source>TextLabel</source>
-        <translation type="obsolete">テキストラベル</translation>
-    </message>
-    <message>
         <location/>
         <source>Splitter Width</source>
         <translation>分割線の幅</translation>
@@ -5351,7 +3687,7 @@ This field describes the size of an LCD device. The size is given either in pixe
 <context>
     <name>Log</name>
     <message>
-        <location filename="Log.cpp" line="+224"/>
+        <location filename="Log.cpp" line="+200"/>
         <source>Debug</source>
         <translation>デバッグ</translation>
     </message>
@@ -5381,22 +3717,6 @@ This field describes the size of an LCD device. The size is given either in pixe
         <translation>サーバから切断</translation>
     </message>
     <message>
-        <source>Player Joined Server</source>
-        <translation type="obsolete">誰かがサーバに参加</translation>
-    </message>
-    <message>
-        <source>Player Left Server</source>
-        <translation type="obsolete">誰かがサーバから退出</translation>
-    </message>
-    <message>
-        <source>Player kicked (you or by you)</source>
-        <translation type="obsolete">誰かがキックされた時(あなた自身、またはあなたによって)</translation>
-    </message>
-    <message>
-        <source>Player kicked</source>
-        <translation type="obsolete">誰かがキックされた時</translation>
-    </message>
-    <message>
         <location line="+6"/>
         <source>You self-muted/deafened</source>
         <translation>自分を発言禁止/聴取禁止にした時</translation>
@@ -5407,33 +3727,9 @@ This field describes the size of an LCD device. The size is given either in pixe
         <translation>他の人が発言禁止/聴取禁止になった時</translation>
     </message>
     <message>
-        <source>Player muted (you)</source>
-        <translation type="obsolete">誰かがあなたを発言禁止にした時</translation>
-    </message>
-    <message>
-        <source>Player muted (by you)</source>
-        <translation type="obsolete">(あなたによって)誰かが発言禁止になった時</translation>
-    </message>
-    <message>
-        <source>Player muted (other)</source>
-        <translation type="obsolete">(他の人によって)誰かが発言禁止になった時</translation>
-    </message>
-    <message>
-        <source>Player Joined Channel</source>
-        <translation type="obsolete">誰かがチャンネルに参加</translation>
-    </message>
-    <message>
-        <source>Player Left Channel</source>
-        <translation type="obsolete">誰かがチャンネルから退出</translation>
-    </message>
-    <message>
         <location line="+6"/>
         <source>Permission Denied</source>
         <translation>権限がない場合</translation>
-    </message>
-    <message>
-        <source>[%2] %1</source>
-        <translation type="obsolete">[%2] %1</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -5507,7 +3803,7 @@ This field describes the size of an LCD device. The size is given either in pixe
         <translation>[ 日付が %1 に変更されます ]</translation>
     </message>
     <message>
-        <location line="+146"/>
+        <location line="+66"/>
         <source>link to %1</source>
         <translation>%1 へのリンク</translation>
     </message>
@@ -5535,7 +3831,7 @@ This field describes the size of an LCD device. The size is given either in pixe
 <context>
     <name>LogConfig</name>
     <message>
-        <location line="-539"/>
+        <location line="-440"/>
         <source>Toggle console for %1 events</source>
         <translation>イベント「%1」 のためのコンソールを切り替える</translation>
     </message>
@@ -5576,11 +3872,6 @@ This field describes the size of an LCD device. The size is given either in pixe
         <translation>イベント「%1」のときに音声通知のために使用するサウンドファイルのパス&lt;br /&gt;シングルクリックで再生&lt;br /&gt;ダブルクリックで変更&lt;br /&gt;これらのイベントのための音声通知が有効であるか、またはこのフィールドが無効であることを確認してください。</translation>
     </message>
     <message>
-        <source>Click here to toggle Text-To-Speech for %1 events.&lt;br /&gt;If checked, Mumble uses Text-To-Speech to read %1 events out loud to you. Text-To-Speech is also able to read the contents of the event which is not true for soundfiles. Text-To-Speech and soundfiles cannot be used at the same time.</source>
-        <oldsource>Click here to toggle Text-To-Speech for %1 events.&lt;br /&gt;If checked, mumble uses Text-To-Speech to read %1 events out loud to you. Text-To-Speech is also able to read the contents of the event which is not true for soundfiles. Text-To-Speech and soundfiles cannot be used at the same time.</oldsource>
-        <translation type="obsolete">イベント「%1」の適すと読み上げを切り替えるためにはここをクリック。&lt;br /&gt;チェックされた場合、イベント「%1」が読み上げられる。テキスト読み上げはサウンドファイルではでいない、イベントの内容を読み上げがが可能である。テキスト読み上げとサウンドファイルは同時に使用することはできない。</translation>
-    </message>
-    <message>
         <location line="-2"/>
         <source>Click here to toggle Text-To-Speech for %1 events.&lt;br /&gt;If checked, Mumble uses Text-To-Speech to read %1 events out loud to you. Text-To-Speech is also able to read the contents of the event which is not true for sound files. Text-To-Speech and sound files cannot be used at the same time.</source>
         <oldsource>Click here to toggle sound notification for %1 events.&lt;br /&gt;If checked, Mumble uses a soundfile predefined by you to indicate %1 events. Soundfiles and Text-To-Speech cannot be used at the same time.</oldsource>
@@ -5593,18 +3884,6 @@ This field describes the size of an LCD device. The size is given either in pixe
         <translation>イベント「%1」のときに音声通知を切り替えるにはここをクリックしてください。&lt;br /&gt; もしチェックしたなら、Mumble はイベント「%1」に設定された音声ファイルを再生します。音声ファイルとTTSは同時に使えません。</translation>
     </message>
     <message>
-        <source>Choose sound file</source>
-        <translation type="obsolete">サウンドファイルを選択してください</translation>
-    </message>
-    <message>
-        <source>Invalid sound file</source>
-        <translation type="obsolete">不正なサウンドファイル</translation>
-    </message>
-    <message>
-        <source>The file &apos;%1&apos; does not exist or is not a valid speex file.</source>
-        <translation type="obsolete">ファイル「%1」は存在しないか、適切な speex ファイルではありません。</translation>
-    </message>
-    <message>
         <location filename="Log.ui"/>
         <source>Messages</source>
         <translation>メッセージ</translation>
@@ -5613,18 +3892,6 @@ This field describes the size of an LCD device. The size is given either in pixe
         <location/>
         <source>Console</source>
         <translation>コンソール</translation>
-    </message>
-    <message>
-        <source>TTS</source>
-        <translation type="obsolete">読み上げ</translation>
-    </message>
-    <message>
-        <source>Enable console for %1</source>
-        <translation type="obsolete">%1をコンソールで有効にする</translation>
-    </message>
-    <message>
-        <source>Enable Text-To-Speech for %1</source>
-        <translation type="obsolete">%1のテキスト読み上げを有効にする</translation>
     </message>
     <message>
         <location/>
@@ -5709,32 +3976,32 @@ This field describes the size of an LCD device. The size is given either in pixe
     <message>
         <location/>
         <source>If enabled text messages you send will be read back to you with TTS</source>
-        <translation type="unfinished"></translation>
+        <translation>有効にするとあなたが送信したテキストメッセージがTTSにより読まれます</translation>
     </message>
     <message>
         <location/>
         <source>Read back own messages</source>
-        <translation type="unfinished"></translation>
+        <translation>自分が送信したメッセージを読み上げる</translation>
     </message>
     <message>
         <location/>
         <source>Chat Log</source>
-        <translation type="unfinished"></translation>
+        <translation>チャットログ</translation>
     </message>
     <message>
         <location/>
         <source>Maximum chat length</source>
-        <translation type="unfinished"></translation>
+        <translation>チャットバーの長さの最大値</translation>
     </message>
     <message>
         <location/>
         <source>Unlimited</source>
-        <translation type="unfinished"></translation>
+        <translation>無制限</translation>
     </message>
     <message>
         <location/>
         <source> Lines</source>
-        <translation type="unfinished"></translation>
+        <translation>行</translation>
     </message>
 </context>
 <context>
@@ -5750,7 +4017,7 @@ This field describes the size of an LCD device. The size is given either in pixe
         <translation>外観と手触り</translation>
     </message>
     <message>
-        <location filename="LookConfig.cpp" line="+52"/>
+        <location filename="LookConfig.cpp" line="+55"/>
         <location line="+11"/>
         <source>System default</source>
         <translation>システムのデフォルト</translation>
@@ -5822,23 +4089,6 @@ This field describes the size of an LCD device. The size is given either in pixe
         <translation>スキン</translation>
     </message>
     <message>
-        <source>...</source>
-        <translation type="obsolete">...</translation>
-    </message>
-    <message>
-        <source>Check to show chat bar</source>
-        <translation type="obsolete">チャットバーを表示するにはチェック</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;If checked the chat bar is shown.&lt;/b&gt;&lt;br /&gt;Uncheck this to hide it.</source>
-        <oldsource>&lt;b&gt;If checked the chat bar is shown&lt;/b&gt;&lt;br /&gt;Uncheck to hide it</oldsource>
-        <translation type="obsolete">&lt;b&gt;チェックしたらチャットバーが現れます&lt;/b&gt;&lt;br /&gt;チェックをはずすと隠す。</translation>
-    </message>
-    <message>
-        <source>Show chatbar</source>
-        <translation type="obsolete">チャットバーを表示する</translation>
-    </message>
-    <message>
         <location/>
         <source>Show number of users in each channel</source>
         <translation>それぞれのチャンネルのユーザ数を表示</translation>
@@ -5854,46 +4104,14 @@ This field describes the size of an LCD device. The size is given either in pixe
         <translation>使用するスキンファイル</translation>
     </message>
     <message>
-        <source>Use Horizontal Splitter</source>
-        <translation type="obsolete">上下に分割する</translation>
-    </message>
-    <message>
-        <source>Use horizontal or vertical splitter for the main window</source>
-        <translation type="obsolete">メインウインドウの区切りに水平もしくは垂直の区切りを使う</translation>
-    </message>
-    <message>
         <location filename="LookConfig.cpp" line="+14"/>
         <source>User Interface</source>
         <translation>インターフェース</translation>
     </message>
     <message>
-        <location line="+130"/>
+        <location line="+133"/>
         <source>Choose skin file</source>
         <translation>スキンファイルを選択</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;If set, players will be shown above subchannels in the channel view.&lt;/b&gt;&lt;br /&gt;A restart of Mumble is required to see the change.</source>
-        <translation type="obsolete">&lt;b&gt;これを設定していると、チャンネル表示の時にサブチャンネルより上にプレイヤーが表示されるようになります。&lt;/b&gt;&lt;br /&gt;この設定を反映するにはMumbleの再起動が必要です。</translation>
-    </message>
-    <message>
-        <source>Expand All Channels</source>
-        <translation type="obsolete">全てのチャンネルを展開する</translation>
-    </message>
-    <message>
-        <source>Expand all channels when connecting</source>
-        <translation type="obsolete">接続時に全てのチャンネルを展開する</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;If set, all channels will be expanded by default when you connect to a server.&lt;/b&gt;</source>
-        <translation type="obsolete">&lt;b&gt;これを設定していると、サーバに接続したときに全てのチャンネルを展開します。&lt;/b&gt;</translation>
-    </message>
-    <message>
-        <source>Players above Channels</source>
-        <translation type="obsolete">チャンネルより上にプレイヤーを表示</translation>
-    </message>
-    <message>
-        <source>List players above subchannels (requires restart).</source>
-        <translation type="obsolete">サブチャンネルより上にプレイヤーが表示されるように並べます。(再起動が必要)</translation>
     </message>
     <message>
         <location filename="LookConfig.ui"/>
@@ -5901,25 +4119,9 @@ This field describes the size of an LCD device. The size is given either in pixe
         <translation>&lt;b&gt;Mumbleで使用するスキンを設定します。&lt;/b&gt;&lt;br /&gt;スキンは基本的なウィジェットスタイルで用いられるスタイルファイルです。アイコンがスタイルシートと同じディレクトリにあるなら、デフォルトのアイコンを置き換えます。</translation>
     </message>
     <message>
-        <source>Form</source>
-        <translation type="obsolete">フォーム</translation>
-    </message>
-    <message>
-        <source>New version check</source>
-        <translation type="obsolete">新しいバージョンをチェック</translation>
-    </message>
-    <message>
-        <source>Check for updates on startup</source>
-        <translation type="obsolete">起動時に更新をチェックする</translation>
-    </message>
-    <message>
-        <location filename="LookConfig.cpp" line="-140"/>
+        <location filename="LookConfig.cpp" line="-143"/>
         <source>None</source>
         <translation>なし</translation>
-    </message>
-    <message>
-        <source>Only with players</source>
-        <translation type="obsolete">人が居るチャンネルのみ</translation>
     </message>
     <message>
         <location line="+2"/>
@@ -5935,10 +4137,6 @@ This field describes the size of an LCD device. The size is given either in pixe
         <location/>
         <source>When to automatically expand channels</source>
         <translation>自動的にチャンネルを展開する</translation>
-    </message>
-    <message>
-        <source>This sets which channels to automatically expand. &lt;i&gt;None&lt;/i&gt; and &lt;i&gt;All&lt;/i&gt; will expand no or all channels, while &lt;i&gt;Only with players&lt;/i&gt; will expand and collapse channels as players join and leave them.</source>
-        <translation type="obsolete">どのチャンネルを自動的に展開するかを決定します。 &lt;i&gt;なし&lt;/i&gt; と &lt;i&gt;全て&lt;/i&gt; は全てのチャンネルを展開する/しない設定にします。&lt;i&gt;人が居るチャンネルのみ&lt;/i&gt; はプレイヤーの入室状況に応じて展開と折りたたみが変わります。</translation>
     </message>
     <message>
         <location filename="LookConfig.cpp" line="-1"/>
@@ -5966,34 +4164,14 @@ This field describes the size of an LCD device. The size is given either in pixe
         <translation>チャンネルのドラッグ操作</translation>
     </message>
     <message>
-        <source>This changes the behaviour when moving channels.</source>
-        <translation type="obsolete">チャンネルを動かすときのふるまいを変更します。</translation>
-    </message>
-    <message>
-        <source>This sets the behaviour of channel drags, it can be used to prevent accidental dragging. &lt;i&gt;Move Channel&lt;/i&gt; moves the channel without prompting. &lt;i&gt;Do Nothing&lt;/i&gt; does nothing and prints an error message. &lt;i&gt;Ask&lt;/i&gt; uses a message box to confirm if you really wanted to move the channel.</source>
-        <translation type="obsolete">チャンネルを動かすときのふるまいを変更します。これを設定すると誤ってチャンネルをドラッグしてしまうのを防ぐことができます。 &lt;i&gt;チャンネルを移動&lt;/i&gt; 確認なしにチャンネルを動かします。 &lt;i&gt;何もしない&lt;/i&gt; 何も行わず、エラーメッセージを表示します。 &lt;i&gt;確認する&lt;/i&gt; 確認メッセージボックスを出してから動かします。</translation>
-    </message>
-    <message>
         <location/>
         <source>Ask whether to close or minimize when quitting Mumble.</source>
         <translation>終了時に最小化するか閉じるかを確認します。</translation>
     </message>
     <message>
-        <source>&lt;b&gt;If set, will verify you want to quit if connected.&lt;b&gt;</source>
-        <translation type="obsolete">&lt;b&gt;これがセットされている場合、接続中に終了するかを確認します。&lt;/b&gt;</translation>
-    </message>
-    <message>
         <location/>
         <source>Ask on quit while connected</source>
         <translation>接続中の終了は確認する</translation>
-    </message>
-    <message>
-        <source>Make the Mumble window appear on top of other windows.</source>
-        <translation type="obsolete">最前面に表示する</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;This makes the Mumble window a topmost window.&lt;/b&gt;</source>
-        <translation type="obsolete">&lt;b&gt;Mumbleのウインドウを最前面に表示します。&lt;/b&gt;</translation>
     </message>
     <message>
         <location/>
@@ -6036,18 +4214,6 @@ This field describes the size of an LCD device. The size is given either in pixe
         <translation>最小化時、タスクトレイに格納する</translation>
     </message>
     <message>
-        <source>Show all configuration items</source>
-        <translation type="obsolete">全ての設定項目を表示</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;This will show all configuration items.&lt;/b&gt;&lt;br /&gt;Mumble contains a lot of configuration items that most users won&apos;t need to change. Checking this will show all configurable items.</source>
-        <translation type="obsolete">&lt;b&gt;全ての設定項目を表示します。&lt;/b&gt;&lt;br /&gt;Mumbleは大部分のユーザが変更する必要のない設定項目を多く含んでいます。ここにチェックを入れると全ての設定項目を表示します。</translation>
-    </message>
-    <message>
-        <source>Expert Config</source>
-        <translation type="obsolete">上級者向け設定</translation>
-    </message>
-    <message>
         <location/>
         <source>Hide the main Mumble window in the tray when it is minimized.</source>
         <translation>最小化されている時にメインウインドウをタスクトレイに格納します。</translation>
@@ -6056,10 +4222,6 @@ This field describes the size of an LCD device. The size is given either in pixe
         <location/>
         <source>This setting controls when the application will be always on top.</source>
         <translation>この設定はどのような状況でアプリケーションを常に手前に表示するかを制御します。</translation>
-    </message>
-    <message>
-        <source>This setting controls in which situations the application will stay always on top. If you select &lt;i&gt;Never&lt;/i&gt; the application will not stay on top. &lt;i&gt;Always&lt;/i&gt; will always keep the application on top. &lt;i&gt;In minimal view&lt;/i&gt; / &lt;i&gt;In normal mode&lt;/i&gt; will only keep the application always on top when minimal view is activated / deactivated.</source>
-        <translation type="obsolete">この設定はどのような状況でアプリケーションを常に手前で表示するかを制御します。</translation>
     </message>
     <message>
         <location/>
@@ -6136,12 +4298,17 @@ This field describes the size of an LCD device. The size is given either in pixe
         <source>&amp;Browse...</source>
         <translation>参照(&amp;B)...</translation>
     </message>
+    <message>
+        <location/>
+        <source>Use selected item as the chat bar target</source>
+        <translation>選択した項目をチャットバーの対象にする</translation>
+    </message>
 </context>
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="MainWindow.cpp" line="+173"/>
-        <location line="+2114"/>
+        <location filename="MainWindow.cpp" line="+182"/>
+        <location line="+2131"/>
         <source>Root</source>
         <translation>ルート</translation>
     </message>
@@ -6154,10 +4321,6 @@ This field describes the size of an LCD device. The size is given either in pixe
         <location/>
         <source>Open the server connection dialog</source>
         <translation>サーバ接続ダイアログを開く</translation>
-    </message>
-    <message>
-        <source>Shows a dialog of registered servers, and also allows quick connect.</source>
-        <translation type="obsolete">登録されたサーバのダイアログを開きます。クイック接続もできるようになります。</translation>
     </message>
     <message>
         <location/>
@@ -6195,25 +4358,9 @@ This field describes the size of an LCD device. The size is given either in pixe
         <translation>キック(&amp;K)</translation>
     </message>
     <message>
-        <source>Kick player (with reason)</source>
-        <translation type="obsolete">プレイヤーをキック(理由付き)</translation>
-    </message>
-    <message>
-        <source>Kick selected player off server. You&apos;ll be asked to specify a reason.</source>
-        <translation type="obsolete">選択されたプレイヤーをサーバから追い出します。あなたは、理由を尋ねられるでしょう。</translation>
-    </message>
-    <message>
         <location/>
         <source>&amp;Ban</source>
         <translation>&amp;BAN</translation>
-    </message>
-    <message>
-        <source>Kick and ban player (with reason)</source>
-        <translation type="obsolete">キックしてBAN(理由付き)</translation>
-    </message>
-    <message>
-        <source>Kick and ban selected player from server. You&apos;ll be asked to specify a reason.</source>
-        <translation type="obsolete">選択されたプレイヤーをサーバからキックしてBANします。あなたは、理由を尋ねられるでしょう。</translation>
     </message>
     <message>
         <location/>
@@ -6221,34 +4368,14 @@ This field describes the size of an LCD device. The size is given either in pixe
         <translation>発言禁止(&amp;M)</translation>
     </message>
     <message>
-        <source>Mute player</source>
-        <translation type="obsolete">プレイヤーを発言禁止にする</translation>
-    </message>
-    <message>
-        <source>Mute or unmute player on server. Unmuting a deafened player will also undeafen them.</source>
-        <translation type="obsolete">サーバにいるプレイヤーを発言禁止にしたり、解除したりします。聴取禁止になっているプレイヤーに対して発言禁止の解除を行うと、聴取禁止も解除されます。</translation>
-    </message>
-    <message>
         <location/>
         <source>&amp;Deafen</source>
         <translation>聴取禁止(&amp;D)</translation>
     </message>
     <message>
-        <source>Deafen player</source>
-        <translation type="obsolete">プレイヤーを聴取禁止にする</translation>
-    </message>
-    <message>
-        <source>Deafen or undeafen player on server. Deafening a player will also mute them.</source>
-        <translation type="obsolete">サーバにいるプレイヤーを聴取禁止にしたり、解除したりします。聴取禁止にすると発言も禁止にします。</translation>
-    </message>
-    <message>
         <location/>
         <source>&amp;Local Mute</source>
         <translation>ローカルで発言禁止(&amp;L)</translation>
-    </message>
-    <message>
-        <source>Mute or unmute player locally.</source>
-        <translation type="obsolete">ローカルで発言禁止にしたり解除したりします。</translation>
     </message>
     <message>
         <location/>
@@ -6281,10 +4408,6 @@ This field describes the size of an LCD device. The size is given either in pixe
         <translation>チャンネルと全てのサブチャンネルを削除します。</translation>
     </message>
     <message>
-        <source>&amp;Edit ACL</source>
-        <translation type="obsolete">ACLを編集(&amp;E)</translation>
-    </message>
-    <message>
         <location/>
         <source>Edit Groups and ACL for channel</source>
         <translation>チャンネルのグループとACLを編集</translation>
@@ -6293,22 +4416,6 @@ This field describes the size of an LCD device. The size is given either in pixe
         <location/>
         <source>This opens the Group and ACL dialog for the channel, to control permissions.</source>
         <translation>権限を管理するため、チャンネルのグループとACLダイアログを開きます。</translation>
-    </message>
-    <message>
-        <source>&amp;Rename</source>
-        <translation type="obsolete">チャンネル名を変更する</translation>
-    </message>
-    <message>
-        <source>&amp;Change Description</source>
-        <translation type="obsolete">説明を変更する(&amp;C)</translation>
-    </message>
-    <message>
-        <source>Changes the channel description</source>
-        <translation type="obsolete">チャンネルの説明を変更する</translation>
-    </message>
-    <message>
-        <source>This changes the description of a channel.</source>
-        <translation type="obsolete">チャンネルの説明を変更する</translation>
     </message>
     <message>
         <location/>
@@ -6321,14 +4428,6 @@ This field describes the size of an LCD device. The size is given either in pixe
         <translation>あなたのいるチャンネルを他のチャンネルとリンクします</translation>
     </message>
     <message>
-        <source>This links your current channel to the selected channel. If they have permission to speak in the other channel, players can now hear each other. This is a permanent link, and will last until manually unlinked or the server is restarted. Please see the shortcuts for push-to-link.</source>
-        <translation type="obsolete">あなたのいるチャンネルを選択されたチャンネルとリンクします。他方のチャンネルで発言する権限を持っていたら、プレイヤーはお互いを聞くことができます。これは恒久的なリンクであり、手動でリンクを解除されるかサーバがリスタートするまで続きます。push-to-linkのショートカットを見てください。</translation>
-    </message>
-    <message>
-        <source>&amp;Unlink</source>
-        <translation type="obsolete">リンク解除(&amp;U)</translation>
-    </message>
-    <message>
         <location/>
         <source>Unlink your channel from another channel</source>
         <translation>他のチャンネルとのリンクを解除します</translation>
@@ -6337,10 +4436,6 @@ This field describes the size of an LCD device. The size is given either in pixe
         <location/>
         <source>This unlinks your current channel from the selected channel.</source>
         <translation>選択されたチャンネルとあなたのいるチャンネルのリンクを解除します。</translation>
-    </message>
-    <message>
-        <source>Unlink &amp;All</source>
-        <translation type="obsolete">全てのリンクを解除(&amp;A)</translation>
     </message>
     <message>
         <location/>
@@ -6411,10 +4506,6 @@ This field describes the size of an LCD device. The size is given either in pixe
         <location/>
         <source>Enable or disable the text-to-speech engine. Only messages enabled for TTS in the Configuration dialog will actually be spoken.</source>
         <translation>テキスト読み上げエンジンを有効にするかどうか。設定ダイアログにてテキスト読み上げが有効になっているメッセージのみ読み上げられます。</translation>
-    </message>
-    <message>
-        <source>S&amp;tatistics</source>
-        <translation type="obsolete">統計(&amp;T)</translation>
     </message>
     <message>
         <location/>
@@ -6502,18 +4593,6 @@ This field describes the size of an LCD device. The size is given either in pixe
         <translation>コメントを変更(&amp;C)</translation>
     </message>
     <message>
-        <source>Change the comment on the selected user.</source>
-        <translation type="obsolete">選択されたユーザのコメントを変更する。</translation>
-    </message>
-    <message>
-        <source>This allows you to change the comment (shown as a tooltip) of a user. Unless you&apos;ve been given extra privileges on the server, you can only change your own comment.</source>
-        <translation type="obsolete">ツールチップとして表示される、ユーザのコメントを変更することができます。サーバ上で追加の権限を与えられない限り、 自分自身のコメントしか変更することができません。</translation>
-    </message>
-    <message>
-        <source>Certificate Wizard</source>
-        <translation type="obsolete">証明書発行ウィザード</translation>
-    </message>
-    <message>
         <location/>
         <source>Configure certificates for strong authentication</source>
         <translation>強固な認証のための証明書を設定する</translation>
@@ -6524,10 +4603,6 @@ This field describes the size of an LCD device. The size is given either in pixe
         <translation>サーバに対する認証のための証明書を、作成・インポート・エクスポートするためのウィザードを開始します。</translation>
     </message>
     <message>
-        <source>Register</source>
-        <translation type="obsolete">ユーザ登録</translation>
-    </message>
-    <message>
         <location/>
         <source>Register user on server</source>
         <translation>サーバ上でユーザを登録</translation>
@@ -6536,10 +4611,6 @@ This field describes the size of an LCD device. The size is given either in pixe
         <location/>
         <source>This will permanently register the user on the server.</source>
         <translation>永久的にサーバにユーザ登録します。</translation>
-    </message>
-    <message>
-        <source>This will permanently register the user on the server. Note that you can&apos;t change the username later on, nor can you easily unregister a user, so make sure you really want to do this.</source>
-        <translation type="obsolete">サーバ上のユーザを永久的にユーザ登録します。登録後にユーザ名を変更できないことと、簡単にユーザ登録を取り消せることを覚えておいてください。あなたが本当にそうしたいときにしてください。</translation>
     </message>
     <message>
         <location/>
@@ -6602,14 +4673,6 @@ This field describes the size of an LCD device. The size is given either in pixe
         <translation>権限を管理するため、登録済みユーザの編集ダイアログを開きます。（ユーザの名前を変更したり、登録を削除したり出来ます）。</translation>
     </message>
     <message>
-        <source>Change Texture</source>
-        <translation type="obsolete">テクスチャを変更</translation>
-    </message>
-    <message>
-        <source>Change your overlay texture on this server</source>
-        <translation type="obsolete">このサーバでのあなたのオーバレイテクスチャを変更する</translation>
-    </message>
-    <message>
         <location/>
         <source>&amp;Access Tokens</source>
         <translation>アクセストークン(&amp;A)</translation>
@@ -6618,18 +4681,6 @@ This field describes the size of an LCD device. The size is given either in pixe
         <location/>
         <source>Add or remove text-based access tokens</source>
         <translation>アクセストークンを追加または削除する</translation>
-    </message>
-    <message>
-        <source>Remove Texture</source>
-        <translation type="obsolete">テクスチャを削除</translation>
-    </message>
-    <message>
-        <source>Remove currently defined user texture.</source>
-        <translation type="obsolete">現在定義されているユーザテクスチャを削除します。</translation>
-    </message>
-    <message>
-        <source>&amp;About Qt</source>
-        <translation type="obsolete">Qtについて(&amp;A)</translation>
     </message>
     <message>
         <location/>
@@ -6657,15 +4708,11 @@ This field describes the size of an LCD device. The size is given either in pixe
         <translation>Mumbleのウェブページに接続して新しいバージョンが出ているかを確認します。もし新しいのが出ていたら適切なダウンロードURLを通知します。</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="-2013"/>
+        <location filename="MainWindow.cpp" line="-2035"/>
         <location line="+15"/>
-        <location line="+2208"/>
+        <location line="+2230"/>
         <source>Mumble -- %1</source>
         <translation>Mumble -- %1</translation>
-    </message>
-    <message>
-        <source>Log of messages</source>
-        <translation type="obsolete">メッセージのログ</translation>
     </message>
     <message>
         <location filename="MainWindow.ui"/>
@@ -6673,21 +4720,9 @@ This field describes the size of an LCD device. The size is given either in pixe
         <translation>最近の動作を全て表示します。サーバへの接続、エラーや情報メッセージは全てここに表示されます。&lt;br /&gt;ここにどのメッセージを表示するかを指定するには、メニューから&lt;b&gt;設定&lt;/b&gt;コマンドを選んでください。</translation>
     </message>
     <message>
-        <source>&amp;Server</source>
-        <translation type="obsolete">サーバ(&amp;S)</translation>
-    </message>
-    <message>
-        <source>&amp;Player</source>
-        <translation type="obsolete">プレイヤー(&amp;P)</translation>
-    </message>
-    <message>
-        <location filename="MainWindow.cpp" line="-2299"/>
+        <location filename="MainWindow.cpp" line="-2321"/>
         <source>&amp;Channel</source>
         <translation>チャンネル(&amp;C)</translation>
-    </message>
-    <message>
-        <source>&amp;Audio</source>
-        <translation type="obsolete">音声(&amp;A)</translation>
     </message>
     <message>
         <location filename="MainWindow.ui"/>
@@ -6724,60 +4759,10 @@ This field describes the size of an LCD device. The size is given either in pixe
         <translation>音声処理をリセット</translation>
     </message>
     <message>
-        <source>Toggle Mute Self</source>
-        <comment>Global Shortcut</comment>
-        <translation type="obsolete">自分の発言禁止を切り替え</translation>
-    </message>
-    <message>
-        <source>Toggle self-mute status.</source>
-        <comment>Global Shortcut</comment>
-        <translation type="obsolete">自分の発言禁止状態を切り替え</translation>
-    </message>
-    <message>
-        <source>This will toggle your muted status. If you toggle this off, you will also disable self-deafen.</source>
-        <comment>Global Shortcut</comment>
-        <translation type="obsolete">これはあなたの消音状態を切り換えるでしょう。また、これをオフに切り替えると、聴取禁止も無効になるだろう。</translation>
-    </message>
-    <message>
-        <source>Toggle Deafen Self</source>
-        <comment>Global Shortcut</comment>
-        <translation type="obsolete">自分の聴取禁止を切り替え</translation>
-    </message>
-    <message>
-        <source>Toggle self-deafen status.</source>
-        <comment>Global Shortcut</comment>
-        <translation type="obsolete">自分の聴取禁止状態を切り替える</translation>
-    </message>
-    <message>
-        <source>This will toggle your deafen status. If you toggle this on, you will also enable self-mute.</source>
-        <comment>Global Shortcut</comment>
-        <translation type="obsolete">これはあなたの聴取禁止状態を切り換えるでしょう。また、これをオンに切り替えると、発言禁止も有効になるだろう。</translation>
-    </message>
-    <message>
         <location line="+13"/>
         <source>Unlink Plugin</source>
         <comment>Global Shortcut</comment>
         <translation>プラグインを外す</translation>
-    </message>
-    <message>
-        <source>Force Center Position</source>
-        <comment>Global Shortcut</comment>
-        <translation type="obsolete">中央に移動させる</translation>
-    </message>
-    <message>
-        <source>Chan Parent</source>
-        <comment>Global Shortcut</comment>
-        <translation type="obsolete">親チャンネルに流す</translation>
-    </message>
-    <message>
-        <source>Chan Sub#%1</source>
-        <comment>Global Shortcut</comment>
-        <translation type="obsolete">サブチャンネル#%1に流す</translation>
-    </message>
-    <message>
-        <source>Chan All Subs</source>
-        <comment>Global Shortcut</comment>
-        <translation type="obsolete">全サブチャンネルに流す</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -6789,7 +4774,7 @@ This field describes the size of an LCD device. The size is given either in pixe
         <location line="+3"/>
         <source>Join Channel</source>
         <comment>Global Shortcut</comment>
-        <translation type="unfinished">チャンネルへの参加</translation>
+        <translation>チャンネルへの参加</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -6804,28 +4789,10 @@ This field describes the size of an LCD device. The size is given either in pixe
         <translation>ゲーム中でのオーバーレイの状態を切り替える。</translation>
     </message>
     <message>
-        <source>This will switch the states of the ingame overlay between showing everybody, just the players who are talking, and nobody.</source>
-        <comment>Global Shortcut</comment>
-        <translation type="obsolete">ゲーム中でのオーバーレイの状態を「全員」と「話している人だけ」、「なし」の間で切り替える。</translation>
-    </message>
-    <message>
-        <source>Alt Push-to-Talk</source>
-        <comment>Global Shortcut</comment>
-        <translation type="obsolete">Alt発言有効化</translation>
-    </message>
-    <message>
-        <source>Kicking player %1</source>
-        <translation type="obsolete">プレイヤー %1 をキックしました。</translation>
-    </message>
-    <message>
-        <location line="+1125"/>
+        <location line="+1130"/>
         <location line="+19"/>
         <source>Enter reason</source>
         <translation>理由を入力してください</translation>
-    </message>
-    <message>
-        <source>Banning player %1</source>
-        <translation type="obsolete">プレイヤー %1 をBANしました</translation>
     </message>
     <message>
         <location filename="MainWindow.ui"/>
@@ -6833,28 +4800,24 @@ This field describes the size of an LCD device. The size is given either in pixe
         <translation>Mumble</translation>
     </message>
     <message>
-        <source>Channel Name</source>
-        <translation type="obsolete">チャンネル名</translation>
-    </message>
-    <message>
-        <location filename="MainWindow.cpp" line="+270"/>
+        <location filename="MainWindow.cpp" line="+268"/>
         <source>Are you sure you want to delete %1 and all its sub-channels?</source>
         <translation>%1 とそのサブチャンネルを全て削除します。よろしいですか?</translation>
     </message>
     <message>
-        <location line="+230"/>
+        <location line="+229"/>
         <source>Unmuted and undeafened.</source>
-        <translation type="unfinished">発言禁止と聴取禁止も解除しました。</translation>
+        <translation>発言禁止と聴取禁止も解除しました。</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>Unmuted.</source>
-        <translation type="unfinished">発言禁止を解除しました。</translation>
+        <translation>発言禁止を解除しました。</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>Muted.</source>
-        <translation type="unfinished">発言を禁止しました。</translation>
+        <translation>発言を禁止しました。</translation>
     </message>
     <message>
         <location line="+31"/>
@@ -6864,28 +4827,20 @@ This field describes the size of an LCD device. The size is given either in pixe
     <message>
         <location line="+2"/>
         <source>Deafened.</source>
-        <translation type="unfinished">聴取を禁止しました。</translation>
+        <translation>聴取を禁止しました。</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>Undeafened.</source>
-        <translation type="unfinished">聴取禁止を解除しました。</translation>
+        <translation>聴取禁止を解除しました。</translation>
     </message>
     <message>
-        <location line="+94"/>
+        <location line="+89"/>
         <source>About Qt</source>
         <translation>Qtについて</translation>
     </message>
     <message>
-        <source>Joining %1.</source>
-        <translation type="obsolete">%1 に入る</translation>
-    </message>
-    <message>
-        <source>Connected to server.</source>
-        <translation type="obsolete">サーバに接続しました。</translation>
-    </message>
-    <message>
-        <location line="+408"/>
+        <location line="+433"/>
         <source>Server connection failed: %1.</source>
         <translation>サーバへの接続に失敗しました: %1.</translation>
     </message>
@@ -6895,20 +4850,12 @@ This field describes the size of an LCD device. The size is given either in pixe
         <translation>サーバから切断しました。</translation>
     </message>
     <message>
-        <location line="-1500"/>
+        <location line="-1542"/>
         <source>Reconnecting.</source>
-        <translation type="unfinished">再接続中です。</translation>
+        <translation>再接続中です。</translation>
     </message>
     <message>
-        <source>Joined server: %1.</source>
-        <translation type="obsolete">サーバに接続しました: %1.</translation>
-    </message>
-    <message>
-        <source>the server</source>
-        <translation type="obsolete">サーバ</translation>
-    </message>
-    <message>
-        <location filename="Messages.cpp" line="+323"/>
+        <location filename="Messages.cpp" line="+333"/>
         <source>You were unmuted and undeafened by %1.</source>
         <translation>%1 があなたを発言・聴取を禁止しました。</translation>
     </message>
@@ -6935,44 +4882,40 @@ This field describes the size of an LCD device. The size is given either in pixe
     <message>
         <location line="+7"/>
         <source>%1 muted and deafened by %2.</source>
-        <translation type="unfinished">%2が%1の発言・聴取を禁止しました。</translation>
+        <translation>%2が%1の発言・聴取を禁止しました。</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>%1 unmuted and undeafened by %2.</source>
-        <translation type="unfinished">%2が%1の発言・聴取の禁止を解除しました。</translation>
+        <translation>%2が%1の発言・聴取の禁止を解除しました。</translation>
     </message>
     <message>
         <location line="+18"/>
         <source>%1 suppressed by %2.</source>
-        <translation type="unfinished">%2が%1の発言を禁止しました。</translation>
+        <translation>%2が%1の発言を禁止しました。</translation>
     </message>
     <message>
         <location line="+25"/>
         <source>%1 moved to %2.</source>
-        <translation type="unfinished">%1は%2に移動しました。</translation>
+        <translation>%1は%2に移動しました。</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>%1 moved to %2 by %3.</source>
-        <translation type="unfinished">%1は%3によって%2に移動させられました。</translation>
+        <translation>%1は%3によって%2に移動させられました。</translation>
     </message>
     <message>
-        <location line="+10"/>
+        <location line="+14"/>
         <source>%1 moved in from %2 by %3.</source>
-        <translation type="unfinished">%1は%3によって%2から移動させられました。</translation>
+        <translation>%1は%3によって%2から移動させられました。</translation>
     </message>
     <message>
-        <source>Left server: %1.</source>
-        <translation type="obsolete">サーバから切断しました: %1.</translation>
-    </message>
-    <message>
-        <location line="-157"/>
+        <location line="-161"/>
         <source>%1 is now muted and deafened.</source>
-        <translation type="unfinished">%1が発言禁止/聴取禁止状態になりました。</translation>
+        <translation>%1が発言禁止/聴取禁止状態になりました。</translation>
     </message>
     <message>
-        <location line="-114"/>
+        <location line="-120"/>
         <source>You were denied %1 privileges in %2.</source>
         <translation>あなたは %2 で %1 の権限を拒否されました。</translation>
     </message>
@@ -6990,7 +4933,7 @@ This field describes the size of an LCD device. The size is given either in pixe
     <message>
         <location line="+38"/>
         <source>%3 was denied %1 privileges in %2.</source>
-        <translation type="unfinished">%3は%2で%1の権限がありません。</translation>
+        <translation>%3は%2で%1の権限がありません。</translation>
     </message>
     <message>
         <location line="+4"/>
@@ -7020,7 +4963,7 @@ This field describes the size of an LCD device. The size is given either in pixe
     <message>
         <location line="+2"/>
         <source>%1 does not have a certificate.</source>
-        <translation type="unfinished">%1は証明書を持っていません。</translation>
+        <translation>%1は証明書を持っていません。</translation>
     </message>
     <message>
         <location line="+5"/>
@@ -7038,44 +4981,49 @@ This field describes the size of an LCD device. The size is given either in pixe
         <translation>チャンネルが満員です。</translation>
     </message>
     <message>
+        <location line="+4"/>
+        <source>Channel nesting limit reached.</source>
+        <translation>チャンネルのネスト制限に達しました。</translation>
+    </message>
+    <message>
         <location line="+7"/>
         <source>Permission denied.</source>
         <translation>権限がありません。</translation>
     </message>
     <message>
-        <location line="+37"/>
+        <location line="+39"/>
         <source>%1 connected.</source>
-        <translation type="unfinished">%1が接続しました。</translation>
+        <translation>%1が接続しました。</translation>
     </message>
     <message>
         <location line="+13"/>
         <source>%1 is now muted.</source>
-        <translation type="unfinished">%1が発言禁止状態になりました。</translation>
+        <translation>%1が発言禁止状態になりました。</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>%1 is now unmuted.</source>
-        <translation type="unfinished">%1の発言禁止状態が解除されました。</translation>
+        <translation>%1の発言禁止状態が解除されました。</translation>
     </message>
     <message>
         <location line="+11"/>
         <source>Recording started</source>
-        <translation type="unfinished">録音開始</translation>
+        <translation>録音開始</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>Recording stopped</source>
-        <translation type="unfinished">録音停止</translation>
+        <translation>録音停止</translation>
     </message>
     <message>
         <location line="+4"/>
         <source>%1 started recording.</source>
-        <translation type="unfinished">%1が録音を開始しました。</translation>
+        <translation>%1が録音を開始しました。</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>%1 stopped recording.</source>
-        <translation type="unfinished">%1が録音を停止しました。</translation>
+        <translation>%1が録音を停止しました。</translation>
     </message>
     <message>
         <location line="+41"/>
@@ -7083,17 +5031,17 @@ This field describes the size of an LCD device. The size is given either in pixe
         <translation>あなたの発言禁止が解除されました。</translation>
     </message>
     <message>
-        <location line="+96"/>
+        <location line="+100"/>
         <source>%1 is recording</source>
-        <translation type="unfinished">%1は録音しています</translation>
+        <translation>%1は録音しています</translation>
     </message>
     <message>
         <location line="+46"/>
         <source>%1 disconnected.</source>
-        <translation type="unfinished">%1が切断しました。</translation>
+        <translation>%1が切断しました。</translation>
     </message>
     <message>
-        <location line="+91"/>
+        <location line="+96"/>
         <source>(Tree) </source>
         <translation>(ツリー) </translation>
     </message>
@@ -7108,36 +5056,32 @@ This field describes the size of an LCD device. The size is given either in pixe
         <translation></translation>
     </message>
     <message>
-        <location line="+197"/>
+        <location line="+201"/>
         <source>The server requests minimum client version %1</source>
-        <translation type="unfinished"></translation>
+        <translation>サーバは最低でもバージョン%1のクライアントを要求しています</translation>
     </message>
     <message>
         <location line="+4"/>
         <source>The server requests positional audio be enabled.</source>
-        <translation type="unfinished"></translation>
+        <translation>サーバは位置音響を有効にすることを要求しています。</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>The server requests positional audio be disabled.</source>
-        <translation type="unfinished"></translation>
+        <translation>サーバは位置音響を無効にすることを要求しています。</translation>
     </message>
     <message>
         <location line="+4"/>
         <source>The server requests Push-to-Talk be enabled.</source>
-        <translation type="unfinished"></translation>
+        <translation>サーバはプッシュ・トゥ・トークを有効にすることを要求しています。</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>The server requests Push-to-Talk be disabled.</source>
-        <translation type="unfinished"></translation>
+        <translation>サーバはプッシュ・トゥ・トークを無効にすることを要求しています。</translation>
     </message>
     <message>
-        <source>server</source>
-        <translation type="obsolete">サーバ</translation>
-    </message>
-    <message>
-        <location line="-463"/>
+        <location line="-476"/>
         <source>You were muted by %1.</source>
         <translation>%1 があなたの発言を禁止しました。</translation>
     </message>
@@ -7158,10 +5102,6 @@ This field describes the size of an LCD device. The size is given either in pixe
         <translation>あなたは %1 によって発言禁止を解除されました。</translation>
     </message>
     <message>
-        <source>You deafened %1.</source>
-        <translation type="obsolete">あなたは %1 を聴取禁止にしました。</translation>
-    </message>
-    <message>
         <location line="+29"/>
         <source>You muted %1.</source>
         <translation>あなたは %1 を発言禁止にしました。</translation>
@@ -7179,30 +5119,25 @@ This field describes the size of an LCD device. The size is given either in pixe
     <message>
         <location line="+25"/>
         <source>%1 muted by %2.</source>
-        <translation type="unfinished">%2が%1を発言禁止にしました。</translation>
+        <translation>%2が%1を発言禁止にしました。</translation>
     </message>
     <message>
         <location line="+16"/>
         <source>%1 unsuppressed by %2.</source>
-        <translation type="unfinished">%1が%2によって発言禁止を解除されました。</translation>
+        <translation>%1が%2によって発言禁止を解除されました。</translation>
     </message>
     <message>
         <location line="-14"/>
         <source>%1 unmuted by %2.</source>
-        <translation type="unfinished">%1は%2によって発言禁止を解除されました。</translation>
+        <translation>%1は%2によって発言禁止を解除されました。</translation>
     </message>
     <message>
-        <source>the server</source>
-        <comment>message from</comment>
-        <translation type="obsolete">サーバ</translation>
-    </message>
-    <message>
-        <location line="+364"/>
+        <location line="+377"/>
         <source>Unable to find matching CELT codecs with other clients. You will not be able to talk to all users.</source>
         <translation>他のクライアントとマッチするCELTコーデックが見つかりません。あなたは全てのユーザとは話せないでしょう。</translation>
     </message>
     <message>
-        <location line="-430"/>
+        <location line="-443"/>
         <source>You were muted and deafened by %1.</source>
         <oldsource>You were deafened by %1.</oldsource>
         <translation>%1 があなたの聴取を禁止しました。</translation>
@@ -7213,23 +5148,19 @@ This field describes the size of an LCD device. The size is given either in pixe
         <translation>%1 があなたの聴取禁止を解除しました。</translation>
     </message>
     <message>
-        <source>%1 deafened by %2.</source>
-        <translation type="obsolete">%1 は %2 によって聴取禁止にされました。</translation>
-    </message>
-    <message>
         <location line="+58"/>
         <source>%1 undeafened by %2.</source>
-        <translation type="unfinished">%2が%1の聴取禁止を解除しました。</translation>
+        <translation>%2が%1の聴取禁止を解除しました。</translation>
     </message>
     <message>
-        <location line="+86"/>
+        <location line="+90"/>
         <source>You were kicked from the server by %1: %2.</source>
         <translation>あなたは %1 によってサーバからキックされました: %2.</translation>
     </message>
     <message>
         <location line="+5"/>
         <source>%3 was kicked from the server by %1: %2.</source>
-        <translation type="unfinished">%3は%1によってサーバからキックされました: %2.</translation>
+        <translation>%3は%1によってサーバからキックされました: %2.</translation>
     </message>
     <message>
         <location line="-7"/>
@@ -7239,57 +5170,74 @@ This field describes the size of an LCD device. The size is given either in pixe
     <message>
         <location line="+5"/>
         <source>%3 was kicked and banned from the server by %1: %2.</source>
-        <translation type="unfinished">%3は%1によってキックされ、サーバからBANされました: %2.</translation>
+        <translation>%3は%1によってキックされ、サーバからBANされました: %2.</translation>
     </message>
     <message>
-        <location line="-60"/>
+        <location line="-64"/>
         <source>You were moved to %1 by %2.</source>
         <translation>%2 があなたを %1 に移動させました。</translation>
     </message>
     <message>
-        <source>%1 left channel.</source>
-        <translation type="obsolete">%1 がチャンネルから退出しました</translation>
-    </message>
-    <message>
-        <source>%1 moved out by %2 to %3.</source>
-        <translation type="obsolete">%1 は %2 によって %3 に移動させられました。</translation>
-    </message>
-    <message>
-        <source>%1 moved in by %2 from %3.</source>
-        <translation type="obsolete">%1 は %2 によって %3 から移動させられました。</translation>
-    </message>
-    <message>
-        <source>%1 moved out by %2.</source>
-        <translation type="obsolete">%1 は %2 によって移動させられました。</translation>
-    </message>
-    <message>
-        <location line="+13"/>
+        <location line="+17"/>
         <source>%1 entered channel.</source>
-        <translation type="unfinished">%1がチャンネルに入りました。</translation>
+        <translation>%1がチャンネルに入りました。</translation>
     </message>
     <message>
-        <source>%1 moved in by %2.</source>
-        <translation type="obsolete">%1 は %2 によって移動させられました。</translation>
-    </message>
-    <message>
-        <location line="-346"/>
+        <location line="-358"/>
         <source>Server connection rejected: %1.</source>
         <translation>サーバへの接続は拒否されました: %1.</translation>
     </message>
     <message>
-        <location line="+141"/>
+        <location line="+147"/>
         <source>Denied: %1.</source>
         <translation>拒否されました: %1.</translation>
     </message>
     <message>
-        <location filename="main.cpp" line="-52"/>
+        <location filename="main.cpp" line="-271"/>
+        <source>Usage: mumble [options] [&lt;url&gt;]
+
+&lt;url&gt; specifies a URL to connect to after startup instead of showing
+the connection window, and has the following form:
+mumble://[&lt;username&gt;[:&lt;password&gt;]@]&lt;host&gt;[:&lt;port&gt;][/&lt;channel&gt;[/&lt;subchannel&gt;...]][?version=&lt;x.y.z&gt;]
+
+The version query parameter has to be set in order to invoke the
+correct client version. It currently defaults to 1.2.0.
+
+Valid options are:
+  -h, --help    Show this help text and exit.
+  -m, --multiple
+                Allow multiple instances of the client to be started.
+  -n, --noidentity
+                Suppress loading of identity files (i.e., certificates.)
+</source>
+        <translation>使用方法: mumble [オプション] [&lt;url&gt;]
+
+&lt;url&gt;は接続ウィンドウを表示する代わりに起動後に接続するURLを指定します。
+形式:mumble://[&lt;username&gt;[:&lt;password&gt;]@]&lt;host&gt;[:&lt;port&gt;][/&lt;channel&gt;[/&lt;subchannel&gt;...]][?version=&lt;x.y.z&gt;]
+
+バージョンクエリパラメータは正しいクライアントのバージョンを呼び出すために設定されなければなりません。デフォルトはでは1.2.0です。
+
+利用可能なオプション：
+  -h, --help    このテキストを表示し終了します。.
+  -m, --multiple
+                クライアントの多重起動を許可します。.
+  -n, --noidentity
+                IDファイルの読み込みを抑制します。（例えば証明書。）         </translation>
+    </message>
+    <message>
+        <location line="+17"/>
+        <source>Invocation</source>
+        <translation>呼び出し</translation>
+    </message>
+    <message>
+        <location line="+192"/>
         <source>Welcome to Mumble.</source>
         <translation>Mumbleへようこそ。</translation>
     </message>
     <message>
-        <location line="+62"/>
+        <location line="+73"/>
         <source>Skipping version check in debug mode.</source>
-        <translation type="unfinished"></translation>
+        <translation>デバッグモードではバージョン確認をスキップする。</translation>
     </message>
     <message>
         <location filename="MainWindow.ui"/>
@@ -7307,30 +5255,26 @@ This field describes the size of an LCD device. The size is given either in pixe
         <translation>アプリケーションを終了します。</translation>
     </message>
     <message>
-        <source>Send Messa&amp;ge</source>
-        <translation type="obsolete">メッセージを送信(&amp;G)</translation>
-    </message>
-    <message>
         <location/>
         <source>Send a Text Message</source>
         <translation>テキストメッセージを送信</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="+478"/>
+        <location filename="MainWindow.cpp" line="+503"/>
         <source>Sending message to %1</source>
         <translation>%1 にメッセージを送信しています</translation>
     </message>
     <message>
         <location line="+12"/>
-        <location line="+81"/>
+        <location line="+79"/>
         <location line="+4"/>
         <location line="+233"/>
         <source>To %1: %2</source>
         <translation>%1 宛: %2</translation>
     </message>
     <message>
-        <location line="-318"/>
-        <location line="+85"/>
+        <location line="-316"/>
+        <location line="+83"/>
         <source>Message to %1</source>
         <translation>%1 へのメッセージ</translation>
     </message>
@@ -7351,11 +5295,7 @@ This field describes the size of an LCD device. The size is given either in pixe
         <translation>(ツリー） %1宛: %2</translation>
     </message>
     <message>
-        <source>Failed to launch compatibility client</source>
-        <translation type="obsolete">互換クライアントの起動に失敗しました</translation>
-    </message>
-    <message>
-        <location line="+705"/>
+        <location line="+724"/>
         <source>Invalid username</source>
         <translation>無効なユーザ名</translation>
     </message>
@@ -7375,29 +5315,17 @@ This field describes the size of an LCD device. The size is given either in pixe
         <translation>誤ったパスワード</translation>
     </message>
     <message>
-        <source>Wrong password for registered users, please try again.</source>
-        <translation type="obsolete">登録されたユーザのパスワードが違うか証明書が一致しません。再度試してください。</translation>
-    </message>
-    <message>
         <location line="+1"/>
         <source>Wrong server password for unregistered user account, please try again.</source>
         <translation>未登録ユーザのパスワードが違います。再度試してください。</translation>
     </message>
     <message>
-        <location line="+211"/>
+        <location line="+222"/>
         <source>Images (*.png *.jpg *.jpeg *.svg)</source>
-        <translation type="unfinished">画像ファイル (*.png *.jpg *.jpeg *.svg)</translation>
+        <translation>画像ファイル (*.png *.jpg *.jpeg *.svg)</translation>
     </message>
     <message>
-        <source>Images (*.png *.jpg *.svg)</source>
-        <translation type="obsolete">画像 (*.png *.jpg *.svg)</translation>
-    </message>
-    <message>
-        <source>From %1: %2</source>
-        <translation type="obsolete">%1 より: %2</translation>
-    </message>
-    <message>
-        <location filename="Messages.cpp" line="+353"/>
+        <location filename="Messages.cpp" line="+364"/>
         <source>Message from %1</source>
         <translation>%1 からのメッセージ</translation>
     </message>
@@ -7412,7 +5340,7 @@ This field describes the size of an LCD device. The size is given either in pixe
         <translation>他のユーザにテキストメッセージを送信します。</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="-2493"/>
+        <location filename="MainWindow.cpp" line="-2526"/>
         <source>&amp;User</source>
         <translation>ユーザ(&amp;U)</translation>
     </message>
@@ -7504,7 +5432,7 @@ This field describes the size of an LCD device. The size is given either in pixe
         <translation>サウンドハードウェアの設定プロセスに案内します。</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="+2205"/>
+        <location filename="MainWindow.cpp" line="+2227"/>
         <source>SSL Verification failed: %1</source>
         <translation>SSL検証エラー: %1</translation>
     </message>
@@ -7534,7 +5462,7 @@ This field describes the size of an LCD device. The size is given either in pixe
         <translation>サーバとの接続についての詳細な情報を表示します。</translation>
     </message>
     <message>
-        <location filename="MainWindow.cpp" line="-1753"/>
+        <location filename="MainWindow.cpp" line="-1793"/>
         <source>Opening URL %1</source>
         <translation>URL %1 を開きます</translation>
     </message>
@@ -7544,7 +5472,7 @@ This field describes the size of an LCD device. The size is given either in pixe
         <translation>ファイルが存在しません</translation>
     </message>
     <message>
-        <location line="+10"/>
+        <location line="+8"/>
         <source>File is not a configuration file.</source>
         <translation>設定ファイルが見つかりません。</translation>
     </message>
@@ -7585,12 +5513,7 @@ This field describes the size of an LCD device. The size is given either in pixe
         <translation>コメントを変更します</translation>
     </message>
     <message>
-        <location line="+94"/>
-        <source>&lt;h2&gt;Version&lt;/h2&gt;&lt;p&gt;Protocol %1.%2.%3.&lt;/p&gt;</source>
-        <translation>&lt;h2&gt;バージョン&lt;/h2&gt;&lt;p&gt;プロトコル %1.%2.%3.&lt;/p&gt;</translation>
-    </message>
-    <message>
-        <location line="+5"/>
+        <location line="+108"/>
         <source>&lt;p&gt;No build information or OS version available.&lt;/p&gt;</source>
         <translation>&lt;p&gt;ビルド情報がないか OS のバージョンが有効です。&lt;/p&gt;</translation>
     </message>
@@ -7600,38 +5523,29 @@ This field describes the size of an LCD device. The size is given either in pixe
         <translation></translation>
     </message>
     <message>
-        <source>&lt;h2&gt;Control channel&lt;/h2&gt;&lt;p&gt;Encrypted with %1 bit %2&lt;br /&gt;%3 ms average latency (%4 deviation)&lt;/p&gt;</source>
-        <translation type="obsolete">&lt;h2&gt;制御チャンネル&lt;/h2&gt;&lt;p&gt;%1 bit %2 で暗号化されています。&lt;br /&gt;平均 %3 ms の遅延 (平方偏差 %4)&lt;/p&gt;</translation>
-    </message>
-    <message>
         <location line="+20"/>
         <source>&lt;h2&gt;Voice channel&lt;/h2&gt;&lt;p&gt;Encrypted with 128 bit OCB-AES128&lt;br /&gt;%1 ms average latency (%4 deviation)&lt;/p&gt;</source>
         <translation>&lt;h2&gt;音声チャンネル&lt;/h2&gt;&lt;p&gt;128 bit OCB-AES128 で暗号化されています。&lt;br /&gt;平均 %1 ms の遅延 (平方偏差 %4)&lt;/p&gt;</translation>
     </message>
     <message>
-        <location line="+11"/>
-        <source>&lt;h2&gt;Audio bandwidth&lt;/h2&gt;&lt;p&gt;Maximum %1 kbit/s&lt;br /&gt;Current %2 kbit/s&lt;/p&gt;</source>
-        <translation>&lt;h2&gt;音声帯域幅&lt;/h2&gt;&lt;p&gt;最大値 %1 kbit/s&lt;br /&gt;現在値 %2 kbit/s&lt;/p&gt;</translation>
-    </message>
-    <message>
-        <location line="+2"/>
+        <location line="+13"/>
         <source>Mumble Server Information</source>
         <translation>Mumble サーバの情報</translation>
     </message>
     <message>
         <location line="+4"/>
-        <location line="+1297"/>
+        <location line="+1330"/>
         <source>&amp;View Certificate</source>
         <translation>証明書を見る(&amp;V)</translation>
     </message>
     <message>
-        <location line="-1409"/>
-        <location line="+329"/>
+        <location line="-1451"/>
+        <location line="+354"/>
         <source>Register yourself as %1</source>
         <translation>%1 の名前で自分をユーザ登録します</translation>
     </message>
     <message>
-        <location line="-1082"/>
+        <location line="-1087"/>
         <source>This will switch the states of the in-game overlay.</source>
         <comment>Global Shortcut</comment>
         <translation>ゲームオーバレイの状態を切り替えます。</translation>
@@ -7640,16 +5554,26 @@ This field describes the size of an LCD device. The size is given either in pixe
         <location line="+19"/>
         <source>Link Channel</source>
         <comment>Global Shortcut</comment>
-        <translation type="unfinished"></translation>
+        <translation>チャンネルのリンク</translation>
     </message>
     <message>
-        <location line="+734"/>
-        <location line="+329"/>
+        <location line="+714"/>
+        <location line="+354"/>
         <source>&lt;p&gt;You are about to register yourself on this server. This action cannot be undone, and your username cannot be changed once this is done. You will forever be known as &apos;%1&apos; on this server.&lt;/p&gt;&lt;p&gt;Are you sure you want to register yourself?&lt;/p&gt;</source>
         <translation>&lt;p&gt;サーバ上で自分自身をユーザ登録しようとしています。このアクションは取り消せません。このサーバでのあなたのユーザ名をこの操作の後に変更できなくなります。あなたはこのサーバ上で &apos;%1&apos; のユーザ名を使うことになります。&lt;/p&gt;&lt;p&gt;本当に自分自身を登録しますか？&lt;/p&gt;</translation>
     </message>
     <message>
-        <location line="+2"/>
+        <location line="-275"/>
+        <source>&lt;h2&gt;Version&lt;/h2&gt;&lt;p&gt;Protocol %1.&lt;/p&gt;</source>
+        <translation>&lt;h2&gt;バージョン&lt;/h2&gt;&lt;p&gt;プロトコル %1.&lt;/p&gt;</translation>
+    </message>
+    <message>
+        <location line="+36"/>
+        <source>&lt;h2&gt;Audio bandwidth&lt;/h2&gt;&lt;p&gt;Maximum %1 kbit/s&lt;br /&gt;Current %2 kbit/s&lt;br /&gt;Codec: %3&lt;/p&gt;</source>
+        <translation>&lt;h2&gt;音声帯域&lt;/h2&gt;&lt;p&gt;最大%1kbit/s&lt;br /&gt;現在%2kbit/s&lt;br /&gt;コーデック: %3&lt;/p&gt;</translation>
+    </message>
+    <message>
+        <location line="+241"/>
         <source>Register user %1</source>
         <translation>ユーザ %1 を登録</translation>
     </message>
@@ -7669,23 +5593,15 @@ This field describes the size of an LCD device. The size is given either in pixe
         <translation>ユーザ：%1 をバンする</translation>
     </message>
     <message>
-        <source>Change comment on user %1</source>
-        <translation type="obsolete">ユーザ %1 のコメントを変更する</translation>
-    </message>
-    <message>
-        <source>To channel %1: %2</source>
-        <translation type="obsolete">チャンネル %1 宛: %2</translation>
-    </message>
-    <message>
-        <location line="+115"/>
+        <location line="+113"/>
         <location line="+237"/>
         <source>Message to channel %1</source>
         <translation>チャンネル %1 へのメッセージ</translation>
     </message>
     <message>
-        <location line="+525"/>
+        <location line="+544"/>
         <source>Connected.</source>
-        <translation type="unfinished">サーバに接続しました。</translation>
+        <translation>サーバに接続しました。</translation>
     </message>
     <message>
         <location line="+159"/>
@@ -7693,51 +5609,39 @@ This field describes the size of an LCD device. The size is given either in pixe
         <translation>SSL のバージョンが一致しません</translation>
     </message>
     <message>
-        <source>This server is using an older encryption standard. It might be an older 1.1 based Mumble server.&lt;br /&gt;Would you like to launch the compatibility client to connect to it?</source>
-        <translation type="obsolete">このサーバはより古い暗号化手順を使用しています。 1.1 ベースの Mumble サーバである可能性があります。&lt;br /&gt;このサーバに接続するために互換クライアントを起動しますか?</translation>
-    </message>
-    <message>
-        <source>Failed to launch compatibilty client</source>
-        <translation type="obsolete">互換クライアントの起動に失敗</translation>
-    </message>
-    <message>
-        <source>The compatibility client could not be found, or failed to start.&lt;br /&gt;Note that the compatibility client is an optional component for most installations, and might not be installed.</source>
-        <translation type="obsolete">互換クライアントが見つからないか起動に失敗しました。&lt;br /&gt;互換クライアントはほとんどのインストールに置いて任意の項目であり、インストールされていない可能性があります。</translation>
-    </message>
-    <message>
         <location line="-24"/>
         <source>&lt;p&gt;%1.&lt;br /&gt;The specific errors with this certificate are: &lt;/p&gt;&lt;ol&gt;%2&lt;/ol&gt;&lt;p&gt;Do you wish to accept this certificate anyway?&lt;br /&gt;(It will also be stored so you won&apos;t be asked this again.)&lt;/p&gt;</source>
         <translation>&lt;p&gt;%1.&lt;br /&gt;詳細な証明書エラーの内容: &lt;/p&gt;&lt;ol&gt;%2&lt;/ol&gt;&lt;p&gt;この証明書を受け入れますか？&lt;br /&gt;(同時に証明書を保存するので、今後この質問は表示されません。)&lt;/p&gt;</translation>
     </message>
     <message>
-        <location line="-1318"/>
+        <location line="-1351"/>
         <source>&lt;h2&gt;Control channel&lt;/h2&gt;&lt;p&gt;Encrypted with %1 bit %2&lt;br /&gt;%3 ms average latency (%4 deviation)&lt;/p&gt;&lt;p&gt;Remote host %5 (port %6)&lt;/p&gt;</source>
         <translation>&lt;h2&gt;制御チャンネル&lt;/h2&gt;&lt;p&gt;%1 bit %2 で暗号化されています。&lt;br /&gt;平均 %3 ms の遅延 (平方偏差 %4)&lt;/p&gt;&lt;p&gt;リモートホスト %5 (ポート %6)&lt;/p&gt;</translation>
     </message>
     <message>
-        <location line="+1342"/>
+        <location line="+1375"/>
         <source>This server is using an older encryption standard, and is no longer supported by modern versions of Mumble.</source>
-        <translation type="unfinished"></translation>
+        <translation>このサーバはより古い暗号化規格を使用しており、Mumbleの最新のバージョンによってもはやサポートされていません。</translation>
     </message>
     <message>
         <location line="+24"/>
         <source>Username in use</source>
-        <translation type="unfinished"></translation>
+        <translation>使用しているユーザ名</translation>
     </message>
     <message>
         <location line="+6"/>
         <source>Wrong certificate or password</source>
-        <translation type="unfinished"></translation>
+        <translation>証明書かパスワードが間違っています</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Wrong certificate or password for registered user. If you are
 certain this user is protected by a password please retry.
 Otherwise abort and check your certificate and username.</source>
-        <translation type="unfinished"></translation>
+        <translation>登録ユーザに対する証明書かパスワードが間違っています。このユーザが本当にパスワードによって保護されているなら、もう一度入力してください。そうでなければ、中断して証明書とユーザ名を確認してください。</translation>
     </message>
     <message>
-        <location line="+111"/>
+        <location line="+122"/>
         <source>&lt;center&gt;Type message to channel &apos;%1&apos; here&lt;/center&gt;</source>
         <oldsource>Type message to channel &apos;%1&apos; here</oldsource>
         <translation>チャンネル &apos;%1&apos; へのメッセージをここに入力</translation>
@@ -7752,10 +5656,6 @@ Otherwise abort and check your certificate and username.</source>
         <location line="+105"/>
         <source>Choose image file</source>
         <translation>イメージファイルを選択</translation>
-    </message>
-    <message>
-        <source>Images (*.png *.jpg)</source>
-        <translation type="obsolete">イメージ (*.png *.jpg)</translation>
     </message>
     <message>
         <location line="+7"/>
@@ -7774,17 +5674,9 @@ Otherwise abort and check your certificate and username.</source>
         <translation>画像の形式を認識できません。</translation>
     </message>
     <message>
-        <source>&lt;h2&gt;Control channel&lt;/h2&gt;&lt;p&gt;Encrypted with %1 bit %2&lt;br /&gt;%3 ms average latency (%4 variance)&lt;/p&gt;</source>
-        <translation type="obsolete">&lt;h2&gt;制御チャンネル&lt;/h2&gt;&lt;p&gt;%1 bit %2 で暗号化されています。&lt;br /&gt;平均 %3 ms の遅延 (平方偏差 %4)&lt;/p&gt;</translation>
-    </message>
-    <message>
-        <location line="-1607"/>
+        <location line="-1651"/>
         <source>Voice channel is sent over control channel.</source>
         <translation>音声チャンネルは管理チャンネルを通して送信されます。</translation>
-    </message>
-    <message>
-        <source>&lt;h2&gt;Voice channel&lt;/h2&gt;&lt;p&gt;Encrypted with 128 bit OCB-AES128&lt;br /&gt;%1 ms average latency (%4 variance)&lt;/p&gt;</source>
-        <translation type="obsolete">&lt;h2&gt;音声チャンネル&lt;/h2&gt;&lt;p&gt;128 bit OCB-AES128 で暗号化されています。&lt;br /&gt;平均 %1 ms の遅延 (平方偏差 %4)&lt;/p&gt;</translation>
     </message>
     <message>
         <location line="+9"/>
@@ -7822,21 +5714,9 @@ Otherwise abort and check your certificate and username.</source>
         <translation>最同期</translation>
     </message>
     <message>
-        <source>Change description of channel %1</source>
-        <translation type="obsolete">チャンネル 「%1」 の説明を変更する</translation>
-    </message>
-    <message>
-        <location line="+629"/>
+        <location line="+643"/>
         <source>Sending message to channel %1</source>
         <translation>チャンネル %1 に送信するメッセージ</translation>
-    </message>
-    <message>
-        <source>Sending message to channel tree %1</source>
-        <translation type="obsolete">チャンネルツリー %1 に送信するメッセージ</translation>
-    </message>
-    <message>
-        <source>To tree %1: %2</source>
-        <translation type="obsolete">tree %1 宛: %2</translation>
     </message>
     <message>
         <location line="+9"/>
@@ -7844,45 +5724,9 @@ Otherwise abort and check your certificate and username.</source>
         <translation>tree %1 宛メッセージ</translation>
     </message>
     <message>
-        <source>You are now in local deafen mode. This mode is not reflected on the server, and you will still be transmitting voice to the server. This mode should only be used if there are several people in the same room and one of them have Mumble on loudspeakers.</source>
-        <translation type="obsolete">ローカルな聴取禁止モードになりました。このモードはサーバには反映されません。そしてあなたの声はまだ送信され続けています。このモードは、同じ部屋に数人の人がいて、そのうちの1人がMumbleを大音量のスピーカーで使っているような時だけ使用すればよいでしょう。</translation>
-    </message>
-    <message>
         <location filename="MainWindow.ui"/>
         <source>Ctrl+Q</source>
         <translation>Ctrl+Q</translation>
-    </message>
-    <message>
-        <source>Mute player locally</source>
-        <translation type="obsolete">ローカルでプレイヤーを発言禁止にする</translation>
-    </message>
-    <message>
-        <source>Mute or unmute player locally. Use this on other players in the same room.</source>
-        <translation type="obsolete">ローカルでプレイヤーを発言禁止にします。同じ部屋にいるプレイヤーに使ってください。</translation>
-    </message>
-    <message>
-        <source>&amp;Rename Channel</source>
-        <translation type="obsolete">チャンネル名を変更(&amp;R)</translation>
-    </message>
-    <message>
-        <source>Renames the channel</source>
-        <translation type="obsolete">チャンネル名を変更します</translation>
-    </message>
-    <message>
-        <source>This renames a channel.</source>
-        <translation type="obsolete">チャンネルの名前を変更します。</translation>
-    </message>
-    <message>
-        <source>&amp;Local deafen</source>
-        <translation type="obsolete">ローカルで聴取禁止にする(&amp;L)</translation>
-    </message>
-    <message>
-        <source>Silence loudspeakers</source>
-        <translation type="obsolete">スピーカーをとめる</translation>
-    </message>
-    <message>
-        <source>Sets you in local deafen mode, wherein your speakers are silenced but you are still transmitting audio.</source>
-        <translation type="obsolete">ローカルな聴取禁止モードに設定します。あなたのスピーカーは音を出しませんが、送信はなお続いています。</translation>
     </message>
     <message>
         <location/>
@@ -7895,35 +5739,7 @@ Otherwise abort and check your certificate and username.</source>
         <translation>チャンネル内の全てのユーザにテキストメッセージを送信します。</translation>
     </message>
     <message>
-        <source>Send &amp;Tree Message</source>
-        <translation type="obsolete">ツリーにメッセージを送信(&amp;T)</translation>
-    </message>
-    <message>
-        <source>Send message to channel tree.</source>
-        <translation type="obsolete">チャンネルツリーにメッセージを送信します</translation>
-    </message>
-    <message>
-        <source>This sends a text message to a channel and it&apos;s subchannels.</source>
-        <translation type="obsolete">チャンネルとそのサブチャンネルにテキストメッセージを送信します。</translation>
-    </message>
-    <message>
-        <source>Server maximum bandwidth is only %1 kbit/s. Quality auto-adjusted.</source>
-        <translation type="obsolete">サーバの最大帯域幅は %1 kbit/s しかありません。品質は自動的に調整されます。</translation>
-    </message>
-    <message>
-        <source>This is the first time you&apos;re starting Mumble.&lt;br /&gt;Would you like to go through the Audio Wizard to configure your soundcard?</source>
-        <translation type="obsolete">初めての起動です。&lt;br /&gt;サウンドカードの設定をするために音声ウィザードに移動しますか?</translation>
-    </message>
-    <message>
-        <source>&lt;h2&gt;Audio bandwidth&lt;/h2&gt;&lt;p&gt;Maximum %1 kbit/s&lt;br /&gt;Current %2 kbit/s (Quality %3)&lt;/p&gt;</source>
-        <translation type="obsolete">&lt;h2&gt;音声帯域幅&lt;/h2&gt;&lt;p&gt;最大値 %1 kbit/s&lt;br /&gt;現在値 %2 kbit/s (品質 %3)&lt;/p&gt;</translation>
-    </message>
-    <message>
-        <source>Connected to server %1.</source>
-        <translation type="obsolete">サーバ %1 に接続しました。</translation>
-    </message>
-    <message>
-        <location filename="MainWindow.cpp" line="-1334"/>
+        <location filename="MainWindow.cpp" line="-1328"/>
         <source>Mumble is currently connected to a server. Do you want to Close or Minimize it?</source>
         <translation>Mumble は現在、サーバに接続しています。接続を閉じるか最小化しますか?</translation>
     </message>
@@ -7933,16 +5749,16 @@ Otherwise abort and check your certificate and username.</source>
         <translation>閉じる</translation>
     </message>
     <message>
-        <location line="-126"/>
-        <location line="+127"/>
+        <location line="-134"/>
+        <location line="+135"/>
         <source>Minimize</source>
         <translation>最小化</translation>
     </message>
     <message>
-        <location line="-183"/>
+        <location line="-192"/>
         <source>Mute Self</source>
         <comment>Global Shortcut</comment>
-        <translation type="unfinished">発言禁止状態</translation>
+        <translation>発言禁止状態</translation>
     </message>
     <message>
         <location line="+2"/>
@@ -7960,7 +5776,7 @@ Otherwise abort and check your certificate and username.</source>
         <location line="+2"/>
         <source>Deafen Self</source>
         <comment>Global Shortcut</comment>
-        <translation type="unfinished">聴取禁止状態</translation>
+        <translation>聴取禁止状態</translation>
     </message>
     <message>
         <location line="+2"/>
@@ -7975,18 +5791,13 @@ Otherwise abort and check your certificate and username.</source>
         <translation>あなたの聴取禁止状態を設定するか切り替えます。オンになれば、発言禁止も有効になります。</translation>
     </message>
     <message>
-        <source>This will switch the states of the in-game overlay between showing everybody, just the users who are talking, and nobody.</source>
-        <comment>Global Shortcut</comment>
-        <translation type="obsolete">ゲーム中でのオーバーレイの状態を「全員」と「話している人だけ」、「なし」の間で切り替える。</translation>
-    </message>
-    <message>
         <location line="+30"/>
         <source>Whisper/Shout</source>
         <oldsource>Whisper</oldsource>
         <translation>ささやき</translation>
     </message>
     <message>
-        <location line="+16"/>
+        <location line="+17"/>
         <source>&amp;Window</source>
         <translation>ウインドウ(&amp;W)</translation>
     </message>
@@ -7996,11 +5807,7 @@ Otherwise abort and check your certificate and username.</source>
         <translation>Ctrl+M</translation>
     </message>
     <message>
-        <source>Ctrl+W</source>
-        <translation type="obsolete">Ctrl+W</translation>
-    </message>
-    <message>
-        <location line="-31"/>
+        <location line="-32"/>
         <source>Toggle Minimal</source>
         <comment>Global Shortcut</comment>
         <translation>小型切り替え</translation>
@@ -8033,14 +5840,14 @@ Otherwise abort and check your certificate and username.</source>
         <translation>音量を下げる(-10%)</translation>
     </message>
     <message>
-        <location line="+69"/>
-        <location line="+2237"/>
+        <location line="+68"/>
+        <location line="+2271"/>
         <source>&lt;center&gt;Not connected&lt;/center&gt;</source>
         <oldsource>Not connected</oldsource>
         <translation>接続されていません</translation>
     </message>
     <message>
-        <location line="-1947"/>
+        <location line="-1998"/>
         <source>Clear</source>
         <translation>クリア</translation>
     </message>
@@ -8050,7 +5857,7 @@ Otherwise abort and check your certificate and username.</source>
         <translation>ログ</translation>
     </message>
     <message>
-        <location filename="UserModel.cpp" line="+1381"/>
+        <location filename="UserModel.cpp" line="+1390"/>
         <source>You have Channel Dragging set to &quot;Do Nothing&quot; so the channel wasn&apos;t moved.</source>
         <translation>チャンネルをドラッグしたときに &quot;何もしない&quot; ようにします; チャンネルが移動しなくなります。</translation>
     </message>
@@ -8060,19 +5867,10 @@ Otherwise abort and check your certificate and username.</source>
         <translation>UserModel::dropMimeData で不明なチャンネルドラッグモードです。</translation>
     </message>
     <message>
-        <source>Unknown Channel Drag mode in PlayerModel::dropMimeData.</source>
-        <translation type="obsolete">不明なチャンネルドラッグモード, PlayerModel::dropMimeData</translation>
-    </message>
-    <message>
         <location filename="MainWindow.ui"/>
         <source>&amp;Unlink</source>
         <comment>Channel</comment>
         <translation>リンク解除(&amp;U)</translation>
-    </message>
-    <message>
-        <source>&amp;Unlink</source>
-        <comment>Plugin</comment>
-        <translation type="obsolete">リンク解除(&amp;U)</translation>
     </message>
     <message>
         <location filename="Messages.cpp" line="-10"/>
@@ -8080,10 +5878,6 @@ Otherwise abort and check your certificate and username.</source>
         <source>Server</source>
         <comment>message from</comment>
         <translation>サーバ</translation>
-    </message>
-    <message>
-        <source>&amp;Quit</source>
-        <translation type="obsolete">終了(&amp;Q)</translation>
     </message>
     <message>
         <location filename="MainWindow.ui"/>
@@ -8119,14 +5913,6 @@ Otherwise abort and check your certificate and username.</source>
         <location/>
         <source>&amp;Register</source>
         <translation>ユーザ登録(&amp;R)</translation>
-    </message>
-    <message>
-        <source>Change &amp;Texture</source>
-        <translation type="obsolete">テクスチャを変更(&amp;T)</translation>
-    </message>
-    <message>
-        <source>&amp;Remove Texture</source>
-        <translation type="obsolete">テクスチャを削除(&amp;R)</translation>
     </message>
     <message>
         <location/>
@@ -8179,10 +5965,6 @@ Otherwise abort and check your certificate and username.</source>
         <translation>プラグインをアンリンク(&amp;U)</translation>
     </message>
     <message>
-        <source>Change your own comment.</source>
-        <translation type="obsolete">自分のコメントを変更する。</translation>
-    </message>
-    <message>
         <location/>
         <source>R&amp;egister</source>
         <translation>登録(&amp;E)</translation>
@@ -8223,29 +6005,45 @@ Otherwise abort and check your certificate and username.</source>
         <translation>自分のコメントを変更</translation>
     </message>
     <message>
-        <source>Priority speaker</source>
-        <translation type="obsolete">優先度スピーカ</translation>
-    </message>
-    <message>
         <location/>
         <source>Recording</source>
-        <translation type="unfinished">録音</translation>
+        <translation>録音</translation>
     </message>
     <message>
         <location/>
         <source>Priority Speaker</source>
-        <translation type="unfinished">優先度スピーカ</translation>
+        <translation>優先度スピーカ</translation>
     </message>
     <message>
         <location/>
         <source>Copies a link to this channel to the clipboard.</source>
-        <translation type="unfinished"></translation>
+        <translation>クリップボードにこのチャンネルへのリンクをコピーします。</translation>
+    </message>
+    <message>
+        <location/>
+        <source>Ignore Messages</source>
+        <translation>メッセージを無視する</translation>
+    </message>
+    <message>
+        <location/>
+        <source>Locally ignore user&apos;s text chat messages.</source>
+        <translation>ユーザのテキストチャットメッセージをローカルで無視します。</translation>
+    </message>
+    <message>
+        <location/>
+        <source>Silently drops all text messages from the user.</source>
+        <translation>ユーザからのすべてのテキストメッセージを通知なしに無視します。</translation>
+    </message>
+    <message>
+        <location/>
+        <source>&amp;Copy URL</source>
+        <translation>URLをコピー(&amp;C)</translation>
     </message>
 </context>
 <context>
     <name>NetworkConfig</name>
     <message>
-        <location filename="NetworkConfig.cpp" line="+53"/>
+        <location filename="NetworkConfig.cpp" line="+56"/>
         <source>Network</source>
         <translation>ネットワーク</translation>
     </message>
@@ -8253,10 +6051,6 @@ Otherwise abort and check your certificate and username.</source>
         <location line="+36"/>
         <source>Updates are mandatory when using snapshot releases.</source>
         <translation>snapshot がリリースされたときはアップデートが必須です。</translation>
-    </message>
-    <message>
-        <source>Form</source>
-        <translation type="obsolete">フォーム</translation>
     </message>
     <message>
         <location filename="NetworkConfig.ui"/>
@@ -8273,10 +6067,6 @@ Otherwise abort and check your certificate and username.</source>
         <location/>
         <source>&lt;b&gt;Enable TCP compatibility mode&lt;/b&gt;.&lt;br /&gt;This will make Mumble use only TCP when communicating with the server. This will increase overhead and cause lost packets to produce noticeable pauses in communication, so this should only be used if you are unable to use the default (which uses UDP for voice and TCP for control).</source>
         <translation>&lt;b&gt;TCP互換モードを有効にします。&lt;/b&gt;.&lt;br /&gt;この設定をするとMumbleがサーバとの通信にTCPのみを使用するようになります。この設定は通信のオーバーヘッドを増大させ、通信時に音声が途切れる原因になるので、デフォルトの設定(音声:UDP 操作:TCP)が使用できない場合だけ使用するのが良いでしょう。</translation>
-    </message>
-    <message>
-        <source>Use TCP mode</source>
-        <translation type="obsolete">TCPモードを使用する</translation>
     </message>
     <message>
         <location/>
@@ -8309,11 +6099,6 @@ Otherwise abort and check your certificate and username.</source>
         <translation>プロキシの接続タイプ</translation>
     </message>
     <message>
-        <source>&lt;b&gt;Type of proxy to connect through&lt;/b&gt;&lt;br /&gt;This makes Mumble connect through a proxy for all outgoing connections. Note: Proxy tunneling forces Mumble into TCP compatibility mode, causing all voice data to be sent via the control channel.</source>
-        <oldsource>&lt;b&gt;Type of proxy to connect through&lt;/b&gt;&lt;br /&gt;This makes Mumble connect through a proxy for all outgoing connections. Note: Proxy tunneling forces Mumble into TCP compatability mode, causing all voice data to be sent via the control channel.</oldsource>
-        <translation type="obsolete">&lt;b&gt;プロキシの接続タイプ&lt;/b&gt;&lt;br /&gt;プロキシを通して外向きの接続を行うようにします。 注意: プロキシ接続をする場合、強制的にTCP互換モードに変更されます。 全ての音声データは管理チャンネルを通して送信されるようになります。</translation>
-    </message>
-    <message>
         <location/>
         <source>Direct connection</source>
         <translation>直接接続</translation>
@@ -8337,10 +6122,6 @@ Otherwise abort and check your certificate and username.</source>
         <location/>
         <source>Hostname of the proxy</source>
         <translation>プロキシのホスト名</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Hostname of the proxy.&lt;b&gt;&lt;br /&gt;This field specifies the hostname of the proxy you wish to tunnel network traffic through.</source>
-        <translation type="obsolete">&lt;b&gt;プロキシサーバのホスト名&lt;b&gt;&lt;br /&gt;あなたが使用したいプロキシサーバのホスト名を指定します。</translation>
     </message>
     <message>
         <location/>
@@ -8485,26 +6266,14 @@ img タグでチャットメッセージに埋め込まれた画像のダウン�
         <translation>プログラムが開始する度に新しいプラグインを確認し、存在すれば自動的にダウンロードする。</translation>
     </message>
     <message>
-        <source>Download plugin updates on startup</source>
-        <translation type="obsolete">開始時にプラグインのアップデートをダウンロードする</translation>
-    </message>
-    <message>
         <location/>
         <source>&lt;b&gt;Submit anonymous statistics.&lt;/b&gt;&lt;br /&gt;Mumble has a small development team, and as such needs to focus its development where it is needed most. By submitting a bit of statistics you help the project determine where to focus development.</source>
         <translation>&lt;b&gt;匿名で統計情報の送信&lt;/b&gt;Mumble の開発チームの規模は小さいので、必要なものに開発の焦点をしぼる必要があります。統計情報を送信することで、プロジェクトがユーザが頻繁に使う機能が何であるのかを知り、開発の焦点をどこに定めるかを決める手助けとなります。</translation>
     </message>
     <message>
-        <source>Check for updates on startup</source>
-        <translation type="obsolete">起動時に更新をチェックする</translation>
-    </message>
-    <message>
         <location/>
         <source>Submit anonymous statistics to the Mumble project</source>
         <translation>Mumbleプロジェクトに匿名で統計を送信</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Submit anonymous statistics.&lt;/b&gt;&lt;br /&gt;Mumble has a small development team, and as such needs to focus it&apos;s development where it&apos;s needed most. By submitting a bit of statistics you help the project determine where to focus development.</source>
-        <translation type="obsolete">&lt;b&gt;匿名で統計を送信します。&lt;/b&gt;&lt;br /&gt;Mumbleは小さなチームで開発を行っているためもっとも必要な機能に絞って開発をしなければなりません。統計情報の送信はプロジェクトがどこに注力して開発すれば良いかを決定するための指針になります。</translation>
     </message>
     <message>
         <location/>
@@ -8528,69 +6297,10 @@ img タグでチャットメッセージに埋め込まれた画像のダウン�
     </message>
 </context>
 <context>
-    <name>OSSConfig</name>
-    <message>
-        <source>%1ms</source>
-        <translation type="obsolete">%1ms</translation>
-    </message>
-    <message>
-        <source>Form</source>
-        <translation type="obsolete">フォーム</translation>
-    </message>
-    <message>
-        <source>Device selection</source>
-        <translation type="obsolete">デバイス選択</translation>
-    </message>
-    <message>
-        <source>Input</source>
-        <translation type="obsolete">入力</translation>
-    </message>
-    <message>
-        <source>Device to use for microphone</source>
-        <translation type="obsolete">マイクに使用するデバイス</translation>
-    </message>
-    <message>
-        <source>Output</source>
-        <translation type="obsolete">出力</translation>
-    </message>
-    <message>
-        <source>Device to use for speakers/headphones</source>
-        <translation type="obsolete">スピーカー/ヘッドホンに使用するデバイス</translation>
-    </message>
-    <message>
-        <source>Output Options</source>
-        <translation type="obsolete">出力オプション</translation>
-    </message>
-    <message>
-        <source>Output Delay</source>
-        <translation type="obsolete">出力猶予</translation>
-    </message>
-    <message>
-        <source>Amount of data to buffer for OSS</source>
-        <translation type="obsolete">OSS用バッファデータの量</translation>
-    </message>
-    <message>
-        <source>This sets the amount of data to prebuffer in the output buffer. Experiment with different values and set it to the lowest which doesn&apos;t cause rapid jitter in the sound.</source>
-        <translation type="obsolete">出力バッファにおけるプリバッファの量を設定します。いろいろな値で試してみて、急に不安定にならない一番小さな値に設定してください。</translation>
-    </message>
-    <message>
-        <source>TextLabel</source>
-        <translation type="obsolete">テキストラベル</translation>
-    </message>
-    <message>
-        <source>This set which device mumble should use. The &lt;i&gt;default&lt;/i&gt; device is your primary sound device.</source>
-        <translation type="obsolete">Mumbleがどのデバイスを使用するか設定します。&lt;i&gt;デフォルト&lt;/i&gt;デバイスはプライマリーのサウンドデバイスです。</translation>
-    </message>
-</context>
-<context>
     <name>Overlay</name>
     <message>
-        <source>Mumble</source>
-        <translation type="obsolete">Mumble</translation>
-    </message>
-    <message>
-        <location filename="OverlayEditorScene.cpp" line="+121"/>
-        <location filename="OverlayUser.cpp" line="+151"/>
+        <location filename="OverlayEditorScene.cpp" line="+119"/>
+        <location filename="OverlayUser.cpp" line="+153"/>
         <source>Silent</source>
         <translation>発言していない</translation>
     </message>
@@ -8619,61 +6329,15 @@ img タグでチャットメッセージに埋め込まれた画像のダウン�
         <translation>チャンネル</translation>
     </message>
     <message>
-        <location filename="Overlay.cpp" line="+101"/>
+        <location filename="Overlay.cpp" line="+104"/>
         <source>Failed to create communication with overlay at %2: %1. No overlay will be available.</source>
         <translation>オーバレイ:  %2: %1 との通信の作成に失敗しました。有効なオーバレイはありません。</translation>
-    </message>
-    <message>
-        <location line="+252"/>
-        <source>Skipping overlay update in debug mode.</source>
-        <translation>デバッグモードではオーバレイの更新をスキップします。</translation>
-    </message>
-    <message>
-        <location line="+61"/>
-        <source>Downloaded new or updated overlay support file to %1.</source>
-        <translation>%1に新規か更新されたオーバレイサポートファイルをダウンロードしました。</translation>
-    </message>
-    <message>
-        <source>Failed to load overlay library. This means either that:
-- the library (mumble_ol.dll) wasn&apos;t found in the directory you ran Mumble from
-- you&apos;re on an OS earlier than WinXP SP2
-- you do not have the August 2006 updated version of DX9.0c</source>
-        <translation type="obsolete">オーバーレイライブラリの読み込みに失敗しました。 原因は次のうちのどれかです:
-- ライブラリ (mumble_ol.dll) が起動していたMumbleのディレクトリに存在しなかった
-- WinXP SP2 以前のOSを使っている
-- 2006年8月にアップデートされたバージョンの DX9.0x を使っていない</translation>
-    </message>
-    <message>
-        <source>Failed to load overlay library. This means either that:
-- the library (mumble_ol.dll) wasn&apos;t found in the directory you ran Mumble from
-- you&apos;re on an OS earlier than WinXP SP2
-- you do not have the June 2007 updated version of DX9.0c</source>
-        <translation type="obsolete">オーバーレイライブラリの読み込みに失敗しました。 原因は次のうちのどれかです:
-- ライブラリ (mumble_ol.dll) が起動していたMumbleのディレクトリに存在しなかった
-- WinXP SP2 以前のOSを使っている
-- 2007年6月にアップデートされたバージョンの DX9.0x を使っていない</translation>
-    </message>
-    <message>
-        <source>Failed to load overlay library. This means either that:
-- the library (mumble_ol.dll) wasn&apos;t found in the directory you ran Mumble from
-- you&apos;re on an OS earlier than WinXP SP2</source>
-        <translation type="obsolete">オーバレイライブラリの読み込みに失敗しました. 次の原因が考えられます:
-- ライブラリファイル（mumble_ol.dll)が Mumble の実行されているフォルダに存在しない
-- WinXP SP2 より古い OS を使用している</translation>
-    </message>
-    <message>
-        <source>Failed to initialize overlay memory. This usually means that the shared memory is locked by the OS, and you need to reboot to release it.</source>
-        <translation type="obsolete">オーバーレイメモリの初期化に失敗しました。共有メモリが OS によってロックされていることが原因であり、それを解放するためには OS を再起動する必要があります。</translation>
-    </message>
-    <message>
-        <source>Failed to create communication with overlay: %1. No overlay will be available.</source>
-        <translation type="obsolete">オーバレイ: %1 との通信の作成に失敗しました。有効なオーバレイはありません。</translation>
     </message>
 </context>
 <context>
     <name>OverlayClient</name>
     <message>
-        <location filename="OverlayUserGroup.cpp" line="+95"/>
+        <location filename="OverlayUserGroup.cpp" line="+97"/>
         <source>Filter</source>
         <translation>フィルタ</translation>
     </message>
@@ -8685,7 +6349,7 @@ img タグでチャットメッセージに埋め込まれた画像のダウン�
     <message>
         <location line="+5"/>
         <source>Talking and recently active</source>
-        <translation type="unfinished"></translation>
+        <translation>発言と最近の活動</translation>
     </message>
     <message>
         <location line="+5"/>
@@ -8705,7 +6369,7 @@ img タグでチャットメッセージに埋め込まれた画像のダウン�
     <message>
         <location line="+8"/>
         <source>Configure recently active time (%1 seconds)...</source>
-        <translation type="unfinished"></translation>
+        <translation>最近の活動時間（%1秒）を設定します...</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -8715,17 +6379,17 @@ img タグでチャットメッセージに埋め込まれた画像のダウン�
     <message>
         <location line="+8"/>
         <source>Sort</source>
-        <translation type="unfinished"></translation>
+        <translation>ソート</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>Alphabetically</source>
-        <translation type="unfinished"></translation>
+        <translation>アルファベット順</translation>
     </message>
     <message>
         <location line="+5"/>
         <source>Last state change</source>
-        <translation type="unfinished"></translation>
+        <translation>最後の状態変更</translation>
     </message>
     <message>
         <location line="+5"/>
@@ -8740,12 +6404,12 @@ img タグでチャットメッセージに埋め込まれた画像のダウン�
     <message>
         <location line="+41"/>
         <source>Configure recently active time</source>
-        <translation type="unfinished"></translation>
+        <translation>最近の活動時間を設定します</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Amount of seconds users remain active after talking:</source>
-        <translation type="unfinished"></translation>
+        <translation>発言後にユーザを活動したままにする秒数:</translation>
     </message>
 </context>
 <context>
@@ -8754,15 +6418,6 @@ img タグでチャットメッセージに埋め込まれた画像のダウン�
         <location filename="Overlay.ui"/>
         <source>Options</source>
         <translation>オプション</translation>
-    </message>
-    <message>
-        <source>Position</source>
-        <translation type="obsolete">位置</translation>
-    </message>
-    <message>
-        <source>Form</source>
-        <oldsource>Font</oldsource>
-        <translation type="obsolete">フォーム</translation>
     </message>
     <message>
         <location/>
@@ -8775,155 +6430,7 @@ img タグでチャットメッセージに埋め込まれた画像のダウン�
         <translation>オーバーレイを有効にします。</translation>
     </message>
     <message>
-        <source>This sets whether the overlay is enabled or not. This setting is only checked with D3D9 applications are started, so make sure Mumble is running and this option is on before you start the application.&lt;br /&gt;Please note that if you start the application after starting Mumble, or if you disable the overlay while running, there is no safe way to restart the overlay without also restarting the application.</source>
-        <translation type="obsolete">オーバーレイを有効にするかどうか決定します。この設定はD3D9を使ったアプリケーションが起動された時だけチェックされます。ですので、アプリケーションを起動する前にMumbleが起動していて、このオプションが有効になっているか確認してください。&lt;br /&gt;Mumbleを起動してからアプリケーションを起動し、起動中にオーバーレイを無効にした場合、アプリケーションの再起動をしないでオーバーレイを再開させる安全な方法はありませんのでご注意ください。</translation>
-    </message>
-    <message>
-        <source>No one</source>
-        <translation type="obsolete">なし</translation>
-    </message>
-    <message>
-        <source>Only talking</source>
-        <translation type="obsolete">話している人だけ</translation>
-    </message>
-    <message>
-        <source>Everyone</source>
-        <translation type="obsolete">全員</translation>
-    </message>
-    <message>
-        <source>Show</source>
-        <translation type="obsolete">表示</translation>
-    </message>
-    <message>
-        <source>Who to show on the overlay</source>
-        <translation type="obsolete">オーバーレイに誰を表示するか</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;This sets who to show in the in-game overlay.&lt;/b&gt;&lt;br /&gt;If many people are connected to the same channel, the overlay list might be very long. Use this to shorten it.&lt;br /&gt;&lt;i&gt;No one&lt;/i&gt; - Don&apos;t show anyone (but leave overlay running).&lt;br /&gt;&lt;i&gt;Only talking&lt;/i&gt; - Only show talking people.&lt;br /&gt;&lt;i&gt;Everyone&lt;/i&gt; - Show everyone.</source>
-        <translation type="obsolete">&lt;b&gt;ゲーム中のオーバーレイに誰を表示するか決定します。&lt;/b&gt;&lt;br /&gt;多くの人が同じチャンネルにいる場合、リストはとても長くなるでしょう。&lt;br /&gt;&lt;i&gt;なし&lt;/i&gt; - 誰も表示ません。(それでもオーバーレイは動いています)&lt;br /&gt;&lt;i&gt;話している人だけ&lt;/i&gt; - 話している人だけ表示します。&lt;br /&gt;&lt;i&gt;全員&lt;/i&gt; - 全員表示します。</translation>
-    </message>
-    <message>
-        <source>Always Show Self</source>
-        <translation type="obsolete">常に自分を表示する</translation>
-    </message>
-    <message>
-        <source>Always show yourself on overlay.</source>
-        <translation type="obsolete">オーバーレイで常に自分を表示します。</translation>
-    </message>
-    <message>
-        <source>This sets whether to always show yourself or not. This setting is useful if you aren&apos;t showing everyone in the overlay, as then you would only see your own status if you were talking, which wouldn&apos;t let you see that you were deafened or muted.</source>
-        <translation type="obsolete">自分自身を常に表示するかどうか決定します。この設定は全員表示にしていない時に効果的です。自分が話しているかの状況だけを確認することができます。あなたが発言禁止や聴取禁止になっている場合には表示されません。</translation>
-    </message>
-    <message>
-        <source>Grow Left</source>
-        <translation type="obsolete">左に延長する</translation>
-    </message>
-    <message>
-        <source>Let overlay grow to the left</source>
-        <translation type="obsolete">オーバーレイを左に延長させる</translation>
-    </message>
-    <message>
-        <source>The overlay tries to stay as small as possible and at the position you have selected. This allows the overlay to grow to the left if needed.</source>
-        <translation type="obsolete">オーバーレイは選択した位置にできるだけ小さく留まろうとします。この設定は、必要ならオーバーレイが左に伸びることを許可します。</translation>
-    </message>
-    <message>
-        <source>Grow Right</source>
-        <translation type="obsolete">右に延長する</translation>
-    </message>
-    <message>
-        <source>Let overlay grow to the Right</source>
-        <translation type="obsolete">オーバーレイを右に延長させる</translation>
-    </message>
-    <message>
-        <source>The overlay tries to stay as small as possible and at the position you have selected. This allows the overlay to grow to the Right if needed.</source>
-        <translation type="obsolete">オーバーレイは選択した位置にできるだけ小さく留まろうとします。この設定は、必要ならオーバーレイが右に伸びることを許可します。</translation>
-    </message>
-    <message>
-        <source>Grow Up</source>
-        <translation type="obsolete">上に延長する</translation>
-    </message>
-    <message>
-        <source>Let overlay grow upwards</source>
-        <translation type="obsolete">オーバーレイを上方向に延長させる</translation>
-    </message>
-    <message>
-        <source>The overlay tries to stay as small as possible and at the position you have selected. This allows the overlay to grow to the top if needed.</source>
-        <translation type="obsolete">オーバーレイは選択した位置にできるだけ小さく留まろうとします。この設定は、必要ならオーバーレイが上に伸びることを許可します。</translation>
-    </message>
-    <message>
-        <source>Grow Down</source>
-        <translation type="obsolete">下に延長する</translation>
-    </message>
-    <message>
-        <source>Let overlay grow downwards</source>
-        <translation type="obsolete">オーバーレイを下方向に延長させる</translation>
-    </message>
-    <message>
-        <source>The overlay tries to stay as small as possible and at the position you have selected. This allows the overlay to grow towards the bottom if needed.</source>
-        <translation type="obsolete">オーバーレイは選択した位置にできるだけ小さく留まろうとします。この設定は、必要ならオーバーレイが下に伸びることを許可します。</translation>
-    </message>
-    <message>
-        <source>X-Position of Overlay</source>
-        <translation type="obsolete">オーバーレイの横軸の位置</translation>
-    </message>
-    <message>
-        <source>This sets the relative X position of the overlay.</source>
-        <translation type="obsolete">オーバーレイの相対的なX座標を決定します。</translation>
-    </message>
-    <message>
-        <source>Y-Position of Overlay</source>
-        <translation type="obsolete">オーバーレイの縦軸の位置</translation>
-    </message>
-    <message>
-        <source>This sets the relative Y position of the overlay.</source>
-        <translation type="obsolete">オーバーレイの相対的なY座標を決定します。</translation>
-    </message>
-    <message>
-        <source>Current Font</source>
-        <translation type="obsolete">現在のフォント</translation>
-    </message>
-    <message>
-        <source>Set Font</source>
-        <translation type="obsolete">フォント設定</translation>
-    </message>
-    <message>
-        <source>Maximum width of names.</source>
-        <translation type="obsolete">最大の高さ</translation>
-    </message>
-    <message>
-        <source>This sets the maximum width of names shown, relative to the height. If you set this to 100%, no line of text will be wider than it is high. At 500%, no line will be more than 5 times wider than its height, and so on.</source>
-        <translation type="obsolete">高さに対する名前表示の最大サイズを設定します。100%にした場合、テキスト行の高さはそれより大きくなりません。500%で、行はそれらの5倍より大きくはなりませんといった感じです。</translation>
-    </message>
-    <message>
-        <source>Maximum width</source>
-        <translation type="obsolete">最大の幅</translation>
-    </message>
-    <message>
-        <source>Change</source>
-        <translation type="obsolete">変更</translation>
-    </message>
-    <message>
-        <source>Color for players</source>
-        <translation type="obsolete">プレイヤーの色</translation>
-    </message>
-    <message>
-        <source>Color for talking players</source>
-        <translation type="obsolete">話しているプレイヤーの色</translation>
-    </message>
-    <message>
-        <source>Color for alt-talking players</source>
-        <translation type="obsolete">Alt発言をしているプレイヤーの色</translation>
-    </message>
-    <message>
-        <source>Color for Channels</source>
-        <translation type="obsolete">チャンネルの色</translation>
-    </message>
-    <message>
-        <source>Color for active Channels</source>
-        <translation type="obsolete">有効なチャンネルの色</translation>
-    </message>
-    <message>
-        <location filename="OverlayConfig.cpp" line="+78"/>
+        <location filename="OverlayConfig.cpp" line="+80"/>
         <source>To move the users, drag the little red dot.</source>
         <translation>ユーザを動かすには、小さな赤い点をドラッグしてください。</translation>
     </message>
@@ -8931,16 +6438,16 @@ img タグでチャットメッセージに埋め込まれた画像のダウン�
         <location line="+1"/>
         <source>To resize the users, mouse wheel over a user.</source>
         <oldsource>To resize the users, mousewheel over a user.</oldsource>
-        <translation type="unfinished">ユーザのアバターのサイズを変えるには、ユーザの上でマウスホィールを動かしてください。</translation>
+        <translation>ユーザのアバターのサイズを変えるには、ユーザの上でマウスホィールを動かしてください。</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>For more options, right click a user.</source>
         <oldsource>For more options, rightclick a user.</oldsource>
-        <translation type="unfinished">更なる設定をするには、ユーザを右クリックしてください。</translation>
+        <translation>更なる設定をするには、ユーザを右クリックしてください。</translation>
     </message>
     <message>
-        <location line="+224"/>
+        <location line="+223"/>
         <source>Overlay</source>
         <translation>オーバーレイ</translation>
     </message>
@@ -8953,17 +6460,6 @@ img タグでチャットメッセージに埋め込まれた画像のダウン�
         <location line="+2"/>
         <source>Choose application</source>
         <translation>アプリケーションを選んでください</translation>
-    </message>
-    <message>
-        <location line="+38"/>
-        <source>Mumble has deemed the installer valid.</source>
-        <translation>Mumbleはインストーラが有効であると認識しました。</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Mumble was unable to verify the authenticity of the installer.</source>
-        <oldsource>Mumble was unable to validate authenticity of the installer.</oldsource>
-        <translation>Mumbleはインストーラの信頼性を検証できません。</translation>
     </message>
     <message>
         <location line="+87"/>
@@ -8982,86 +6478,10 @@ img タグでチャットメッセージに埋め込まれた画像のダウン�
         <translation>オーバレイのプリセットを保存</translation>
     </message>
     <message>
-        <source>Show User Textures</source>
-        <translation type="obsolete">ユーザテクスチャを表示する</translation>
-    </message>
-    <message>
-        <source>Show User custom textures instead of text on the overlay.</source>
-        <translation type="obsolete">テキストの代わりにユーザのカスタムテクスチャをオーバーレイに表示します。</translation>
-    </message>
-    <message>
-        <source>This sets whether to download and use custom textures for registered users. If disabled, the regular outline text will be used instead.</source>
-        <translation type="obsolete">登録されたユーザのカスタムテクスチャをダウンロードして使用するかどうかを決定します。無効の時は通常のテキストが代わりに使われます。</translation>
-    </message>
-    <message>
-        <source>Maximum height of names.</source>
-        <translation type="obsolete">名前の最大の高さです。</translation>
-    </message>
-    <message>
-        <source>This sets the maximum height of names shown, relative to the screen height. If your active 3D window is 800 pixels tall and this is set to 5%, each name will be 40 pixels tall. Note that the names will not be taller than 60 pixels no matter what you set here.</source>
-        <translation type="obsolete">画面の高さに対する名前表示の最大の高さを決定します。あなたのゲーム画面が 800ピクセルの高さでこれが5%にセットされているとき、各名前は 40ピクセルの高さで表示されます。注意: ここの値に関わらず、名前の高さは 60ピクセル以上にはなりません。</translation>
-    </message>
-    <message>
-        <source>Maximum height</source>
-        <translation type="obsolete">最大の高さ</translation>
-    </message>
-    <message>
-        <source>Show no one</source>
-        <translation type="obsolete">なし</translation>
-    </message>
-    <message>
-        <source>Show only talking</source>
-        <translation type="obsolete">話している人だけ</translation>
-    </message>
-    <message>
-        <source>Show everyone</source>
-        <translation type="obsolete">全員</translation>
-    </message>
-    <message>
-        <source>Color for users</source>
-        <translation type="obsolete">ユーザの色</translation>
-    </message>
-    <message>
-        <source>Color for talking users</source>
-        <translation type="obsolete">しゃべっているユーザの色</translation>
-    </message>
-    <message>
-        <source>Color for whispering users</source>
-        <translation type="obsolete">ささやいているユーザの色</translation>
-    </message>
-    <message>
-        <source>Color for channels</source>
-        <translation type="obsolete">チャンネルの色</translation>
-    </message>
-    <message>
-        <source>Color for active channels</source>
-        <translation type="obsolete">有効なチャンネルの色</translation>
-    </message>
-    <message>
         <location filename="Overlay.ui"/>
         <source>This sets whether the overlay is enabled or not. This setting is only checked when applications are started, so make sure Mumble is running and this option is on before you start the application.&lt;br /&gt;Please note that if you start Mumble after starting the application, or if you disable the overlay while the application is running, there is no safe way to restart the overlay without also restarting the application.</source>
         <oldsource>This sets whether the overlay is enabled or not. This setting is only checked when applications are started, so make sure Mumble is running and this option is on before you start the application.&lt;br /&gt;Please note that if you start the application after starting Mumble, or if you disable the overlay while running, there is no safe way to restart the overlay without also restarting the application.</oldsource>
         <translation>これはオーバレイを有功にするかそうでないかを設定します。この設定はアプリケーションが開始したときにのみチェックされます。Mumble が動作中であることと、アプリケーションが開始する前にこのオプションが有効になっていることを確認してください。&lt;br /&gt;Mumble が開始した後にアプリケーションを開始しても、起動中にオーバレイを無効にしても、アプリケーションを際スタートしないとオーバレイを再開する安全な方法ではありません。</translation>
-    </message>
-    <message>
-        <source>The overlay tries to stay as small as possible and at the position you have selected. This allows the overlay to grow upwards if needed.</source>
-        <translation type="obsolete">オーバーレイはあなたが選択した位置で最小の状態で表示されます。この設定を有効にすると、必要に応じてオーバーレイが上方向に伸びます。</translation>
-    </message>
-    <message>
-        <source>Let overlay grow to the right</source>
-        <translation type="obsolete">オーバーレイを右に延長させる</translation>
-    </message>
-    <message>
-        <source>The overlay tries to stay as small as possible and at the position you have selected. This allows the overlay to grow to the right if needed.</source>
-        <translation type="obsolete">オーバーレイはあなたが選択した位置で最小の状態で表示されます。この設定を有効にすると、必要に応じてオーバーレイが右方向に伸びます。</translation>
-    </message>
-    <message>
-        <source>The overlay tries to stay as small as possible and at the position you have selected. This allows the overlay to grow downwards if needed.</source>
-        <translation type="obsolete">オーバーレイはあなたが選択した位置で最小の状態で表示されます。この設定を有効にすると、必要に応じてオーバーレイが下方向に伸びます。</translation>
-    </message>
-    <message>
-        <source>TextLabel</source>
-        <translation type="obsolete">テキストラベル</translation>
     </message>
     <message>
         <location/>
@@ -9082,10 +6502,6 @@ img タグでチャットメッセージに埋め込まれた画像のダウン�
         <location/>
         <source>Whitelist</source>
         <translation>ホワイトリスト</translation>
-    </message>
-    <message>
-        <source>Add</source>
-        <translation type="obsolete">追加</translation>
     </message>
     <message>
         <location/>
@@ -9147,19 +6563,6 @@ To upgrade these files to their latest versions, click the button below.</source
     </message>
     <message>
         <location/>
-        <source>View Certificates</source>
-        <translation>証明書を見る</translation>
-    </message>
-    <message>
-        <source>&amp;Add...</source>
-        <translation type="obsolete">追加(&amp;A)...</translation>
-    </message>
-    <message>
-        <source>&amp;Remove</source>
-        <translation type="obsolete">削除(&amp;R)</translation>
-    </message>
-    <message>
-        <location/>
         <source>Load an overlay preset from file</source>
         <translation>ファイルからオーバレイのプリセットを読み込みます</translation>
     </message>
@@ -9208,13 +6611,24 @@ To upgrade these files to their latest versions, click the button below.</source
         <source>Add...</source>
         <translation>追加...</translation>
     </message>
+    <message>
+        <location/>
+        <source>To list exceptions, use a</source>
+        <translation>例外設定のリスト化に使う方法</translation>
+    </message>
+    <message>
+        <location/>
+        <source>Show the overlay in all applicable programs except</source>
+        <translation>次の対象を除くすべての適用可能なプログラムに対してオーバレイを表示します</translation>
+    </message>
+    <message>
+        <location/>
+        <source>Show the overlay only in</source>
+        <translation>次の対象だけにオーバレイを表示します</translation>
+    </message>
 </context>
 <context>
     <name>OverlayEditor</name>
-    <message>
-        <source>Dialog</source>
-        <translation type="obsolete">ダイアログ</translation>
-    </message>
     <message>
         <location filename="OverlayEditor.ui"/>
         <source>State</source>
@@ -9334,7 +6748,7 @@ To upgrade these files to their latest versions, click the button below.</source
 <context>
     <name>OverlayEditorScene</name>
     <message>
-        <location filename="OverlayEditorScene.cpp" line="+399"/>
+        <location filename="OverlayEditorScene.cpp" line="+397"/>
         <source>Layout preset</source>
         <translation>レイアウトプリセット</translation>
     </message>
@@ -9454,134 +6868,13 @@ To upgrade these files to their latest versions, click the button below.</source
 <context>
     <name>OverlayPrivateWin</name>
     <message>
-        <source>Mumble</source>
-        <translation type="obsolete">Mumble</translation>
-    </message>
-    <message>
-        <location filename="Overlay_win.cpp" line="+53"/>
+        <location filename="Overlay_win.cpp" line="+55"/>
         <source>Failed to load overlay library. This means either that:
 - the library (mumble_ol.dll) wasn&apos;t found in the directory you ran Mumble from
 - you&apos;re on an OS earlier than WinXP SP2</source>
         <translation>オーバレイライブラリの読み込みに失敗しました. 次の原因が考えられます:
 - ライブラリファイル（mumble_ol.dll)が Mumble の実行されているフォルダに存在しない
 - WinXP SP2 より古い OS を使用している</translation>
-    </message>
-</context>
-<context>
-    <name>OverlayUser</name>
-    <message>
-        <source>Channel</source>
-        <translation type="obsolete">チャンネル</translation>
-    </message>
-    <message>
-        <source>Silent</source>
-        <translation type="obsolete">静か</translation>
-    </message>
-    <message>
-        <source>Talking</source>
-        <translation type="obsolete">発言中</translation>
-    </message>
-    <message>
-        <source>Whisper</source>
-        <translation type="obsolete">ささやき</translation>
-    </message>
-    <message>
-        <source>Shout</source>
-        <translation type="obsolete">叫んでいる</translation>
-    </message>
-    <message>
-        <source>User Opacity</source>
-        <translation type="obsolete">ユーザの不透明度</translation>
-    </message>
-    <message>
-        <source>%1%</source>
-        <translation type="obsolete">%1%</translation>
-    </message>
-    <message>
-        <source>Object Opacity</source>
-        <translation type="obsolete">オブジェクトの不透明度</translation>
-    </message>
-    <message>
-        <source>Color...</source>
-        <translation type="obsolete">色...</translation>
-    </message>
-    <message>
-        <source>Font...</source>
-        <translation type="obsolete">フォント...</translation>
-    </message>
-    <message>
-        <source>Pick color</source>
-        <translation type="obsolete">色の選択</translation>
-    </message>
-    <message>
-        <source>Pick font</source>
-        <translation type="obsolete">フォントの選択</translation>
-    </message>
-</context>
-<context>
-    <name>PAAudioConfig</name>
-    <message>
-        <source>PortAudio</source>
-        <translation type="obsolete">PortAudio</translation>
-    </message>
-    <message>
-        <source>Input Device</source>
-        <translation type="obsolete">入力デバイス</translation>
-    </message>
-    <message>
-        <source>Output Device</source>
-        <translation type="obsolete">出力デバイス</translation>
-    </message>
-</context>
-<context>
-    <name>PlayerModel</name>
-    <message>
-        <source>Name of player</source>
-        <translation type="obsolete">プレイヤーの名前</translation>
-    </message>
-    <message>
-        <source>Name of channel</source>
-        <translation type="obsolete">チャンネルの名前</translation>
-    </message>
-    <message>
-        <source>Player flags</source>
-        <translation type="obsolete">プレイヤーのフラグ</translation>
-    </message>
-    <message>
-        <source>This is a player connected to the server. The icon to the left of the player indicates whether or not they are talking:&lt;br /&gt;&lt;img src=&quot;:/icons/talking_on.png&quot; /&gt; Talking&lt;br /&gt;&lt;img src=&quot;:/icons/talking_off.png&quot; /&gt; Not talking</source>
-        <translation type="obsolete">サーバに接続しているプレイヤーです。プレイヤーの左のアイコンはその人が話しているかどうかを示しています:&lt;br /&gt;&lt;img src=&quot;:/icons/talking_on.png&quot; /&gt; 話している&lt;br /&gt;&lt;img src=&quot;:/icons/talking_off.png&quot; /&gt; 話していない</translation>
-    </message>
-    <message>
-        <source>This is a channel on the server. Only players in the same channel can hear each other.</source>
-        <translation type="obsolete">サーバにあるチャンネルです。同じチャンネルにいるプレイヤーしかお互いの会話を聞くことはできません。</translation>
-    </message>
-    <message>
-        <source>This shows the flags the player has on the server, if any:&lt;br /&gt;&lt;img src=&quot;:/icons/authenticated.png&quot; /&gt;Authenticated user&lt;br /&gt;&lt;img src=&quot;:/icons/muted_self.png&quot; /&gt;Muted (by self)&lt;br /&gt;&lt;img src=&quot;:/icons/muted_server.png&quot; /&gt;Muted (by admin)&lt;br /&gt;&lt;img src=&quot;:/icons/deafened_self.png&quot; /&gt;Deafened (by self)&lt;br /&gt;&lt;img src=&quot;:/icons/deafened_server.png&quot; /&gt;Deafened (by admin)&lt;br /&gt;A player muted by himself is probably just away, talking on the phone or something like that.&lt;br /&gt;A player muted by an admin is probably also just away, and the noise the player is making was annoying enough that an admin muted him.</source>
-        <translation type="obsolete">サーバ内のプレイヤーが持っているフラグを表示します:&lt;br /&gt;&lt;img src=&quot;:/icons/authenticated.png&quot; /&gt;認証されたユーザ&lt;br /&gt;&lt;img src=&quot;:/icons/muted_self.png&quot; /&gt;発言禁止(自分によって)&lt;br /&gt;&lt;img src=&quot;:/icons/muted_server.png&quot; /&gt;発言禁止(管理者によって)&lt;br /&gt;&lt;img src=&quot;:/icons/deafened_self.png&quot; /&gt;聴取禁止(自分によって)&lt;br /&gt;&lt;img src=&quot;:/icons/deafened_server.png&quot; /&gt;聴取禁止(管理者によって)&lt;br /&gt;自分で発言禁止にしているプレイヤーは、おそらくちょっと離席しているだけでしょう。&lt;br /&gt;管理者によって発言禁止にされているプレイヤーは同じく離席しているだけか、管理者が発言禁止するに値するほどその人の発する雑音がうるさかったのでしょう。</translation>
-    </message>
-    <message>
-        <source>Name</source>
-        <translation type="obsolete">名前</translation>
-    </message>
-    <message>
-        <source>Flags</source>
-        <translation type="obsolete">フラグ</translation>
-    </message>
-    <message>
-        <source>This is a player connected to the server. The icon to the left of the player indicates whether or not they are talking:&lt;br /&gt;&lt;img src=&quot;skin:talking_on.png&quot; /&gt; Talking&lt;br /&gt;&lt;img src=&quot;skin:talking_off.png&quot; /&gt; Not talking</source>
-        <translation type="obsolete">サーバに接続しているプレイヤーです。プレイヤーの左のアイコンはその人が話しているかどうかを示しています:&lt;br /&gt;&lt;img src=&quot;skin:talking_on.png&quot; /&gt; 話している&lt;br /&gt;&lt;img src=&quot;skin:talking_off.png&quot; /&gt; 話していない</translation>
-    </message>
-    <message>
-        <source>This shows the flags the player has on the server, if any:&lt;br /&gt;&lt;img src=&quot;skin:authenticated.png&quot; /&gt;Authenticated user&lt;br /&gt;&lt;img src=&quot;skin:muted_self.png&quot; /&gt;Muted (by self)&lt;br /&gt;&lt;img src=&quot;skin:muted_server.png&quot; /&gt;Muted (by admin)&lt;br /&gt;&lt;img src=&quot;skin:deafened_self.png&quot; /&gt;Deafened (by self)&lt;br /&gt;&lt;img src=&quot;skin:deafened_server.png&quot; /&gt;Deafened (by admin)&lt;br /&gt;A player muted by himself is probably just away, talking on the phone or something like that.&lt;br /&gt;A player muted by an admin is probably also just away, and the noise the player is making was annoying enough that an admin muted him.</source>
-        <translation type="obsolete">サーバ内のプレイヤーが持っているフラグを表示します:&lt;br /&gt;&lt;img src=&quot;skin:authenticated.png&quot; /&gt;認証されたユーザ&lt;br /&gt;&lt;img src=&quot;skin:muted_self.png&quot; /&gt;発言禁止(自分によって)&lt;br /&gt;&lt;img src=&quot;skin:muted_server.png&quot; /&gt;発言禁止(管理者によって)&lt;br /&gt;&lt;img src=&quot;skin:deafened_self.png&quot; /&gt;聴取禁止(自分によって)&lt;br /&gt;&lt;img src=&quot;skin:deafened_server.png&quot; /&gt;聴取禁止(管理者によって)&lt;br /&gt;自分で発言禁止にしているプレイヤーは、おそらくちょっと離席しているだけでしょう。&lt;br /&gt;管理者によって発言禁止にされているプレイヤーは同じく離席しているだけか、管理者が発言禁止するに値するほどその人の発する雑音がうるさかったのでしょう。</translation>
-    </message>
-    <message>
-        <source>Mumble</source>
-        <translation type="obsolete">Mumble</translation>
-    </message>
-    <message>
-        <source>Are you sure you want to drag this channel?</source>
-        <translation type="obsolete">本当にこのチャンネルをドラッグしますか？</translation>
     </message>
 </context>
 <context>
@@ -9593,7 +6886,7 @@ To upgrade these files to their latest versions, click the button below.</source
     </message>
     <message>
         <location/>
-        <location filename="Plugins.cpp" line="+75"/>
+        <location filename="Plugins.cpp" line="+78"/>
         <source>Plugins</source>
         <translation>プラグイン</translation>
     </message>
@@ -9606,10 +6899,6 @@ To upgrade these files to their latest versions, click the button below.</source
         <location/>
         <source>Enable plugins and transmit positional information</source>
         <translation>プラグインを有効にすると位置情報を送信します</translation>
-    </message>
-    <message>
-        <source>This enables plugins for supported games to fetch your in-game position and transmit that with each voice packet. This enables other players to hear your voice in-game from the direction your character is in relation to their own.</source>
-        <translation type="obsolete">この設定は、サポートされたゲームのプラグインが位置情報を取得して、音声パケットと共に送信することを可能にします。他のプレイヤーから見て、ゲーム内であなたのキャラクターがいる方向から声が聞こえるようにすることができます。</translation>
     </message>
     <message>
         <location/>
@@ -9662,10 +6951,6 @@ To upgrade these files to their latest versions, click the button below.</source
         <translation>プラグインの設定ページがあれば表示します。</translation>
     </message>
     <message>
-        <source>Mumble</source>
-        <translation type="obsolete">Mumble</translation>
-    </message>
-    <message>
         <location filename="Plugins.cpp" line="+56"/>
         <source>Plugin has no configure function.</source>
         <translation>プラグインに設定機能がありません。</translation>
@@ -9710,17 +6995,9 @@ To upgrade these files to their latest versions, click the button below.</source
         <translation>%1 に新しいプラグインをインストールできません。</translation>
     </message>
     <message>
-        <source>Plugin %1 lost link.</source>
-        <translation type="obsolete">プラグイン %1 はリンクを失いました。</translation>
-    </message>
-    <message>
         <location line="-257"/>
         <source>%1 lost link.</source>
         <translation>%1 はリンクを失いました。</translation>
-    </message>
-    <message>
-        <source>Plugin %1 linked.</source>
-        <translation type="obsolete">プラグイン %1 はリンクされました。</translation>
     </message>
     <message>
         <location line="+74"/>
@@ -9731,86 +7008,15 @@ To upgrade these files to their latest versions, click the button below.</source
 <context>
     <name>PortAudioSystem</name>
     <message>
-        <location filename="PAAudio.cpp" line="+273"/>
+        <location filename="PAAudio.cpp" line="+275"/>
         <source>Default Device</source>
         <translation>デフォルトデバイス</translation>
     </message>
 </context>
 <context>
-    <name>PulseAudioConfig</name>
-    <message>
-        <source>PulseAudio</source>
-        <translation type="obsolete">PulseAudio</translation>
-    </message>
-    <message>
-        <source>%1ms</source>
-        <translation type="obsolete">%1ms</translation>
-    </message>
-    <message>
-        <source>Form</source>
-        <translation type="obsolete">フォーム</translation>
-    </message>
-    <message>
-        <source>Device selection</source>
-        <translation type="obsolete">デバイス選択</translation>
-    </message>
-    <message>
-        <source>Input (Microphone)</source>
-        <translation type="obsolete">入力(マイク)</translation>
-    </message>
-    <message>
-        <source>Device to use for microphone</source>
-        <translation type="obsolete">マイクに使用するデバイス</translation>
-    </message>
-    <message>
-        <source>This set which source mumble should use for the microphone. The &lt;i&gt;default&lt;/i&gt; device means to use the PulseAudio defaults.</source>
-        <translation type="obsolete">どのソースをマイクに使用するか設定します。&lt;i&gt;デフォルト&lt;/i&gt; デバイスは PulseAudio のデフォルトです。 </translation>
-    </message>
-    <message>
-        <source>Output</source>
-        <translation type="obsolete">出力</translation>
-    </message>
-    <message>
-        <source>Device to use for speakers/headphones</source>
-        <translation type="obsolete">スピーカー/ヘッドホンに使用するデバイス</translation>
-    </message>
-    <message>
-        <source>Enable echo cancellation</source>
-        <translation type="obsolete">エコーキャンセル</translation>
-    </message>
-    <message>
-        <source>This enables echo cancellation. Don&apos;t enable this unless you are listening on speakers; for headphones it will cause audio degradation.</source>
-        <translation type="obsolete">エコーキャンセルを有効にします。スピーカーで聞いていない限りこれを有効にしないでください; ヘッドホンでは音質劣化の原因となります。</translation>
-    </message>
-    <message>
-        <source>Use echo cancellation</source>
-        <translation type="obsolete">エコーキャンセルを使う</translation>
-    </message>
-    <message>
-        <source>Output Options</source>
-        <translation type="obsolete">出力オプション</translation>
-    </message>
-    <message>
-        <source>Output Delay</source>
-        <translation type="obsolete">出力猶予</translation>
-    </message>
-    <message>
-        <source>Amount of data to buffer for ALSA</source>
-        <translation type="obsolete">ALSA用バッファデータの量</translation>
-    </message>
-    <message>
-        <source>This sets the amount of data to prebuffer in the output buffer. Experiment with different values and set it to the lowest which doesn&apos;t cause rapid jitter in the sound.</source>
-        <translation type="obsolete">出力バッファにおけるプリバッファの量を設定します。いろいろな値で試してみて、急に不安定にならない一番小さな値に設定してください。</translation>
-    </message>
-    <message>
-        <source>TextLabel</source>
-        <translation type="obsolete">テキストラベル</translation>
-    </message>
-</context>
-<context>
     <name>PulseAudioSystem</name>
     <message>
-        <location filename="PulseAudio.cpp" line="+565"/>
+        <location filename="PulseAudio.cpp" line="+756"/>
         <source>Default Input</source>
         <translation>デフォルト入力</translation>
     </message>
@@ -9823,7 +7029,7 @@ To upgrade these files to their latest versions, click the button below.</source
 <context>
     <name>RichTextEditor</name>
     <message>
-        <location filename="RichTextEditor.cpp" line="+241"/>
+        <location filename="RichTextEditor.cpp" line="+244"/>
         <source>Failed to load image</source>
         <translation>画像の読み込みに失敗</translation>
     </message>
@@ -9836,10 +7042,6 @@ To upgrade these files to their latest versions, click the button below.</source
         <location line="+81"/>
         <source>Message is too long.</source>
         <translation>メッセージが長すぎます。</translation>
-    </message>
-    <message>
-        <source>TabWidget</source>
-        <translation type="obsolete">タブウィジット</translation>
     </message>
     <message>
         <location filename="RichTextEditor.ui"/>
@@ -9928,7 +7130,7 @@ To upgrade these files to their latest versions, click the button below.</source
 <context>
     <name>ServerHandler</name>
     <message>
-        <location filename="ServerHandler.cpp" line="+401"/>
+        <location filename="ServerHandler.cpp" line="+447"/>
         <source>UDP packets cannot be sent to or received from the server. Switching to TCP mode.</source>
         <translation>UDP パケットをサーバに送ることができないか、サーバから受けとることができません。TCPモードに切り替えます。</translation>
     </message>
@@ -9956,7 +7158,7 @@ To upgrade these files to their latest versions, click the button below.</source
 <context>
     <name>ServerView</name>
     <message>
-        <location filename="ConnectDialog.cpp" line="-628"/>
+        <location filename="ConnectDialog.cpp" line="-611"/>
         <source>Favorite</source>
         <translation>お気に入り</translation>
     </message>
@@ -10004,7 +7206,7 @@ To upgrade these files to their latest versions, click the button below.</source
 <context>
     <name>ShortcutActionWidget</name>
     <message>
-        <location filename="GlobalShortcut.cpp" line="-483"/>
+        <location filename="GlobalShortcut.cpp" line="-558"/>
         <source>Unassigned</source>
         <translation>未割り当て</translation>
     </message>
@@ -10012,7 +7214,7 @@ To upgrade these files to their latest versions, click the button below.</source
 <context>
     <name>ShortcutDelegate</name>
     <message>
-        <location line="+361"/>
+        <location line="+370"/>
         <source>On</source>
         <translation>オン</translation>
     </message>
@@ -10035,7 +7237,7 @@ To upgrade these files to their latest versions, click the button below.</source
 <context>
     <name>ShortcutKeyWidget</name>
     <message>
-        <location line="-435"/>
+        <location line="-444"/>
         <source>Press Shortcut</source>
         <translation>ショートカットを押下</translation>
     </message>
@@ -10059,6 +7261,7 @@ To upgrade these files to their latest versions, click the button below.</source
     </message>
     <message>
         <location line="+5"/>
+        <location line="+6"/>
         <source>Subchannel #%1</source>
         <translation>サブチャンネル #%1</translation>
     </message>
@@ -10091,6 +7294,7 @@ To upgrade these files to their latest versions, click the button below.</source
         <translation>現在</translation>
     </message>
     <message>
+        <location line="+3"/>
         <location line="+2"/>
         <source>Subchannel #%1</source>
         <translation>サブチャンネル #%1</translation>
@@ -10104,13 +7308,13 @@ To upgrade these files to their latest versions, click the button below.</source
         <location line="+3"/>
         <source>Empty</source>
         <oldsource>&lt;Empty&gt;</oldsource>
-        <translation type="unfinished">&lt;空欄&gt;</translation>
+        <translation>&lt;空欄&gt;</translation>
     </message>
 </context>
 <context>
     <name>ShortcutToggleWidget</name>
     <message>
-        <location line="-259"/>
+        <location line="-268"/>
         <source>Off</source>
         <translation>オフ</translation>
     </message>
@@ -10128,23 +7332,7 @@ To upgrade these files to their latest versions, click the button below.</source
 <context>
     <name>TextMessage</name>
     <message>
-        <source>Message to send</source>
-        <translation type="obsolete">送信するメッセージ</translation>
-    </message>
-    <message>
-        <source>Preview</source>
-        <translation type="obsolete">プレビュー</translation>
-    </message>
-    <message>
-        <source>Send raw message</source>
-        <translation type="obsolete">生のメッセージを送信する</translation>
-    </message>
-    <message>
-        <source>Disables html formating</source>
-        <translation type="obsolete">htmlフォーマットを無効にする</translation>
-    </message>
-    <message>
-        <location filename="TextMessage.h" line="+46"/>
+        <location filename="TextMessage.h" line="+45"/>
         <source>Enter text</source>
         <translation>テキストを入力</translation>
     </message>
@@ -10162,7 +7350,7 @@ To upgrade these files to their latest versions, click the button below.</source
 <context>
     <name>Tokens</name>
     <message>
-        <location filename="Tokens.cpp" line="+69"/>
+        <location filename="Tokens.cpp" line="+72"/>
         <source>Empty Token</source>
         <translation>空のトークン</translation>
     </message>
@@ -10216,7 +7404,7 @@ An access token is a text string, which can be used as a password for very simpl
     </message>
     <message>
         <location/>
-        <location filename="UserEdit.cpp" line="+96"/>
+        <location filename="UserEdit.cpp" line="+99"/>
         <source>Remove</source>
         <translation>削除</translation>
     </message>
@@ -10329,16 +7517,12 @@ An access token is a text string, which can be used as a password for very simpl
         <translation>クライアント宛</translation>
     </message>
     <message>
-        <source>Bandwidth</source>
-        <translation type="obsolete">ネットワーク帯域</translation>
-    </message>
-    <message>
         <location/>
         <source>Connection time</source>
         <translation>接続時間</translation>
     </message>
     <message>
-        <location filename="UserInformation.cpp" line="+93"/>
+        <location filename="UserInformation.cpp" line="+99"/>
         <source>%1w</source>
         <translation>%1週間</translation>
     </message>
@@ -10364,22 +7548,34 @@ An access token is a text string, which can be used as a password for very simpl
     </message>
     <message>
         <location line="+29"/>
-        <location line="+43"/>
+        <location line="+39"/>
         <source>, </source>
         <translation></translation>
     </message>
     <message>
         <location line="-13"/>
-        <source>%1.%2.%3 (%4)</source>
-        <translation></translation>
-    </message>
-    <message>
         <location line="+1"/>
         <source>%1 (%2)</source>
+        <oldsource>%1.%2.%3 (%4)</oldsource>
         <translation></translation>
     </message>
     <message>
-        <location line="+53"/>
+        <location line="+15"/>
+        <source>Supported</source>
+        <translation>サポートされています</translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>Not Supported</source>
+        <translation>サポートされません</translation>
+    </message>
+    <message>
+        <location line="-119"/>
+        <source>Not Reported</source>
+        <translation>報告されません</translation>
+    </message>
+    <message>
+        <location line="+160"/>
         <source>%1 online (%2 idle)</source>
         <translation>オンライン時間 %1  (アイドル時間 %2)</translation>
     </message>
@@ -10405,11 +7601,16 @@ An access token is a text string, which can be used as a password for very simpl
         <comment>Label</comment>
         <translation>ネットワーク帯域</translation>
     </message>
+    <message>
+        <location/>
+        <source>Ping deviation</source>
+        <translation>Pingのばらつき</translation>
+    </message>
 </context>
 <context>
     <name>UserModel</name>
     <message>
-        <location filename="UserModel.cpp" line="-804"/>
+        <location filename="UserModel.cpp" line="-806"/>
         <source>This is a user connected to the server. The icon to the left of the user indicates whether or not they are talking:</source>
         <translation>サーバに接続しているユーザです。ユーザの左側のアイコンは彼らが話しているかどうかを意味します:</translation>
     </message>
@@ -10455,7 +7656,7 @@ An access token is a text string, which can be used as a password for very simpl
         <translation>あなたがリンクしていないサーバ上のチャンネルです。</translation>
     </message>
     <message>
-        <location line="+16"/>
+        <location line="+17"/>
         <source>This shows the flags the user has on the server, if any:</source>
         <translation>ユーザがサーバ上で持っているフラグを表示します:</translation>
     </message>
@@ -10510,6 +7711,11 @@ An access token is a text string, which can be used as a password for very simpl
         <translation>ユーザはあなたが既に見たコメントを持っています。（見るにはクリックしてください）</translation>
     </message>
     <message>
+        <location line="+1"/>
+        <source>Ignoring Text Messages</source>
+        <translation>テキストメッセージを無視します</translation>
+    </message>
+    <message>
         <location line="+7"/>
         <source>This shows the flags the channel has, if any:</source>
         <translation>チャンネルが持っているフラグを表示します:</translation>
@@ -10549,15 +7755,7 @@ An access token is a text string, which can be used as a password for very simpl
 <context>
     <name>VersionCheck</name>
     <message>
-        <source>Mumble</source>
-        <translation type="obsolete">Mumble</translation>
-    </message>
-    <message>
-        <source>Mumble failed to retrieve version information from the SourceForge server.</source>
-        <translation type="obsolete">SourceForgeサーバからのバージョン情報の取得に失敗しました。</translation>
-    </message>
-    <message>
-        <location filename="VersionCheck.cpp" line="+125"/>
+        <location filename="VersionCheck.cpp" line="+128"/>
         <source>Upgrade Mumble</source>
         <translation>Mumble のアップグレード</translation>
     </message>
@@ -10577,7 +7775,7 @@ An access token is a text string, which can be used as a password for very simpl
         <translation>新しいバージョンの破損したダウンロードが検知されました。自動的に削除されました。</translation>
     </message>
     <message>
-        <location line="+18"/>
+        <location line="+23"/>
         <source>Downloading new snapshot from %1 to %2</source>
         <translation>%1 から %2 に新しい snapshot をダウンロード中です</translation>
     </message>
@@ -10585,7 +7783,7 @@ An access token is a text string, which can be used as a password for very simpl
         <location line="+14"/>
         <source>Failed to write new version to disk.</source>
         <oldsource>Failed to write new version to disc.</oldsource>
-        <translation type="unfinished">ディスクに新しいバージョンを書きこむことに失敗しました。</translation>
+        <translation>ディスクに新しいバージョンを書きこむことに失敗しました。</translation>
     </message>
     <message>
         <location line="+10"/>
@@ -10596,7 +7794,7 @@ An access token is a text string, which can be used as a password for very simpl
 <context>
     <name>ViewCert</name>
     <message>
-        <location filename="ViewCert.cpp" line="+41"/>
+        <location filename="ViewCert.cpp" line="+43"/>
         <source>Certificate Chain Details</source>
         <translation>証明書階層の詳細</translation>
     </message>
@@ -10682,8 +7880,8 @@ An access token is a text string, which can be used as a password for very simpl
     </message>
     <message>
         <location line="+1"/>
-        <source>Digest (MD5): %1</source>
-        <translation>ダイジェスト(MD5): %1</translation>
+        <source>Digest (SHA-1): %1</source>
+        <translation>ダイジェスト(SHA-1): %1</translation>
     </message>
     <message>
         <location line="+4"/>
@@ -10709,7 +7907,7 @@ An access token is a text string, which can be used as a password for very simpl
 <context>
     <name>VoiceRecorder</name>
     <message>
-        <location filename="VoiceRecorder.cpp" line="+184"/>
+        <location filename="VoiceRecorder.cpp" line="+186"/>
         <source>Invalid sample rate given to recorder</source>
         <translation>レコーダに与えられたサンプルレートは無効です</translation>
     </message>
@@ -10748,7 +7946,7 @@ An access token is a text string, which can be used as a password for very simpl
     <name>VoiceRecorderDialog</name>
     <message>
         <location filename="VoiceRecorderDialog.ui"/>
-        <location filename="VoiceRecorderDialog.cpp" line="+98"/>
+        <location filename="VoiceRecorderDialog.cpp" line="+101"/>
         <location line="+33"/>
         <location line="+8"/>
         <location line="+10"/>
@@ -10783,10 +7981,6 @@ An access token is a text string, which can be used as a password for very simpl
         <translation>モード</translation>
     </message>
     <message>
-        <source>Mixdown</source>
-        <translation type="obsolete">ミックスダウン</translation>
-    </message>
-    <message>
         <location/>
         <source>Multichannel</source>
         <translation>マルチチャンネル</translation>
@@ -10812,22 +8006,6 @@ An access token is a text string, which can be used as a password for very simpl
         <translation>ファイル名</translation>
     </message>
     <message>
-        <source>&lt;pre&gt;
-Valid variables are:
-%user	Inserts the users name
-%date	Inserts the current date
-%time	Inserts the current time
-%host	Inserts the hostname
-&lt;/pre&gt;</source>
-        <translation type="obsolete">&lt;pre&gt;
-有効な変数は:
-%user	ユーザ名を追加します
-%date	現在の日付を追加します
-%time	現在の時間を追加します
-%host	ホスト名を追加します
-&lt;/pre&gt;</translation>
-    </message>
-    <message>
         <location/>
         <source>&amp;Browse...</source>
         <translation>参照(&amp;B)...</translation>
@@ -10838,33 +8016,29 @@ Valid variables are:
         <translation>レコーダを閉じると現在の録音が停止します。本当にレコーダを閉じますか?</translation>
     </message>
     <message>
-        <source>Recoder</source>
-        <translation type="obsolete">レコーダ</translation>
-    </message>
-    <message>
         <location line="-31"/>
         <source>Valid variables are:</source>
-        <translation type="unfinished">有効な変数は:</translation>
+        <translation>有効な変数は:</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Inserts the user&apos;s name</source>
-        <translation type="unfinished">ユーザ名を挿入</translation>
+        <translation>ユーザ名を挿入</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Inserts the current date</source>
-        <translation type="unfinished">現在の日付を挿入</translation>
+        <translation>現在の日付を挿入</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Inserts the current time</source>
-        <translation type="unfinished">現在の時間を挿入</translation>
+        <translation>現在の時間を挿入</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Inserts the hostname</source>
-        <translation type="unfinished">ホスト名を挿入</translation>
+        <translation>ホスト名を挿入</translation>
     </message>
     <message>
         <location line="+60"/>
@@ -10896,61 +8070,15 @@ Please contact your server administrator for further information.</source>
     <message>
         <location filename="VoiceRecorderDialog.ui"/>
         <source>Downmix</source>
-        <translation type="unfinished">ダウンミックス</translation>
-    </message>
-</context>
-<context>
-    <name>WASAPIConfig</name>
-    <message>
-        <source>Form</source>
-        <translation type="obsolete">フォーム</translation>
-    </message>
-    <message>
-        <source>Device selection</source>
-        <translation type="obsolete">デバイス選択</translation>
-    </message>
-    <message>
-        <source>Input (Microphone)</source>
-        <translation type="obsolete">入力(マイク)</translation>
-    </message>
-    <message>
-        <source>This set which source mumble should use for the microphone. The &lt;i&gt;default&lt;/i&gt; device means to use the PulseAudio defaults.</source>
-        <translation type="obsolete">どのソースをマイクに使用するか設定します。&lt;i&gt;デフォルト&lt;/i&gt; デバイスは PulseAudio のデフォルトです。 </translation>
-    </message>
-    <message>
-        <source>Output</source>
-        <translation type="obsolete">出力</translation>
-    </message>
-    <message>
-        <source>Device to use for speakers/headphones</source>
-        <translation type="obsolete">スピーカー/ヘッドホンに使用するデバイス</translation>
-    </message>
-    <message>
-        <source>Enable echo cancellation</source>
-        <translation type="obsolete">エコーキャンセル</translation>
-    </message>
-    <message>
-        <source>This enables echo cancellation. Don&apos;t enable this unless you are listening on speakers; for headphones it will cause audio degradation.</source>
-        <translation type="obsolete">エコーキャンセルを有効にします。スピーカーを使っている場合のみこれを有効にしてください; ヘッドホンでは音質劣化の原因となります。</translation>
-    </message>
-    <message>
-        <source>Use echo cancellation</source>
-        <translation type="obsolete">エコーキャンセルを使う</translation>
+        <translation>ダウンミックス</translation>
     </message>
 </context>
 <context>
     <name>WASAPISystem</name>
     <message>
-        <location filename="WASAPI.cpp" line="+180"/>
+        <location filename="WASAPI.cpp" line="+184"/>
         <source>Default Device</source>
         <translation>デフォルトデバイス</translation>
-    </message>
-</context>
-<context>
-    <name>XInputKeyWidget</name>
-    <message>
-        <source>Press Shortcut</source>
-        <translation type="obsolete">ショートカット押下</translation>
     </message>
 </context>
 <context>
@@ -10958,12 +8086,12 @@ Please contact your server administrator for further information.</source>
     <message>
         <location filename="PTTButtonWidget.ui"/>
         <source>Mumble PTT</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location/>
         <source>Push to talk</source>
-        <translation type="unfinished"></translation>
+        <translation>プッシュ・トゥ・トーク</translation>
     </message>
 </context>
 </TS>

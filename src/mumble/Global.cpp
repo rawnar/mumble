@@ -28,6 +28,8 @@
    SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
+#include "mumble_pch.hpp"
+
 #include "Global.h"
 
 Global *Global::g_global_struct;
@@ -79,7 +81,11 @@ Global::Global() {
 	iCodecAlpha = 0;
 	iCodecBeta = 0;
 	bPreferAlpha = true;
+#ifdef USE_OPUS
 	bOpus = true;
+#else
+	bOpus = false;
+#endif
 
 	bAttenuateOthers = false;
 
@@ -103,14 +109,16 @@ Global::Global() {
 	qsl << QCoreApplication::instance()->applicationDirPath();
 	qsl << QDesktopServices::storageLocation(QDesktopServices::DataLocation);
 #if defined(Q_OS_WIN)
-	QSettings settings(QSettings::UserScope, QLatin1String("Microsoft"), QLatin1String("Windows"));
-	settings.beginGroup(QLatin1String("CurrentVersion/Explorer/Shell Folders"));
-	QString appdata = QDir::fromNativeSeparators(settings.value(QLatin1String("AppData")).toString());
-	if (! appdata.isEmpty()) {
-		appdata.append(QLatin1String("/Mumble"));
-		qsl << appdata;
+	QString appdata;
+	wchar_t appData[MAX_PATH];
+	if (SUCCEEDED(SHGetFolderPath(NULL, CSIDL_APPDATA, NULL, SHGFP_TYPE_CURRENT, appData))) {
+		appdata = QDir::fromNativeSeparators(QString::fromWCharArray(appData));
+
+		if (!appdata.isEmpty()) {
+			appdata.append(QLatin1String("/Mumble"));
+			qsl << appdata;
+		}
 	}
-	settings.endGroup();
 #endif
 
 	foreach(const QString &dir, qsl) {
@@ -143,9 +151,7 @@ Global::Global() {
 	if (! qdBasePath.exists(QLatin1String("Overlay")))
 		qdBasePath.mkpath(QLatin1String("Overlay"));
 
-#if QT_VERSION >= 0x040500
 	qs->setIniCodec("UTF-8");
-#endif
 }
 
 Global::~Global() {

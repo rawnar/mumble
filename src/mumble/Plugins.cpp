@@ -28,14 +28,17 @@
    SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
+#include "mumble_pch.hpp"
+
 #include "Plugins.h"
+
+#include "Global.h"
 #include "Log.h"
+#include "MainWindow.h"
 #include "Message.h"
 #include "ServerHandler.h"
-#include "MainWindow.h"
-#include "WebFetch.h"
 #include "../../plugins/mumble_plugin.h"
-#include "Global.h"
+#include "WebFetch.h"
 
 static ConfigWidget *PluginConfigDialogNew(Settings &st) {
 	return new PluginConfig(st);
@@ -213,7 +216,7 @@ Plugins::Plugins(QObject *p) : QObject(p) {
 #ifdef Q_OS_WIN
 	// According to MS KB Q131065, we need this to OpenProcess()
 
-	hToken = FALSE;
+	hToken = NULL;
 
 	if (!OpenThreadToken(GetCurrentThread(), TOKEN_ADJUST_PRIVILEGES | TOKEN_QUERY, FALSE, &hToken)) {
 		if (GetLastError() == ERROR_NO_TOKEN) {
@@ -271,19 +274,26 @@ void Plugins::rescanPlugins() {
 	QFileInfoList libs = qd.entryInfoList();
 #endif
 
-	QSet<QString> loaded;
+	QSet<QString> evaluated;
 	foreach(const QFileInfo &libinfo, libs) {
 		QString fname = libinfo.fileName();
 		QString libname = libinfo.absoluteFilePath();
-		if (!loaded.contains(fname) && QLibrary::isLibrary(libname)) {
+		if (!evaluated.contains(fname) && QLibrary::isLibrary(libname)) {
 			PluginInfo *pi = new PluginInfo();
 			pi->lib.setFileName(libname);
 			pi->filename = fname;
 			if (pi->lib.load()) {
 				mumblePluginFunc mpf = reinterpret_cast<mumblePluginFunc>(pi->lib.resolve("getMumblePlugin"));
 				if (mpf) {
+					evaluated.insert(fname);
 					pi->p = mpf();
-					if (pi->p && (pi->p->magic == MUMBLE_PLUGIN_MAGIC)) {
+
+					// Check whether the plugin has a valid plugin magic and that it's not retracted.
+					// A retracted plugin is a plugin that clients should disregard, typically because
+					// the game the plugin was written for now provides positional audio via the
+					// link plugin (see null_plugin.cpp).
+					if (pi->p && pi->p->magic == MUMBLE_PLUGIN_MAGIC && pi->p->shortname != L"Retracted") {
+
 						pi->description = QString::fromStdWString(pi->p->description);
 						pi->shortname = QString::fromStdWString(pi->p->shortname);
 						pi->enabled = g.s.qmPositionalAudioPlugins.value(pi->filename, true);
@@ -297,7 +307,6 @@ void Plugins::rescanPlugins() {
 						}
 
 						qlPlugins << pi;
-						loaded.insert(fname);
 						continue;
 					}
 				}

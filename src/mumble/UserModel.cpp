@@ -29,18 +29,22 @@
    SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
+#include "mumble_pch.hpp"
+
 #include "UserModel.h"
-#include "MainWindow.h"
-#include "Message.h"
-#include "ServerHandler.h"
+
+#include "ClientUser.h"
 #include "Channel.h"
-#include "User.h"
+#include "Database.h"
 #include "Global.h"
-#include "Overlay.h"
 #include "LCD.h"
 #include "Log.h"
-#include "Database.h"
+#include "MainWindow.h"
+#include "Message.h"
+#include "Overlay.h"
+#include "ServerHandler.h"
 #include "Usage.h"
+#include "User.h"
 
 QHash <Channel *, ModelItem *> ModelItem::c_qhChannels;
 QHash <ClientUser *, ModelItem *> ModelItem::c_qhUsers;
@@ -621,13 +625,13 @@ QVariant UserModel::otherRoles(const QModelIndex &idx, int role) const {
 						                                           tr("Muted (manually muted by self)"),
 						                                           tr("Muted (manually muted by admin)"),
 						                                           tr("Muted (not allowed to speak in current channel)"),
-						                                           tr("Muted (muted by you, only on your machine)"),
-																   tr("Ignoring Text Messages")
+						                                           tr("Muted (muted by you, only on your machine)")
 						                                          ).arg(
 						           tr("Deafened (by self)"),
 						           tr("Deafened (by admin)"),
 						           tr("User has a new comment set (click to show)"),
-						           tr("User has a comment set, which you've already seen. (click to show)")
+						           tr("User has a comment set, which you've already seen. (click to show)"),
+						           tr("Ignoring Text Messages")
 						       );
 					else
 						return QString::fromLatin1("%1"

@@ -28,7 +28,10 @@
    SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
+#include "mumble_pch.hpp"
+
 #include "GlobalShortcut_win.h"
+
 #include "MainWindow.h"
 #include "Overlay.h"
 #include "Global.h"
@@ -89,6 +92,9 @@ GlobalShortcutWin::GlobalShortcutWin() {
 	pDI = NULL;
 	uiHardwareDevices = 0;
 
+	// Hidden setting to disable hooking
+	bHook = g.qs->value(QLatin1String("winhooks"), true).toBool();
+
 	GetKeyboardState(ucKeyState);
 
 	moveToThread(this);
@@ -102,27 +108,42 @@ GlobalShortcutWin::~GlobalShortcutWin() {
 
 void GlobalShortcutWin::run() {
 	HMODULE hSelf;
-	HRESULT hr;
 	QTimer *timer;
 
-	if (FAILED(hr = DirectInput8Create(GetModuleHandle(NULL), DIRECTINPUT_VERSION, IID_IDirectInput8, reinterpret_cast<void **>(&pDI), NULL))) {
+	if (FAILED(DirectInput8Create(GetModuleHandle(NULL), DIRECTINPUT_VERSION, IID_IDirectInput8, reinterpret_cast<void **>(&pDI), NULL))) {
 		qFatal("GlobalShortcutWin: Failed to create d8input");
 		return;
 	}
 
-	/*
-	 * Wait for MainWindow's constructor to finish before we enumerate DirectInput devices.
-	 * We need to do this because adding a new device requires a Window handle. (SetCooperativeLevel())
-	 */
+	// Print the user's LowLevelHooksTimeout registry key for debugging purposes.
+	// On Windows 7 and greater, Windows will silently remove badly behaving hooks
+	// without telling the application. Users can tweak the timeout themselves
+	// with this registry key.
+	HKEY key = NULL;
+	DWORD type = 0;
+	DWORD value = 0;
+	DWORD len = sizeof(DWORD);
+	if (RegOpenKeyExA(HKEY_CURRENT_USER, "Control Panel\\Desktop", NULL, KEY_READ, &key) == ERROR_SUCCESS) {
+		LONG err = RegQueryValueExA(key, "LowLevelHooksTimeout", NULL, &type, reinterpret_cast<LPBYTE>(&value), &len);
+		if (err == ERROR_SUCCESS && type == REG_DWORD) {
+			qWarning("GlobalShortcutWin: Found LowLevelHooksTimeout with value = 0x%x", value);
+		} else if (err == ERROR_FILE_NOT_FOUND) {
+			qWarning("GlobalShortcutWin: No LowLevelHooksTimeout registry key found.");
+		} else {
+			qWarning("GlobalShortcutWin: Error looking up LowLevelHooksTimeout. (Error: 0x%x, Type: 0x%x, Value: 0x%x)", err, type, value);
+		}
+	}
+
+	// Wait for MainWindow's constructor to finish before we enumerate DirectInput devices.
+	// We need to do this because adding a new device requires a Window handle. (SetCooperativeLevel())
 	while (! g.mw)
 		this->yieldCurrentThread();
 
-	GetModuleHandleEx(GET_MODULE_HANDLE_EX_FLAG_FROM_ADDRESS | GET_MODULE_HANDLE_EX_FLAG_UNCHANGED_REFCOUNT, (wchar_t *) &HookKeyboard, &hSelf);
-
-	hhKeyboard = SetWindowsHookEx(WH_KEYBOARD_LL, HookKeyboard, hSelf, 0);
-	hhMouse = SetWindowsHookEx(WH_MOUSE_LL, HookMouse, hSelf, 0);
-#ifdef QT_NO_DEBUG
-#endif
+	if (bHook) {
+		GetModuleHandleEx(GET_MODULE_HANDLE_EX_FLAG_FROM_ADDRESS | GET_MODULE_HANDLE_EX_FLAG_UNCHANGED_REFCOUNT, (wchar_t *) &HookKeyboard, &hSelf);
+		hhKeyboard = SetWindowsHookEx(WH_KEYBOARD_LL, HookKeyboard, hSelf, 0);
+		hhMouse = SetWindowsHookEx(WH_MOUSE_LL, HookMouse, hSelf, 0);
+	}
 
 	timer = new QTimer(this);
 	connect(timer, SIGNAL(timeout()), this, SLOT(timeTicked()));
@@ -132,8 +153,10 @@ void GlobalShortcutWin::run() {
 
 	exec();
 
-	UnhookWindowsHookEx(hhKeyboard);
-	UnhookWindowsHookEx(hhMouse);
+	if (bHook) {
+		UnhookWindowsHookEx(hhKeyboard);
+		UnhookWindowsHookEx(hhMouse);
+	}
 
 	foreach(InputDevice *id, qhInputDevices) {
 		if (id->pDID) {
@@ -557,7 +580,7 @@ QString GlobalShortcutWin::buttonName(const QVariant &v) {
 }
 
 bool GlobalShortcutWin::canSuppress() {
-	return true;
+	return bHook;
 }
 
 void GlobalShortcutWin::prepareInput() {

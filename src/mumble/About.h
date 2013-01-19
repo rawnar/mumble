@@ -28,10 +28,11 @@
    SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
-#ifndef _ABOUT_H
-#define _ABOUT_H
+#ifndef ABOUT_H_
+#define ABOUT_H_
 
-#include "mumble_pch.hpp"
+#include <QtCore/QObject>
+#include <QtGui/QDialog>
 
 class AboutDialog : public QDialog {
 	private:
@@ -39,14 +40,6 @@ class AboutDialog : public QDialog {
 		Q_DISABLE_COPY(AboutDialog)
 	public:
 		AboutDialog(QWidget *parent);
-};
-
-class AboutSpeexDialog : public QDialog {
-	private:
-		Q_OBJECT
-		Q_DISABLE_COPY(AboutSpeexDialog)
-	public:
-		AboutSpeexDialog(QWidget *parent);
 };
 
 #endif

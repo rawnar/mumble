@@ -28,20 +28,26 @@
    SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
-#ifndef _OVERLAY_H
-#define _OVERLAY_H
+#ifndef OVERLAY_H_
+#define OVERLAY_H_
 
-#include "mumble_pch.hpp"
+#include <QtCore/QUrl>
+#include <QtGui/QGraphicsItem>
+#include <QtNetwork/QLocalSocket>
+
 #include "ConfigDialog.h"
+#include "OverlayText.h"
 #include "SharedMemory.h"
+#include "Timer.h"
+#include "../../overlay/overlay.h"
+
 #include "ui_Overlay.h"
 #include "ui_OverlayEditor.h"
-#include "../../overlay/overlay.h"
-#include "OverlayText.h"
-#include "Timer.h"
 
 class ClientUser;
 class Overlay;
+class QLibrary;
+class QLocalServer;
 
 struct OverlayAppInfo {
 	QString qsDisplayName;
@@ -263,12 +269,10 @@ class OverlayConfig : public ConfigWidget, public Ui::OverlayConfig {
 	protected slots:
 		void on_qpbInstall_clicked();
 		void on_qpbUninstall_clicked();
-		void on_qpbShowCerts_clicked();
 		void on_qpbAdd_clicked();
 		void on_qpbRemove_clicked();
 		void on_qrbBlacklist_toggled(bool);
 		void on_qcbEnable_stateChanged(int);
-		void on_qswOverlayPage_currentChanged(int idx);
 		void on_qcbShowFps_stateChanged(int);
 		void on_qpbFpsFont_clicked();
 		void on_qpbFpsColor_clicked();
@@ -394,8 +398,6 @@ class Overlay : public QObject {
 		void setActive(bool act);
 		void toggleShow();
 		void forceSettings();
-		void checkUpdates();
-		void fetched(QByteArray, QUrl);
 };
 
 #ifdef Q_OS_WIN

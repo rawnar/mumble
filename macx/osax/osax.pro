@@ -3,14 +3,18 @@
 
 include(../../compiler.pri)
 
-CONFIG += x86_64 x86 ppc debug_and_release
-CONFIG(lion) {
-	CONFIG -= ppc
+CONFIG += x86_64 x86 debug_and_release
+CONFIG(universal) {
+	CONFIG += ppc
 }
 
 TEMPLATE = lib
 CONFIG += plugin plugin_bundle
 CONFIG -= gui qt
+
+CONFIG(static) {
+	CONFIG -= static
+}
 
 TARGET = MumbleOverlay
 QMAKE_INFO_PLIST = osax.plist
@@ -23,7 +27,7 @@ SDEF.files = MumbleOverlay.sdef
 SDEF.path = Contents/Resources
 QMAKE_BUNDLE_DATA += SDEF
 
-SOURCES = osax.m
+OBJECTIVE_SOURCES = osax.m
 DIST = osax.plist MumbleOverlay.sdef
 
 CONFIG(debug, debug|release) {

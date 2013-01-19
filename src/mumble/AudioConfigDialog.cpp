@@ -29,9 +29,13 @@
    SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
+#include "mumble_pch.hpp"
+
+#include "AudioConfigDialog.h"
+
 #include "AudioInput.h"
 #include "AudioOutput.h"
-#include "AudioConfigDialog.h"
+#include "AudioOutputSample.h"
 #include "Global.h"
 #include "NetworkConfig.h"
 
@@ -80,6 +84,7 @@ AudioInputDialog::AudioInputDialog(Settings &st) : ConfigWidget(st) {
 
 	on_qcbPushClick_clicked(g.s.bTxAudioCue);
 	on_Tick_timeout();
+	on_qcbIdleAction_currentIndexChanged(g.s.iaeIdleAction);
 }
 
 QString AudioInputDialog::title() const {
@@ -113,6 +118,7 @@ void AudioInputDialog::load(const Settings &r) {
 	loadSlider(qsTransmitMax, iroundf(r.fVADmax * 32767.0f + 0.5f));
 	loadSlider(qsFrames, (r.iFramesPerPacket == 1) ? 1 : (r.iFramesPerPacket/2 + 1));
 	loadSlider(qsDoublePush, iroundf(static_cast<float>(r.uiDoublePush) / 1000.f + 0.5f));
+	loadSlider(qsPTTHold, r.uiPTTHold);
 
 	if (r.vsVAD == Settings::Amplitude)
 		qrbAmplitude->setChecked(true);
@@ -128,7 +134,10 @@ void AudioInputDialog::load(const Settings &r) {
 		loadSlider(qsNoise, 14);
 
 	loadSlider(qsAmp, 20000 - r.iMinLoudness);
-	loadSlider(qsIdle, r.iIdleTime);
+
+	// Idle auto actions
+	qsbIdle->setValue(r.iIdleTime / 60);
+	loadComboBox(qcbIdleAction, r.iaeIdleAction);
 
 	int echo = 0;
 	if (r.bEcho)
@@ -148,8 +157,12 @@ void AudioInputDialog::save() const {
 	s.iFramesPerPacket = qsFrames->value();
 	s.iFramesPerPacket = (s.iFramesPerPacket == 1) ? 1 : ((s.iFramesPerPacket-1) * 2);
 	s.uiDoublePush = qsDoublePush->value() * 1000;
+	s.uiPTTHold = qsPTTHold->value();
 	s.atTransmit = static_cast<Settings::AudioTransmit>(qcbTransmit->currentIndex());
-	s.iIdleTime = qsIdle->value();
+
+	// Idle auto actions
+	s.iIdleTime = qsbIdle->value() * 60;
+	s.iaeIdleAction = static_cast<Settings::IdleAction>(qcbIdleAction->currentIndex());
 
 	s.bShowPTTButtonWindow = qcbPushWindow->isChecked();
 	s.bTxAudioCue = qcbPushClick->isChecked();
@@ -178,8 +191,10 @@ bool AudioInputDialog::expert(bool b) {
 	qlFrames->setVisible(b);
 	qswTransmit->setVisible(b);
 	qliIdle->setVisible(b);
-	qsIdle->setVisible(b);
+	qsbIdle->setVisible(b);
+	qcbIdleAction->setVisible(b);
 	qlIdle->setVisible(b);
+	qlIdle2->setVisible(b);
 	return true;
 }
 
@@ -193,6 +208,13 @@ void AudioInputDialog::on_qsDoublePush_valueChanged(int v) {
 		qlDoublePush->setText(tr("Off"));
 	else
 		qlDoublePush->setText(tr("%1 ms").arg(v));
+}
+
+void AudioInputDialog::on_qsPTTHold_valueChanged(int v) {
+	if (v == 0)
+		qlPTTHold->setText(tr("Off"));
+	else
+		qlPTTHold->setText(tr("%1 ms").arg(v));
 }
 
 void AudioInputDialog::on_qsTransmitHold_valueChanged(int v) {
@@ -222,13 +244,6 @@ void AudioInputDialog::on_qsAmp_valueChanged(int v) {
 	v = 18000 - v + 2000;
 	float d = 20000.0f/static_cast<float>(v);
 	qlAmp->setText(QString::fromLatin1("%1").arg(d, 0, 'f', 2));
-}
-
-void AudioInputDialog::on_qsIdle_valueChanged(int v) {
-	if (v > 0)
-		qlIdle->setText(tr("%1 min").arg(v / 60));
-	else
-		qlIdle->setText(tr("Off"));
 }
 
 void AudioInputDialog::updateBitrate() {
@@ -268,14 +283,15 @@ void AudioInputDialog::updateBitrate() {
 
 	qlBitrate->setPalette(pal);
 
-	QString v = tr("%1 kbit/s (Audio %2 %5, Position %4, Overhead %3)").arg(total / 1000.0, 0, 'f', 1).arg(audiorate / 1000.0, 0, 'f', 1).arg(overhead / 1000.0, 0, 'f', 1).arg(posrate / 1000.0, 0, 'f', 1).arg(::AudioInput::preferCELT(q,p) ? tr("CELT") : tr("Speex"));
+	QString v = tr("%1 kbit/s (Audio %2, Position %4, Overhead %3)")
+	        .arg(total / 1000.0, 0, 'f', 1)
+	        .arg(audiorate / 1000.0, 0, 'f', 1)
+	        .arg(overhead / 1000.0, 0, 'f', 1)
+	        .arg(posrate / 1000.0, 0, 'f', 1);
+
 	qlBitrate->setText(v);
 
-	if (p == 1) {
-		qsQuality->setMinimum(24000);
-	} else {
-		qsQuality->setMinimum(8000);
-	}
+	qsQuality->setMinimum(8000);
 }
 
 void AudioInputDialog::on_qcbPushClick_clicked(bool b) {
@@ -378,6 +394,17 @@ void AudioInputDialog::on_Tick_timeout() {
 		abSpeech->iValue = iroundf(ai->fSpeechProb * 32767.0f + 0.5f);
 	}
 	abSpeech->update();
+}
+
+
+void AudioInputDialog::on_qcbIdleAction_currentIndexChanged(int v) {
+	const Settings::IdleAction action = static_cast<Settings::IdleAction>(v);
+
+	const bool enabled = (action != Settings::Nothing);
+
+	qlIdle->setEnabled(enabled);
+	qlIdle2->setEnabled(enabled);
+	qsbIdle->setEnabled(enabled);
 }
 
 AudioOutputDialog::AudioOutputDialog(Settings &st) : ConfigWidget(st) {

@@ -28,7 +28,10 @@
    SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
+#include "mumble_pch.hpp"
+
 #include "ClientUser.h"
+
 #include "Channel.h"
 #include "Global.h"
 #include "AudioOutput.h"
@@ -55,18 +58,6 @@ ClientUser *ClientUser::get(unsigned int uiSession) {
 	QReadLocker lock(&c_qrwlUsers);
 	ClientUser *p = c_qmUsers.value(uiSession);
 	return p;
-}
-
-ClientUser *ClientUser::getByHash(const QString &hash) {
-	QReadLocker lock(&c_qrwlUsers);
-
-	ClientUser *cu;
-	foreach(cu, c_qmUsers) {
-		if (cu->qsHash == hash)
-			return cu;
-	}
-
-	return NULL;
 }
 
 QList<ClientUser *> ClientUser::getTalking() {

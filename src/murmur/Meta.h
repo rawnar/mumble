@@ -28,15 +28,27 @@
    SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
-#ifndef _META_H
-#define _META_H
+#ifndef META_H_
+#define META_H_
 
-#include "murmur_pch.h"
+#include <QtCore/QDir>
+#include <QtCore/QList>
+#include <QtCore/QUrl>
+#include <QtCore/QVariant>
+#include <QtNetwork/QHostAddress>
+#include <QtNetwork/QSslCertificate>
+#include <QtNetwork/QSslKey>
+#ifdef Q_OS_WIN
+#include <windows.h>
+#endif
+
 #include "Timer.h"
 
 class Server;
+class QSettings;
 
-struct MetaParams {
+class MetaParams {
+public:
 	QDir qdBasePath;
 
 	QList<QHostAddress> qlBind;
@@ -49,6 +61,8 @@ struct MetaParams {
 	bool bRememberChan;
 	int iMaxTextMessageLength;
 	int iMaxImageMessageLength;
+	int iOpusThreshold;
+	int iChannelNestingLimit;
 	bool bAllowHTML;
 	QString qsPassword;
 	QString qsWelcomeText;
@@ -111,6 +125,10 @@ struct MetaParams {
 	MetaParams();
 	~MetaParams();
 	void read(QString fname = QString("murmur.ini"));
+
+private:
+		template <class T>
+		T typeCheckedFromSettings(const QString &name, const T &variable);
 };
 
 class Meta : public QObject {

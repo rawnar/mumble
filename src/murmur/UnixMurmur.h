@@ -28,10 +28,16 @@
    SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
-#ifndef _UNIXMURMUR_H
-#define _UNIXMURMUR_H
+#ifndef UNIXMURMUR_H_
+#define UNIXMURMUR_H_
 
-#include "murmur_pch.h"
+#include <QtCore/QObject>
+#include <QtCore/QThread>
+
+class QCoreApplication;
+class QMutex;
+class QSocketNotifier;
+class QWaitCondition;
 
 class LimitTest : public QThread {
 		Q_OBJECT
@@ -63,6 +69,7 @@ class UnixMurmur : public QObject {
 		void setuid();
 		void initialcap();
 		void finalcap();
+		const QString trySystemIniFiles(const QString& fname);
 
 		UnixMurmur();
 		~UnixMurmur();

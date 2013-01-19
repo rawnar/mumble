@@ -28,8 +28,17 @@
    SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
-#ifndef _AUDIOINPUT_H
-#define _AUDIOINPUT_H
+#ifndef AUDIOINPUT_H_
+#define AUDIOINPUT_H_
+
+#include <boost/shared_ptr.hpp>
+#include <speex/speex.h>
+#include <speex/speex_echo.h>
+#include <speex/speex_preprocess.h>
+#include <speex/speex_resampler.h>
+#include <QtCore/QObject>
+#include <QtCore/QThread>
+#include <vector>
 
 #include "Audio.h"
 #include "Settings.h"
@@ -37,6 +46,8 @@
 #include "Message.h"
 
 class AudioInput;
+class CELTCodec;
+struct CELTEncoder;
 struct OpusEncoder;
 typedef boost::shared_ptr<AudioInput> AudioInputPtr;
 
@@ -86,7 +97,8 @@ class AudioInput : public QThread {
 		void resetAudioProcessor();
 
 		OpusEncoder *opusState;
-		int encodeOpusFrame(short *source, unsigned char *buffer);
+		bool selectCodec();
+		int encodeOpusFrame(short *source, int size, unsigned char *buffer);
 		int encodeSpeexFrame(short *pSource, unsigned char *buffer);
 		int encodeCELTFrame(short *pSource, unsigned char *buffer);
 	protected:
@@ -110,9 +122,6 @@ class AudioInput : public QThread {
 		CELTCodec *cCodec;
 		CELTEncoder *ceEncoder;
 
-		SpeexBits sbBits;
-		void *esSpeex;
-
 		int iAudioQuality;
 		int iAudioFrames;
 
@@ -124,6 +133,8 @@ class AudioInput : public QThread {
 		float *pfEchoInput;
 		float *pfOutput;
 
+		std::vector<short> opusBuffer;
+
 		void encodeAudioFrame();
 		void addMic(const void *data, unsigned int nsamp);
 		void addEcho(const void *data, unsigned int nsamp);
@@ -134,16 +145,17 @@ class AudioInput : public QThread {
 		int iFrameCounter;
 		int iSilentFrames;
 		int iHoldFrames;
+		int iBufferedFrames;
 
 		QList<QByteArray> qlFrames;
 		void flushCheck(const QByteArray &, bool terminator);
 
 		void initializeMixer();
 
-		static bool preferCELT(int bitrate, int frames);
 		static void adjustBandwidth(int bitspersec, int &bitrate, int &frames);
 	signals:
 		void doDeaf();
+		void doMute();
 	public:
 		bool bResetProcessor;
 
@@ -163,6 +175,4 @@ class AudioInput : public QThread {
 		bool isTransmitting() const;
 };
 
-#else
-class AudioInput;
 #endif

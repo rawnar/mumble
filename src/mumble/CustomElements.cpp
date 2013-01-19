@@ -28,7 +28,11 @@
    NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
    SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
+
+#include "mumble_pch.hpp"
+
 #include "CustomElements.h"
+
 #include "ClientUser.h"
 #include "Global.h"
 #include "MainWindow.h"
@@ -101,7 +105,7 @@ void ChatbarTextEdit::inFocus(bool focus) {
 void ChatbarTextEdit::contextMenuEvent(QContextMenuEvent *qcme) {
 	QMenu *menu = createStandardContextMenu();
 
-	QAction *action = new QAction(tr("Paste and send") + QLatin1Char('\t'), menu);
+	QAction *action = new QAction(tr("Paste and &Send") + QLatin1Char('\t'), menu);
 	action->setEnabled(!QApplication::clipboard()->text().isEmpty());
 	connect(action, SIGNAL(triggered()), this, SLOT(pasteAndSend_triggered()));
 	if (menu->actions().count() > 6)
@@ -325,6 +329,9 @@ QSize DockTitleBar::minimumSizeHint() const {
 
 bool DockTitleBar::eventFilter(QObject *, QEvent *evt) {
 	QDockWidget *qdw = qobject_cast<QDockWidget*>(parentWidget());
+
+	if (! this->isEnabled())
+		return false;
 
 	switch (evt->type()) {
 		case QEvent::Leave:

@@ -28,6 +28,8 @@
    SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
+#include "mumble_pch.hpp"
+
 #include "User.h"
 #include "Channel.h"
 #include "Overlay.h"
@@ -113,15 +115,4 @@ bool OverlayConfig::installFiles() {
 
 bool OverlayConfig::uninstallFiles() {
 	return false;
-}
-
-bool OverlayConfig::supportsCertificates() {
-	return false;
-}
-
-bool OverlayConfig::installerIsValid() {
-	return false;
-}
-
-void OverlayConfig::showCertificates() {
 }

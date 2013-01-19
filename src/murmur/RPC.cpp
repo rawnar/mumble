@@ -28,12 +28,14 @@
    SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
-#include "Server.h"
-#include "ServerUser.h"
+#include "murmur_pch.h"
+
 #include "Channel.h"
 #include "Group.h"
 #include "Meta.h"
+#include "Server.h"
 #include "ServerDB.h"
+#include "ServerUser.h"
 #include "Version.h"
 
 /*!
@@ -50,7 +52,7 @@
   If recursion is activated all temporary memberships in related channels will also be cleared.
 */
 
-void Server::setUserState(User *pUser, Channel *cChannel, bool mute, bool deaf, bool suppressed, bool prioritySpeaker, const QString &comment) {
+void Server::setUserState(User *pUser, Channel *cChannel, bool mute, bool deaf, bool suppressed, bool prioritySpeaker, const QString& name, const QString &comment) {
 	bool changed = false;
 
 	if (deaf)
@@ -85,11 +87,16 @@ void Server::setUserState(User *pUser, Channel *cChannel, bool mute, bool deaf, 
 			setInfo(pUser->iId, info);
 		}
 	}
+	if (name != pUser->qsName) {
+		changed = true;
+		mpus.set_name(u8(name));
+	}
 
 	pUser->bDeaf = deaf;
 	pUser->bMute = mute;
 	pUser->bSuppress = suppressed;
 	pUser->bPrioritySpeaker = prioritySpeaker;
+	pUser->qsName = name;
 	hashAssign(pUser->qsComment, pUser->qbaCommentHash, comment);
 
 	if (cChannel != pUser->cChannel) {
@@ -130,6 +137,10 @@ bool Server::setChannelState(Channel *cChannel, Channel *cParent, const QString 
 			if (p == cChannel)
 				return false;
 			p = p->cParent;
+		}
+
+		if (!canNest(cParent, cChannel)) {
+			return false;
 		}
 
 		cChannel->cParent->removeChannel(cChannel);

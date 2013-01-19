@@ -28,11 +28,14 @@
    SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
+#include "mumble_pch.hpp"
+
 #include "WASAPI.h"
-#include "User.h"
+#include "WASAPINotificationClient.h"
 #include "Global.h"
-#include "MainWindow.h"
 #include "Timer.h"
+#include "User.h"
+
 
 // Now that Win7 is published, which includes public versions of these
 // interfaces, we simply inherit from those but use the "old" IIDs.
@@ -213,7 +216,7 @@ const QHash<QString, QString> WASAPISystem::getDevices(EDataFlow dataflow) {
 	return devices;
 }
 
-const QList<audioDevice> WASAPISystem::mapToDevice(const QHash<QString, QString> devs, const QString &match) {
+const QList<audioDevice> WASAPISystem::mapToDevice(const QHash<QString, QString>& devs, const QString& match) {
 	QList<audioDevice> qlReturn;
 
 	QStringList qlDevices = devs.keys();
@@ -257,6 +260,8 @@ static IMMDevice *openNamedOrDefaultDevice(const QString& name, EDataFlow dataFl
 		hr = pEnumerator->GetDevice(devname, &pDevice);
 		if (FAILED(hr)) {
 			qWarning("WASAPI: Failed to open selected device %s %ls (df=%d, e=%d, hr=0x%08lx), falling back to default", qPrintable(name), devname, dataFlow, role, hr);
+		} else {
+			WASAPINotificationClient::get().enlistDeviceAsUsed(devname);
 		}
 	}
 
@@ -282,6 +287,7 @@ static IMMDevice *openNamedOrDefaultDevice(const QString& name, EDataFlow dataFl
 			qWarning("WASAPI: Failed to reopen default device: df=%d, e=%d, hr=0x%08lx", dataFlow, role, hr);
 			goto cleanup;
 		}
+		WASAPINotificationClient::get().enlistDefaultDeviceAsUsed(devname);
 		CoTaskMemFree(devname);
 	}
 

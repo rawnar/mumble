@@ -28,8 +28,10 @@
    SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
-#ifndef _CLIENTUSER_H
-#define _CLIENTUSER_H
+#ifndef CLIENTUSER_H_
+#define CLIENTUSER_H_
+
+#include <QtCore/QReadWriteLock>
 
 #include "User.h"
 #include "Timer.h"
@@ -85,7 +87,6 @@ class ClientUser : public QObject, public User {
 		static void sortUsersOverlay(QList<ClientUser *> &list);
 
 		static ClientUser *get(unsigned int);
-		static ClientUser *getByHash(const QString &hash);
 		static bool isValid(unsigned int);
 		static ClientUser *add(unsigned int, QObject *p = NULL);
 		static ClientUser *match(const ClientUser *p, bool matchname = false);

@@ -28,11 +28,14 @@
    SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
+#include "mumble_pch.hpp"
+
 #include "ConfigDialog.h"
+
 #include "AudioInput.h"
 #include "AudioOutput.h"
-#include "Overlay.h"
 #include "Global.h"
+#include "Overlay.h"
 
 ConfigDialog::ConfigDialog(QWidget *p) : QDialog(p) {
 	setupUi(this);
@@ -129,6 +132,7 @@ void ConfigDialog::on_pageButtonBox_clicked(QAbstractButton *b) {
 	switch (pageButtonBox->standardButton(b)) {
 		case QDialogButtonBox::RestoreDefaults: {
 				Settings def;
+				def.bExpert = g.s.bExpert;
 				conf->load(def);
 				break;
 			}

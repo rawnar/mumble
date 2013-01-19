@@ -28,18 +28,21 @@
    SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
+#include "mumble_pch.hpp"
+
 #include "ConnectDialog.h"
-#include "Global.h"
-#include "ServerHandler.h"
-#include "Channel.h"
-#include "Database.h"
-#include "WebFetch.h"
 
 #ifdef USE_BONJOUR
 #include "BonjourClient.h"
 #include "BonjourServiceBrowser.h"
 #include "BonjourServiceResolver.h"
 #endif
+
+#include "Channel.h"
+#include "Database.h"
+#include "Global.h"
+#include "ServerHandler.h"
+#include "WebFetch.h"
 
 QMap<QString, QIcon> ServerItem::qmIcons;
 QList<PublicInfo> ConnectDialog::qlPublicServers;
@@ -110,7 +113,7 @@ ServerView::~ServerView() {
 	delete siPublic;
 }
 
-QMimeData *ServerView::mimeData(const QList<QTreeWidgetItem *> mimeitems) const {
+QMimeData *ServerView::mimeData(const QList<QTreeWidgetItem *>& mimeitems) const {
 	if (mimeitems.isEmpty())
 		return NULL;
 
@@ -215,29 +218,12 @@ ServerItem *ServerView::getParent(const QString &continentcode, const QString &c
 
 
 void ServerItem::init() {
-#if QT_VERSION < 0x040500
-	m_emitDataChanged = 0;
-#endif
 	// Without this, columncount is wrong.
 	setData(0, Qt::DisplayRole, QVariant());
 	setData(1, Qt::DisplayRole, QVariant());
 	setData(2, Qt::DisplayRole, QVariant());
 	emitDataChanged();
 }
-
-#if QT_VERSION < 0x040500
-void ServerItem::emitDataChanged() {
-	static QVariant emitDataChangedQVariants[] = { QVariant(0), QVariant(1) };
-
-	if (! treeWidget() || ! treeWidget()->header())
-		return;
-
-	m_emitDataChanged = !m_emitDataChanged;
-
-	int sortCol = treeWidget()->header()->sortIndicatorSection();
-	setData((sortCol > 0) ? sortCol : 0, Qt::UserRole, emitDataChangedQVariants[m_emitDataChanged]);
-}
-#endif
 
 ServerItem::ServerItem(const FavoriteServer &fs) : QTreeWidgetItem(QTreeWidgetItem::UserType) {
 	siParent = NULL;
@@ -520,7 +506,7 @@ void ServerItem::hideCheck() {
 
 	if (! bParent && (itType == PublicType)) {
 		if (g.s.ssFilter == Settings::ShowReachable)
-			hide = (uiPing == 0);
+			hide = (dPing == 0.0);
 		else if (g.s.ssFilter == Settings::ShowPopulated)
 			hide = (uiUsers == 0);
 	}
@@ -1125,7 +1111,7 @@ void ConnectDialog::on_qtwServers_currentItemChanged(QTreeWidgetItem *item, QTre
 		qpbEdit->setEnabled(false);
 	}
 	
-	bool bOk = (si && ! si->qlAddresses.isEmpty());
+	bool bOk = !si->qlAddresses.isEmpty();
 	qdbbButtonBox->button(QDialogButtonBox::Ok)->setEnabled(bOk);
 
 	bLastFound = true;

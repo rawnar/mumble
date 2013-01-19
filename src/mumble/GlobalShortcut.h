@@ -29,12 +29,16 @@
 */
 
 
-#ifndef _GLOBALSHORTCUT_H
-#define _GLOBALSHORTCUT_H
+#ifndef GLOBALSHORTCUT_H_
+#define GLOBALSHORTCUT_H_
 
-#include "mumble_pch.hpp"
+#include <QtCore/QThread>
+#include <QtGui/QToolButton>
+#include <QtGui/QStyledItemDelegate>
+
 #include "ConfigDialog.h"
 #include "Timer.h"
+
 #include "ui_GlobalShortcut.h"
 #include "ui_GlobalShortcutTarget.h"
 
@@ -62,7 +66,7 @@ class GlobalShortcut : public QObject {
 
 		bool active() const {
 			return ! qlActive.isEmpty();
-		};
+		}
 };
 
 class ShortcutKeyWidget : public QLineEdit {
@@ -128,6 +132,14 @@ class ShortcutTargetDialog : public QDialog, public Ui::GlobalShortcutTarget {
 		void on_qpbRemove_clicked();
 };
 
+enum ShortcutTargetTypes {
+	SHORTCUT_TARGET_ROOT = -1,
+	SHORTCUT_TARGET_PARENT = -2,
+	SHORTCUT_TARGET_CURRENT = -3,
+	SHORTCUT_TARGET_SUBCHANNEL = -4,
+	SHORTCUT_TARGET_PARENT_SUBCHANNEL = -12
+};
+
 class ShortcutTargetWidget : public QFrame {
 	private:
 		Q_OBJECT
@@ -164,6 +176,8 @@ class GlobalShortcutConfig : public ConfigWidget, public Ui::GlobalShortcut {
 		QList<Shortcut> qlShortcuts;
 		QTreeWidgetItem *itemForShortcut(const Shortcut &) const;
 		bool bExpert;
+		bool showWarning() const;
+		bool eventFilter(QObject *, QEvent *);
 	public:
 		GlobalShortcutConfig(Settings &st);
 		virtual QString title() const;
@@ -175,10 +189,13 @@ class GlobalShortcutConfig : public ConfigWidget, public Ui::GlobalShortcut {
 		void reload();
 		bool expert(bool);
 		void commit();
+		void on_qcbEnableGlobalShortcuts_stateChanged(int);
 		void on_qpbAdd_clicked(bool);
 		void on_qpbRemove_clicked(bool);
 		void on_qtwShortcuts_currentItemChanged(QTreeWidgetItem *, QTreeWidgetItem *);
 		void on_qtwShortcuts_itemChanged(QTreeWidgetItem *, int);
+		void on_qpbOpenAccessibilityPrefs_clicked();
+		void on_qpbSkipWarning_clicked();
 };
 
 struct ShortcutKey {
@@ -219,6 +236,10 @@ class GlobalShortcutEngine : public QThread {
 		static QString buttonText(const QList<QVariant> &);
 		virtual QString buttonName(const QVariant &) = 0;
 		virtual bool canSuppress();
+
+		virtual void setEnabled(bool b);
+		virtual bool enabled();
+		virtual bool canDisable();
 
 		virtual void prepareInput();
 	signals:

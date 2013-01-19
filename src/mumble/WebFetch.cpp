@@ -28,9 +28,12 @@
    SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
+#include "mumble_pch.hpp"
+
 #include "WebFetch.h"
-#include "NetworkConfig.h"
+
 #include "Global.h"
+#include "NetworkConfig.h"
 
 WebFetch::WebFetch(QUrl url, QObject *obj, const char *slot) : QObject(), qoObject(obj), cpSlot(slot) {
 	url.setScheme(QLatin1String("http"));
@@ -60,7 +63,11 @@ void WebFetch::finished() {
 	QUrl url = qnr->request().url();
 
 	if (qnr->error() == QNetworkReply::NoError) {
-		const QByteArray &a=qnr->readAll();
+		QByteArray a = qnr->readAll();
+
+		// empty response is not an error
+		if (a.isNull())
+			a.append("");
 
 		QMap<QString, QString> headers;
 

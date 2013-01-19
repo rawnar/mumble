@@ -28,15 +28,27 @@
    SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
-#ifndef _CONNECTDIALOG_H
-#define _CONNECTDIALOG_H
+#ifndef CONNECTDIALOG_H_
+#define CONNECTDIALOG_H_
 
-#include "mumble_pch.hpp"
-#include "Timer.h"
-#include "Net.h"
+#include <boost/accumulators/accumulators.hpp>
+#include <boost/accumulators/statistics/stats.hpp>
+
+#include <QtCore/QString>
+#include <QtCore/QUrl>
+#include <QtGui/QTreeWidget>
+#include <QtNetwork/QHostInfo>
+
+#ifdef USE_BONJOUR
+#include <dns_sd.h>
+#endif
+
 #include "BonjourRecord.h"
+#include "Net.h"
+#include "Timer.h"
 
 struct FavoriteServer;
+class QUdpSocket;
 
 typedef QPair<QHostAddress, unsigned short> qpAddress;
 
@@ -95,7 +107,7 @@ class ServerView : public QTreeWidget {
 
 		ServerItem *getParent(const QString &continent, const QString &countrycode, const QString &countryname, const QString &usercontinentcode, const QString &usercountrycode);
 	protected:
-		virtual QMimeData *mimeData(const QList<QTreeWidgetItem *>) const;
+		virtual QMimeData *mimeData(const QList<QTreeWidgetItem *>&) const;
 		virtual QStringList mimeTypes() const;
 		virtual Qt::DropActions supportedDropActions() const;
 		virtual bool dropMimeData(QTreeWidgetItem *, int, const QMimeData *, Qt::DropAction);
@@ -162,12 +174,6 @@ class ServerItem : public QTreeWidgetItem, public PingStats {
 		QVariant data(int column, int role) const;
 
 		void hideCheck();
-
-#if QT_VERSION < 0x040500
-		void emitDataChanged();
-	private:
-		bool m_emitDataChanged;
-#endif
 };
 
 class ConnectDialogEdit : public QDialog, protected Ui::ConnectDialogEdit {

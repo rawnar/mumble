@@ -1,4 +1,4 @@
-/* Copyright (C) 2005-2011, Thorvald Natvig <thorvald@natvig.com>
+/* Copyright (C) 2005-2012, Thorvald Natvig <thorvald@natvig.com>
 
    All rights reserved.
 
@@ -73,7 +73,7 @@ static int32_t GetTickCount() {
 	return tv.tv_usec / 1000 + tv.tv_sec * 1000;
 }
 
-static struct LinkedMem * const lm_invalid = reinterpret_cast<struct LinkedMem *>(-1);
+#define lm_invalid reinterpret_cast<struct LinkedMem *>(-1)
 static struct LinkedMem *lm = lm_invalid;
 static int shmfd = -1;
 

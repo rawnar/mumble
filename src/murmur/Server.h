@@ -29,23 +29,39 @@
    SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
-#ifndef _SERVER_H
-#define _SERVER_H
+#ifndef SERVER_H_
+#define SERVER_H_
 
-#include "murmur_pch.h"
-#include "Message.h"
-#include "Timer.h"
-#include "Net.h"
-#include "ACL.h"
-
-#ifdef USE_BONJOUR
-#include "BonjourServer.h"
+#include <boost/function.hpp>
+#include <QtCore/QEvent>
+#include <QtCore/QMutex>
+#include <QtCore/QTimer>
+#include <QtCore/QQueue>
+#include <QtCore/QReadWriteLock>
+#include <QtCore/QStringList>
+#include <QtCore/QSocketNotifier>
+#include <QtCore/QThread>
+#include <QtCore/QUrl>
+#include <QtNetwork/QSslCertificate>
+#include <QtNetwork/QSslKey>
+#include <QtNetwork/QSslSocket>
+#include <QtNetwork/QTcpServer>
+#ifdef Q_OS_WIN
+#include <windows.h>
 #endif
 
+#include "ACL.h"
+#include "Message.h"
+#include "Mumble.pb.h"
+#include "Net.h"
+#include "Timer.h"
+
+class BonjourServer;
 class Channel;
 class PacketDataStream;
 class ServerUser;
 class User;
+class QNetworkAccessManager;
 
 struct TextMessage {
 	QList<unsigned int> qlSessions;
@@ -116,6 +132,7 @@ class Server : public QThread {
 		bool bRememberChan;
 		int iMaxTextMessageLength;
 		int iMaxImageMessageLength;
+		int iOpusThreshold;
 		bool bAllowHTML;
 		QString qsPassword;
 		QString qsWelcomeText;
@@ -150,7 +167,7 @@ class Server : public QThread {
 		int iCodecBeta;
 		bool bPreferAlpha;
 		bool bOpus;
-		void recheckCodecVersions();
+		void recheckCodecVersions(ServerUser *connectingUser = 0);
 
 #ifdef USE_BONJOUR
 		void initBonjour();
@@ -159,6 +176,10 @@ class Server : public QThread {
 		// Registration, implementation in Register.cpp
 		QTimer qtTick;
 		void initRegister();
+
+	private:
+		int iChannelNestingLimit;
+
 	public slots:
 		void regSslError(const QList<QSslError> &);
 		void finished();
@@ -248,8 +269,8 @@ class Server : public QThread {
 
 		QString addressToString(const QHostAddress &, unsigned short port);
 
-		void log(const QString &);
-		void log(ServerUser *u, const QString &);
+		void log(const QString &) const;
+		void log(ServerUser *u, const QString &) const;
 
 		void removeChannel(int id);
 		void removeChannel(Channel *c, Channel *dest = NULL);
@@ -258,6 +279,8 @@ class Server : public QThread {
 
 		Server(int snum, QObject *parent = NULL);
 		~Server();
+
+		bool canNest(Channel *newParent, Channel *channel = NULL) const;
 
 		// RPC functions. Implementation in RPC.cpp
 		void connectAuthenticator(QObject *p);
@@ -288,7 +311,7 @@ class Server : public QThread {
 
 		void contextAction(const User *, const QString &, unsigned int, int);
 	public:
-		void setUserState(User *p, Channel *parent, bool mute, bool deaf, bool suppressed, bool prioritySpeaker, const QString &comment = QString());
+		void setUserState(User *p, Channel *parent, bool mute, bool deaf, bool suppressed, bool prioritySpeaker, const QString& name = QString(), const QString &comment = QString());
 		bool setChannelState(Channel *c, Channel *parent, const QString &qsName, const QSet<Channel *> &links, const QString &desc = QString(), const int position = 0);
 		void sendTextMessage(Channel *cChannel, ServerUser *pUser, bool tree, const QString &text);
 
@@ -320,7 +343,7 @@ class Server : public QThread {
 		void saveBans();
 		QVariant getConf(const QString &key, QVariant def);
 		void setConf(const QString &key, const QVariant &value);
-		void dblog(const QString &str);
+		void dblog(const QString &str) const;
 
 		// From msgHandler. Implementation in Messages.cpp
 #define MUMBLE_MH_MSG(x) void msg##x(ServerUser *, MumbleProto:: x &);

@@ -28,7 +28,10 @@
    SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
+#include "mumble_pch.hpp"
+
 #include "About.h"
+
 #include "Global.h"
 #include "MainWindow.h"
 #include "licenses.h"
@@ -43,6 +46,20 @@ AboutDialog::AboutDialog(QWidget *p) : QDialog(p) {
 	qteLicense->setReadOnly(true);
 	qteLicense->setPlainText(QLatin1String(licenseMumble));
 
+	QTextBrowser *qtb3rdPartyLicense = new QTextBrowser(qtwTab);
+	qtb3rdPartyLicense->setReadOnly(true);
+	qtb3rdPartyLicense->setOpenExternalLinks(true);
+
+	for(int i = 0; licenses3rdParty[i] != 0; ++i)
+	{
+		qtb3rdPartyLicense->append(QString::fromLatin1("<h3>%1 (<a href=\"%2\">%2</a>)</h3><pre>%3</pre>")
+				.arg(QString::fromLatin1(licenses3rdPartyNames[i]))
+				.arg(QString::fromLatin1(licenses3rdPartyURLs[i]))
+				.arg(QString::fromLatin1(licenses3rdParty[i])));
+	}
+
+	qtb3rdPartyLicense->moveCursor(QTextCursor::Start);
+
 	QWidget *about=new QWidget(qtwTab);
 
 	QLabel *icon=new QLabel(about);
@@ -55,41 +72,18 @@ AboutDialog::AboutDialog(QWidget *p) : QDialog(p) {
 	                  "<p>Copyright %3 Thorvald Natvig<br />slicer@users.sourceforge.net</p>"
 	                  "<p><b>A voice-chat utility for gamers</b></p>"
 	                  "<p><tt><a href=\"%2\">%2</a></tt></p>"
-	              ).arg(QLatin1String(MUMBLE_RELEASE)).arg(QLatin1String("http://mumble.sourceforge.net/")).arg(QLatin1String("2005-2010")));
+	              ).arg(QLatin1String(MUMBLE_RELEASE)).arg(QLatin1String("http://mumble.sourceforge.net/")).arg(QLatin1String("2005-2012")));
 	QHBoxLayout *qhbl=new QHBoxLayout(about);
 	qhbl->addWidget(icon);
 	qhbl->addWidget(text);
 
 	qtwTab->addTab(about, tr("&About Mumble"));
 	qtwTab->addTab(qteLicense, tr("&License"));
+	qtwTab->addTab(qtb3rdPartyLicense, tr("3rd &party licenses"));
 
 	QPushButton *okButton = new QPushButton(tr("OK"), this);
 	connect(okButton, SIGNAL(clicked()), this, SLOT(accept()));
 
 	vblMain->addWidget(qtwTab);
-	vblMain->addWidget(okButton);
-}
-
-AboutSpeexDialog::AboutSpeexDialog(QWidget *p) : QDialog(p) {
-	setWindowTitle(tr("About Speex"));
-
-	QLabel *text=new QLabel(this);
-	text->setOpenExternalLinks(true);
-	text->setText(tr(
-	                  "<h3>About Speex</h3>"
-	                  "<p><tt><a href=\"%1\">%1</a></tt></p>"
-	                  "<p>This program uses SpeexDSP.</p>"
-	                  "<p>Speex is used for echo cancellation, noise<br />"
-	                  "filtering and voice activity detection.</p>"
-	              ).arg(QLatin1String("http://www.speex.org/")));
-
-	QPushButton *okButton = new QPushButton(tr("OK"), this);
-	connect(okButton, SIGNAL(clicked()), this, SLOT(accept()));
-
-	QVBoxLayout *vblMain = new QVBoxLayout(this);
-	QHBoxLayout *qhbl=new QHBoxLayout();
-	qhbl->addWidget(text);
-
-	vblMain->addLayout(qhbl);
 	vblMain->addWidget(okButton);
 }
