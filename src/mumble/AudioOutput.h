@@ -63,6 +63,8 @@
 #define SPEAKER_TOP_BACK_RIGHT          0x20000
 #endif
 
+#include <boost/optional.hpp>
+
 #include "Audio.h"
 #include "Message.h"
 
@@ -94,14 +96,30 @@ class AudioOutputRegistrar {
 		virtual bool canExclusive() const;
 };
 
+// Attributes related to the audio source
+struct AudioSourceData {
+	float fDirection[3];
+	float fAttenuation;
+	float fBloom;
+};
+
 class AudioOutput : public QThread {
 	private:
 		Q_OBJECT
 		Q_DISABLE_COPY(AudioOutput)
 	private:
+		// Loudspeakers info
+		bool bHeadphones;
 		float *fSpeakers;
-		float *fSpeakerVolume;
 		bool *bSpeakerPositional;
+		bool *bSpeakerDirectional;
+		unsigned int iChannelsPositional;
+		unsigned int *iSpeakerMap;
+		// Attributes of the listener 
+		float fPosition[3];
+		float fRight[3];
+		float fTop[3];
+		float fFront[3];
 	protected:
 		enum { SampleShort, SampleFloat } eSampleFormat;
 		volatile bool bRunning;
@@ -113,7 +131,10 @@ class AudioOutput : public QThread {
 		QMultiHash<const ClientUser *, AudioOutputUser *> qmOutputs;
 
 		virtual void removeBuffer(AudioOutputUser *);
+		void setSpeakerPositions(const unsigned int *, bool);
 		void initializeMixer(const unsigned int *chanmasks, bool forceheadphone = false);
+		bool positionListener(float *, float *, float *);
+		boost::optional<AudioSourceData> locateSource(const float * const position);
 		bool mix(void *output, unsigned int nsamp);
 	public:
 		void wipe();
@@ -127,7 +148,7 @@ class AudioOutput : public QThread {
 		void run() = 0;
 		virtual bool isAlive() const;
 		const float *getSpeakerPos(unsigned int &nspeakers);
-		static float calcGain(float dotproduct, float distance);
+		float calcGain(const unsigned int & chanIndex, const AudioSourceData & sourceData);
 		unsigned int getMixerFreq() const;
 };
 
